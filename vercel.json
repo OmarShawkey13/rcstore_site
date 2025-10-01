@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/rcwhatsapp", "destination": "/index.html" },
+    { "source": "/rcgram", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
