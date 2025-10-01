@@ -1,0 +1,68 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        { "type": "host", "value": "www.rcmods.online" }
+      ],
+      "destination": "https://rcmods.online/",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "www.rcmods.online" }
+      ],
+      "destination": "https://rcmods.online/$1",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        { "type": "host", "value": ":subdomain.rcmods.online" }
+      ],
+      "destination": "https://rcmods.online/",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": ":subdomain.rcmods.online" }
+      ],
+      "destination": "https://rcmods.online/$1",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        { "type": "host", "value": ":subdomain.vercel.app" }
+      ],
+      "destination": "https://rcmods.online/",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": ":subdomain.vercel.app" }
+      ],
+      "destination": "https://rcmods.online/$1",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

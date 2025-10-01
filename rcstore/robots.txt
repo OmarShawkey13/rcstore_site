@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rcmods.online/sitemap.xml
+Host: rcmods.online
