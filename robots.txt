@@ -1,5 +1,21 @@
+# www.robotstxt.org/
+# Allow crawling of all content
 User-agent: *
 Allow: /
+Disallow: /canvaskit/
+Disallow: /assets/shaders/
+Disallow: /*.js$
+Disallow: /*.wasm$
 
+# Allow specific bots with better crawl rate
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://rcmods.online/sitemap.xml
 Host: rcmods.online
