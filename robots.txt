@@ -1,21 +1,43 @@
-# www.robotstxt.org/
-# Allow crawling of all content
+# rcmods.online - Robots.txt (optimized for Flutter Web + SEO + Security)
+# Last Updated: 2025-10-04
+
+# General policy
 User-agent: *
 Allow: /
 Disallow: /canvaskit/
 Disallow: /assets/shaders/
 Disallow: /*.js$
 Disallow: /*.wasm$
+Disallow: /firebase-init.js
+Disallow: /404.html
+Disallow: /offline.html
+Disallow: /__/   # Firebase internal routes
 
-# Allow specific bots with better crawl rate
+# Prevent crawling of query-parameter heavy URLs
+Disallow: /*?*
+
+# Limit crawling frequency (helps server performance)
+Crawl-delay: 5
+
+# Specific crawler policies
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 2
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 2
 
-# Sitemap location
+User-agent: Yandex
+Allow: /
+Crawl-delay: 3
+
+User-agent: AhrefsBot
+Disallow: /   # avoid unnecessary crawling by SEO tools
+
+User-agent: SemrushBot
+Disallow: /
+
+# Sitemap and preferred host
 Sitemap: https://rcmods.online/sitemap.xml
 Host: rcmods.online

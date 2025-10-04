@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
     xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home Page -->
   <url>
     <loc>https://rcmods.online/</loc>
     <lastmod>2025-10-01</lastmod>
@@ -9,15 +12,39 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://rcmods.online/assets/assets/images/logo.jpg</image:loc>
-      <image:title>RC Mods</image:title>
+      <image:title>RCMods – Official Website</image:title>
     </image:image>
     <image:image>
       <image:loc>https://rcmods.online/assets/assets/images/rcgram.webp</image:loc>
-      <image:title>RC Gram</image:title>
+      <image:title>RCGram App Preview</image:title>
     </image:image>
     <image:image>
       <image:loc>https://rcmods.online/assets/assets/images/rcwhatsapp.png</image:loc>
-      <image:title>RC WhatsApp</image:title>
+      <image:title>RCWhatsApp Mod</image:title>
     </image:image>
   </url>
+
+  <!-- Example sub-pages -->
+  <url>
+    <loc>https://rcmods.online/rcgram</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://rcmods.online/assets/assets/images/rcgram.webp</image:loc>
+      <image:title>Download RCGram Latest Version</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://rcmods.online/rcwhatsapp</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://rcmods.online/assets/assets/images/rcwhatsapp.png</image:loc>
+      <image:title>Download RCWhatsApp Latest Version</image:title>
+    </image:image>
+  </url>
+
 </urlset>
