@@ -80695,7 +80695,7 @@ a0R(a){$.asa().m(0,this,a)}}
 A.jG.prototype={}
 A.Hs.prototype={
 I(a){var s=null,r=$.as4()
-return A.cl(s,A.agT(B.db,A.b([A.ayD("Make your WhatsApp special with new features and iOS design","assets/images/rcwhatsapp.png",new A.Zh(a),B.Kp,"Rc Whatsapp v10.40"),A.ayD("Make your Telegram special with new features and iOS design","assets/images/rcgram.webp",new A.Zi(a),B.Kq,"RcGram v7.1")],t.p),30,30),B.q,s,s,s,s,s,r,s,B.jp,s,s,1/0)}}
+return A.cl(s,A.agT(B.db,A.b([A.ayD("Make your WhatsApp special with new features and iOS design","assets/images/rcwhatsapp.png",new A.Zh(a),B.Kp,"Rc Whatsapp v10.41"),A.ayD("Make your Telegram special with new features and iOS design","assets/images/rcgram.webp",new A.Zi(a),B.Kq,"RcGram v7.1")],t.p),30,30),B.q,s,s,s,s,s,r,s,B.jp,s,s,1/0)}}
 A.Zh.prototype={
 $0(){A.pE(this.a,!1).GJ("/rcwhatsapp",null,t.X)},
 $S:0}
@@ -80828,7 +80828,7 @@ A.akg.prototype={
 $0(){return this.a.e=!1},
 $S:0}
 A.pX.prototype={
-I(a){var s,r=this,q=null,p=t.p,o=A.b([A.bw("RCWA App Info",q,B.cb.aJ(B.e),q),B.aO,r.vR("Developer","Omar Shawkey"),r.vR("Version","10.40"),r.vR("Size","115 MB"),r.vR("Platform","Android")],p)
+I(a){var s,r=this,q=null,p=t.p,o=A.b([A.bw("RCWA App Info",q,B.cb.aJ(B.e),q),B.aO,r.vR("Developer","Omar Shawkey"),r.vR("Version","v10.41"),r.vR("Size","110 MB"),r.vR("Platform","Android")],p)
 if(r.c){s=A.fA(q,q,B.ae,q,q,q,q,q,q,q,q,q,q,q,new A.bv(A.bf(30),B.m),q,q,q,q,q)
 B.b.F(o,A.b([B.bg,A.rY(!1,A.bw("Close",q,B.aP.aJ(B.e),q),q,q,q,q,q,q,new A.aaq(a),q,s)],p))}return new A.cB(B.nJ,A.cb(o,B.G,B.c3),q)},
 vR(a,b){var s=null
@@ -81159,7 +81159,7 @@ l=A.ia(A.e9(A.iG(A.cD("RCWhatsApp",n,B.Aa.aJ(B.e),n),new A.amh()),B.T,m),B.aH,B.
 m=o.d
 s=m?B.i:B.dN
 m=m?1:0
-s=A.ia(A.e9(A.cD("v10.40 \u2013 Premium experience for WhatsApp with elegant iOS-like design.",2,B.ig.hl(B.Z,1.4),n),B.T,m),B.aH,B.T,s)
+s=A.ia(A.e9(A.cD("v10.41 \u2013 Premium experience for WhatsApp with elegant iOS-like design.",2,B.ig.hl(B.Z,1.4),n),B.T,m),B.aH,B.T,s)
 m=o.d?B.i:B.kA
 r=A.fA(n,n,B.ae,n,n,n,n,n,n,n,n,n,B.cM,n,new A.bv(A.bf(30),B.m),n,n,n,n,n)
 r=A.hJ(A.oB(B.dB,A.bw("Get Started",n,B.aP.aJ(B.e),n),new A.ami(),r))
@@ -81363,7 +81363,7 @@ aC(){this.aV()
 A.im(B.aD,new A.aq8(this),t.P)},
 I(a){var s,r,q,p=null,o=this.d,n=o?B.i:B.kB
 o=o?1:0
-n=A.ia(A.e9(A.iG(A.cD("RCWhatsApp v10.40",p,B.lw.aJ(B.e),p),new A.aq4()),B.a6,o),B.aH,B.a6,n)
+n=A.ia(A.e9(A.iG(A.cD("RCWhatsApp v10.41",p,B.lw.aJ(B.e),p),new A.aq4()),B.a6,o),B.aH,B.a6,n)
 o=this.d?1:0
 o=A.e9(A.cD("Premium experience for WhatsApp with elegant iOS-like design.",p,B.e0.hl(B.Z,1.5),p),B.a6,o)
 s=A.fA(p,p,B.ae,p,p,p,p,p,p,p,p,p,B.fW,p,new A.bv(A.bf(30),B.m),p,p,p,p,p)
@@ -89529,10 +89529,10 @@ B.OE=new A.pJ(1,null)
 B.OF=new A.Lk(0,"portrait")
 B.OG=new A.Lk(1,"landscape")
 B.OH=new A.A_(null)
-B.v5=new A.jG("RCWhatsApp","com.sathwbg.easymessager","https://uploadrar.com/ccq56ovpazhc")
-B.v6=new A.jG("GBWhatsApp","com.gbwhatsapp","https://uploadrar.com/tvfcdlduxbus")
-B.v7=new A.jG("RCWhatsApp","com.rcwhatsapp","https://uploadrar.com/mamosm07j4zk")
-B.v8=new A.jG("RCWhatsApp","com.universe.messenger","https://uploadrar.com/7gcq00a7jrkw")
+B.v5=new A.jG("RCWhatsApp","com.rcwhatsapp","https://uploadrar.com/5xi4ge2xqdij")
+B.v6=new A.jG("RCWhatsApp","com.sathwbg.easymessager","https://uploadrar.com/t9shjwzp31ui")
+B.v7=new A.jG("GBWhatsApp","com.gbwhatsapp","https://uploadrar.com/3vbbj6j6qpqr")
+B.v8=new A.jG("RCWhatsApp","com.universe.messenger","https://uploadrar.com/pdsieylq01pv")
 B.OI=new A.A3(null)
 B.cq=new A.Lr(0,"fill")
 B.OJ=new A.Ls(0,"fill")
@@ -90674,8 +90674,8 @@ $.aKC=A.b([35,30,20,25,30,35,30,25,25],t.n)
 $.ie=function(){var s=t.n
 return A.b([A.b([0.41233895,0.35762064,0.18051042],s),A.b([0.2126,0.7152,0.0722],s),A.b([0.01932141,0.11916382,0.95034478],s)],t.zg)}()
 $.rD=A.b([95.047,100,108.883],t.n)
-$.aJ_=A.b([B.v7,B.v6,B.v8,B.v5],A.aa("t<jG>"))
-$.azQ=A.b([B.v7,B.v6,B.v8,B.v5],A.aa("t<jG>"))
+$.aJ_=A.b([B.v5,B.v7,B.v8,B.v6],A.aa("t<jG>"))
+$.azQ=A.b([B.v5,B.v7,B.v8,B.v6],A.aa("t<jG>"))
 $.aIA=A.p(t.S,A.aa("aSS"))
 $.aPb=A.p(A.aa("rp"),A.aa("Iv<~>"))
 $.aqu=null
