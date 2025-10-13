@@ -439,13 +439,6 @@ class CompiledApp {
       _1300: () => typeof dartUseDateNowForTicks !== "undefined",
       _1301: () => 1000 * performance.now(),
       _1302: () => Date.now(),
-      _1303: () => {
-        // On browsers return `globalThis.location.href`
-        if (globalThis.location != null) {
-          return globalThis.location.href;
-        }
-        return null;
-      },
       _1305: () => new WeakMap(),
       _1306: (map, o) => map.get(o),
       _1307: (map, o, v) => map.set(o, v),
