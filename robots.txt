@@ -1,43 +1,61 @@
-# rcmods.online - Robots.txt (optimized for Flutter Web + SEO + Security)
-# Last Updated: 2025-10-04
+# ===========================================
+# RCMods.online - Robots.txt
+# Optimized for Flutter Web (WASM) + GitHub Pages + SEO + Performance
+# Last Updated: 2025-10-17
+# ===========================================
 
-# General policy
+# --- General Rules ---
 User-agent: *
 Allow: /
 Disallow: /canvaskit/
 Disallow: /assets/shaders/
-Disallow: /*.js$
-Disallow: /*.wasm$
-Disallow: /firebase-init.js
 Disallow: /404.html
 Disallow: /offline.html
-Disallow: /__/   # Firebase internal routes
+Disallow: /*?*          # Prevent crawling of query-heavy URLs
+# Keep WASM and main runtime JS accessible for site loading
+Allow: /*.wasm$
+Allow: /*.js$
+# But block test/debug scripts if any
+Disallow: /test/
+Disallow: /debug/
 
-# Prevent crawling of query-parameter heavy URLs
-Disallow: /*?*
-
-# Limit crawling frequency (helps server performance)
+# --- Crawl Control ---
 Crawl-delay: 5
 
-# Specific crawler policies
+# --- Googlebot ---
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 2
+Disallow: /canvaskit/
+Disallow: /assets/shaders/
 
+# --- Bingbot ---
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 2
 
+# --- Yandex ---
 User-agent: Yandex
 Allow: /
 Crawl-delay: 3
 
+# --- SEO Crawlers / Marketing Bots ---
 User-agent: AhrefsBot
-Disallow: /   # avoid unnecessary crawling by SEO tools
+Disallow: /
 
 User-agent: SemrushBot
 Disallow: /
 
-# Sitemap and preferred host
+# --- Social Media Bots (for previews) ---
+User-agent: Twitterbot
+Allow: /
+
+User-agent: FacebookExternalHit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# --- Sitemap & Host ---
 Sitemap: https://rcmods.online/sitemap.xml
 Host: rcmods.online
