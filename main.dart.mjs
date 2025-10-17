@@ -223,6 +223,7 @@ class CompiledApp {
       _780: x0 => x0.timeStamp,
       _781: x0 => x0.type,
       _783: (x0,x1,x2,x3) => x0.initEvent(x1,x2,x3),
+      _789: x0 => x0.baseURI,
       _790: x0 => x0.firstChild,
       _794: x0 => x0.parentElement,
       _796: (x0,x1) => { x0.textContent = x1 },
@@ -567,7 +568,6 @@ class CompiledApp {
             constructor, [null, ...args]);
         return new factoryFunction();
       },
-      _1486: (o, p) => p in o,
       _1487: (o, p) => o[p],
       _1488: (o, p, v) => o[p] = v,
       _1489: (o, m, a) => o[m].apply(o, a),
@@ -672,7 +672,6 @@ class CompiledApp {
         return s;
       },
       _1511: x0 => x0.index,
-      _1512: x0 => x0.groups,
       _1513: x0 => x0.flags,
       _1514: x0 => x0.multiline,
       _1515: x0 => x0.ignoreCase,
