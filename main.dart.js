@@ -83760,7 +83760,7 @@ if(s!=null)s.aW()}},
 $S:0}
 A.as6.prototype={
 $0(){this.a.a.toString
-return A.wP(A.fy("https://uploadrar.com/doqni8f00ria",0,null))},
+return A.wP(A.fy("https://www.mediafire.com/file/xtdshmdapcg6p7g/RCGram_V8.1.apk/file",0,null))},
 $S:25}
 A.Hu.prototype={
 l(){var s=this,r=s.bn$
