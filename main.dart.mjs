@@ -698,8 +698,7 @@ class CompiledApp {
       _1588: Function.prototype.call.bind(Number.prototype.toString),
       _1589: (d, digits) => d.toFixed(digits),
       _1762: x0 => x0.style,
-      _2250: (x0,x1) => { x0.width = x1 },
-      _2252: (x0,x1) => { x0.height = x1 },
+      _2246: (x0,x1) => { x0.allow = x1 },
       _2999: (x0,x1) => { x0.src = x1 },
       _3001: (x0,x1) => { x0.type = x1 },
       _3005: (x0,x1) => { x0.async = x1 },
@@ -709,6 +708,11 @@ class CompiledApp {
       _3919: x0 => x0.userAgent,
       _6148: () => globalThis.document,
       _10747: (x0,x1) => { x0.border = x1 },
+      _11025: (x0,x1) => { x0.display = x1 },
+      _11189: (x0,x1) => { x0.height = x1 },
+      _11275: (x0,x1) => { x0.margin = x1 },
+      _11361: (x0,x1) => { x0.maxWidth = x1 },
+      _11879: (x0,x1) => { x0.width = x1 },
 
     };
 
