@@ -1,4 +1,3 @@
-<script>//<![CDATA[
 (function(){
   const KEY_CONFIRMED = 'ab_v2_disabled_confirmed';
   const INITIAL_DELAY = 800;      // تأخير بسيط لضمان تحميل الصفحة
@@ -177,4 +176,3 @@
   else init();
 
 })();
-//]]></script>
