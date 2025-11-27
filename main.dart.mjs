@@ -707,6 +707,7 @@ class CompiledApp {
       _3530: x0 => x0.navigator,
       _3919: x0 => x0.userAgent,
       _6148: () => globalThis.document,
+      _6230: x0 => x0.body,
       _10747: (x0,x1) => { x0.border = x1 },
       _11025: (x0,x1) => { x0.display = x1 },
       _11189: (x0,x1) => { x0.height = x1 },
