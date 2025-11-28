@@ -4,7 +4,7 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
 const RESOURCES = {"404.html": "02ac0de092dba5cbd002fb7cff84b02d",
-"adblock_monitor.js": "7f156eac395a454a35fb9b9a9d7986d6",
+"adblock_monitor.js": "aec24a8f9a7483995e747ddd14314eb2",
 "assets/AssetManifest.bin": "e2cfcfbb4ec397e9ba1a50cc4cf381a8",
 "assets/AssetManifest.bin.json": "858897a8b8bec14b5c9af02aa8c2646d",
 "assets/assets/images/instagram.svg": "7eae9e3d5a167fac1a73babf0888191d",
@@ -43,7 +43,7 @@ const RESOURCES = {"404.html": "02ac0de092dba5cbd002fb7cff84b02d",
 "canvaskit/skwasm_heavy.wasm": "b0be7910760d205ea4e011458df6ee01",
 "favicon.png": "ac08444cecfdcdbb59a9a1bf920dcecf",
 "flutter.js": "24bc71911b75b5f8135c949e27a2984e",
-"flutter_bootstrap.js": "6b1763c55c6f636d88159ee0f3364b93",
+"flutter_bootstrap.js": "65483e74742e7ae0e5955ad3a18f7c12",
 "icons/Icon-192.png": "0f14cea1dbbd82f3881813082419925d",
 "icons/Icon-512.png": "9ca727ff7cb1c70f0ed8ed6df27d2783",
 "icons/Icon-maskable-192.png": "0f14cea1dbbd82f3881813082419925d",
@@ -56,6 +56,7 @@ const RESOURCES = {"404.html": "02ac0de092dba5cbd002fb7cff84b02d",
 "manifest.json": "b59e4cb95ccb65f4ef775ac0032f566d",
 "robots.txt": "c7a50bb0772971908e5f35691e6945eb",
 "sitemap.xml": "8260278b5adde0775dde7b7c005c0766",
+"sw.js": "cbfeb5087518cd2d75784c07fb026c9b",
 "version.json": "1c087765eded2a501ec60e6a23bdd805"};
 // The application shell files that are downloaded before a service worker can
 // start.

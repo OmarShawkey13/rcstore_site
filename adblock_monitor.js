@@ -1,6 +1,7 @@
 (function(){
   const KEY_CONFIRMED = 'ab_v2_disabled_confirmed';
-  const INITIAL_DELAY = 800;      // تأخير بسيط لضمان تحميل الصفحة
+  // زيادة التأخير لضمان استقرار المتصفحات المدمجة مثل تيليجرام
+  const INITIAL_DELAY = 1500;     // تأخير (1.5 ثانية) لضمان تحميل الصفحة
   const POLL_INTERVAL = 2000;     // الفحص كل ثانيتين أثناء ظهور المودال
   const MONITOR_INTERVAL = 4000;  // الفحص كل 4 ثواني في الخلفية
 
@@ -14,19 +15,17 @@
   // --- 1. دالة كشف DNS المحسنة (Super Cache Buster) ---
   function checkDNSBlocking() {
     return new Promise((resolve) => {
-      // توليد رقم عشوائي + توقيت لضمان رابط فريد 100% في كل مرة
-      // الشكل النهائي: adsbygoogle.js?cb=174823_982374
       const uniqueParam = Date.now() + '_' + Math.floor(Math.random() * 1000000);
       const bustCacheUrl = AD_URL + '?cb=' + uniqueParam;
 
       fetch(bustCacheUrl, {
         method: 'HEAD',
-        mode: 'no-cors',    // يسمح بالطلب من دومين مختلف
-        cache: 'no-store',  // يمنع المتصفح من حفظ النتيجة
-        headers: { 'Pragma': 'no-cache', 'Cache-Control': 'no-cache' } // زيادة تأكيد
+        mode: 'no-cors',
+        cache: 'no-store',
+        headers: { 'Pragma': 'no-cache', 'Cache-Control': 'no-cache' }
       })
       .then(() => {
-        // الاتصال تم بنجاح (السيرفر رد) -> لا يوجد حجب DNS
+        // الاتصال تم بنجاح -> لا يوجد حجب DNS
         resolve(false);
       })
       .catch(() => {
@@ -36,57 +35,75 @@
     });
   }
 
-  // --- 2. دالة الفحص المجمعة ---
+  // --- 2. دالة فحص عناصر CSS (CSS Bait) ---
+  // هذه الآلية هي الأفضل لاكتشاف إضافات المتصفح التقليدية
+  function checkCSSBait() {
+    let blocked = false;
+    const baitClasses = ['adsbox','adunit','adsbygoogle','textads','banner_ads','ad-zone'];
+    const baits = [];
+    try {
+      for (let c of baitClasses){
+        const d = document.createElement('div');
+        d.className = c;
+        // يجب أن تكون الأبعاد غير صفرية بشكل نظري لتجنب بعض الفلاتر
+        d.style.cssText = 'width:1px;height:1px;position:fixed;left:-9999px;top:-9999px;pointer-events:none;opacity:0;z-index:-1';
+        document.body.appendChild(d);
+        baits.push(d);
+      }
+
+      // لا نحتاج لانتظار requestAnimationFrame هنا، لكن نعتمد على الفحص بعد إضافة العناصر
+
+      for (let d of baits){
+        const s = window.getComputedStyle(d);
+        // التحقق من الإخفاء بواسطة display:none أو visibility:hidden أو الأبعاد الصفرية
+        if(!s || s.display === 'none' || s.visibility === 'hidden' || parseFloat(s.width) === 0){
+          blocked = true;
+          break;
+        }
+      }
+    } catch(e){ blocked = true; }
+
+    // تنظيف العناصر
+    for (let el of baits) try{ el.remove(); }catch(e){}
+
+    return blocked;
+  }
+
+  // --- 3. دالة الفحص المجمعة والمحسنة ---
   function detectAdblockOnce(){
     return new Promise(async (resolve) => {
-      // أولاً: فحص DNS (الأقوى للموبايل)
-      const dnsBlocked = await checkDNSBlocking();
-      if(dnsBlocked) {
+      let isBlocked = false;
+
+      // أولاً: فحص العناصر (CSS Bait) - الأولوية القصوى
+      // للكشف عن إضافات المتصفح (AdBlock Plus, uBlock, إلخ)
+      isBlocked = checkCSSBait();
+      if(isBlocked) {
         resolve(true);
         return;
       }
 
-      // ثانياً: فحص العناصر (CSS Bait) للإضافات العادية
-      let blocked = false;
-      const baitClasses = ['adsbox','adunit','adsbygoogle','textads','banner_ads','ad-zone'];
-      const baits = [];
-      try {
-        for (let c of baitClasses){
-          const d = document.createElement('div');
-          d.className = c;
-          d.style.cssText = 'width:1px;height:1px;position:fixed;left:-9999px;top:-9999px;pointer-events:none;opacity:0;z-index:-1';
-          document.body.appendChild(d);
-          baits.push(d);
-        }
-        // انتظار لحظي ليقوم المتصفح بتطبيق الستايل
-        await new Promise(r => requestAnimationFrame(r));
-
-        for (let d of baits){
-          const s = window.getComputedStyle(d);
-          if(!s || s.display === 'none' || s.visibility === 'hidden' || parseFloat(s.width) === 0){
-            blocked = true;
-            break;
+      // ثانياً: فحص DNS/الشبكة - كاختبار ثانوي
+      // هذا هو الجزء الذي يكتشف Private DNS والحجب على مستوى الشبكة
+      // يتم تشغيله فقط إذا لم يتم اكتشاف حجب بواسطة CSS Bait
+      if(!isBlocked) {
+          const dnsBlocked = await checkDNSBlocking();
+          if(dnsBlocked) {
+             isBlocked = true;
           }
-        }
-      } catch(e){ blocked = true; }
+      }
 
-      // تنظيف
-      for (let el of baits) try{ el.remove(); }catch(e){}
-
-      resolve(blocked);
+      resolve(isBlocked);
     });
   }
 
   let monitorIntervalId = null;
 
-  // --- 3. عرض المودال بالتصميم الأصلي ---
+  // --- 4. عرض المودال بالتصميم الأصلي (لم يتم تعديل التصميم) ---
   function showForcedModal(){
     if(document.getElementById('ab-forced-overlay')) return;
 
-    // إيقاف المراقبة الخلفية لمنع التداخل
     if(monitorIntervalId) { clearInterval(monitorIntervalId); monitorIntervalId = null; }
 
-    // CSS التصميم الأصلي (الداكن والأزرق)
     const css = `
       :root{--bg:rgba(6,8,12,.96);--card:#041428;--muted:#9fb6cf;--border:rgba(255,255,255,.05)}
       #ab-forced-overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);z-index:2147483647;padding:18px;backdrop-filter:blur(4px)}
@@ -160,6 +177,7 @@
   }
 
   function init(){
+    // يبدأ بعد 1.5 ثانية (بدلاً من 0.8 ثانية)
     setTimeout(() => {
       detectAdblockOnce().then(blocked => {
         if(blocked){
