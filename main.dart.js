@@ -81855,7 +81855,7 @@ s.aV$=null
 s.aG()}}
 A.M7.prototype={
 J(a){var s=this,r=null,q=t.p,p=A.b([A.bP("RCGram App Info",r,r,r,B.d0.bQ(B.h),r),B.cX,s.w4("Developer","Omar Shawkey"),s.w4("Version","v9.1"),s.w4("Size","89 MB"),s.w4("Platform","Android")],q),o=A.oH(r,r,B.al,r,r,r,r,r,r,r,r,r,r,r,new A.bU(A.be(30),B.o),r,r,r,r,r)
-B.b.F(p,A.b([B.le,A.Jy(!1,A.bP("Close",r,r,r,B.ih.bQ(B.h),r),r,r,r,r,r,r,new A.aaP(a),r,o)],q))
+B.b.F(p,A.b([B.lf,A.Jy(!1,A.bP("Close",r,r,r,B.ih.bQ(B.h),r),r,r,r,r,r,r,new A.aaP(a),r,o)],q))
 return new A.c6(B.js,A.cn(p,B.r,B.t,B.aV),r)},
 w4(a,b){var s=null
 return new A.c6(B.nK,A.eY(A.b([A.bP(a,s,s,s,B.cp.bQ(B.a7),s),A.bP(b,s,s,s,B.ih.bQ(B.h),s)],t.p),B.r,B.eS,B.x,0),s)}}
@@ -82054,7 +82054,7 @@ $0(){return this.a.d=!1},
 $S:0}
 A.Mb.prototype={
 J(a){var s=this,r=null,q=t.p,p=A.b([A.bP("RCWA App Info",r,r,r,B.d0.bQ(B.h),r),B.cX,s.wo("Developer","Omar Shawkey"),s.wo("Version","v10.51"),s.wo("Size","115 MB"),s.wo("Platform","Android")],q),o=A.oH(r,r,B.al,r,r,r,r,r,r,r,r,r,r,r,new A.bU(A.be(30),B.o),r,r,r,r,r)
-B.b.F(p,A.b([B.le,A.Jy(!1,A.bP("Close",r,r,r,B.ih.bQ(B.h),r),r,r,r,r,r,r,new A.aaV(a),r,o)],q))
+B.b.F(p,A.b([B.lf,A.Jy(!1,A.bP("Close",r,r,r,B.ih.bQ(B.h),r),r,r,r,r,r,r,new A.aaV(a),r,o)],q))
 return new A.c6(B.js,A.cn(p,B.r,B.t,B.aV),r)},
 wo(a,b){var s=null
 return new A.c6(B.nK,A.eY(A.b([A.bP(a,s,s,s,B.cp.bQ(B.a7),s),A.bP(b,s,s,s,B.ih.bQ(B.h),s)],t.p),B.r,B.eS,B.x,0),s)}}
@@ -82247,7 +82247,7 @@ return A.c2(s,A.cn(A.b([new A.c6(new A.av(o,0,o,0),n,s),B.dS,m,B.c4,this.a2A(a)]
 a2W(){var s=t.TO
 s=A.U(new A.a0(B.oS,new A.anq(),s),s.h("ar.E"))
 return new A.dX(B.e7,A.Pu(B.cr,s,B.d8,24,24),null)},
-a2J(a){return A.cn(A.b([A.ff(new A.Ae(this.d,new A.aeF(new A.anp(this,400),4,null),null),400,null),B.le,this.a2x()],t.p),B.r,B.t,B.x)},
+a2J(a){return A.cn(A.b([A.ff(new A.Ae(this.d,new A.aeF(new A.anp(this,400),4,null),null),400,null),B.lf,this.a2x()],t.p),B.r,B.t,B.x)},
 a2x(){var s,r,q,p,o=null,n=J.ay8(4,t.l7)
 for(s=0;s<4;++s){r=this.e===s
 q=r?24:8
@@ -82337,14 +82337,14 @@ $2(a,b){if(b.b<600)return B.Oz
 else return B.ZK},
 $S:116}
 A.L5.prototype={
-J(a){var s=null,r=t.p,q=A.b([new A.Oa(A.cn(A.b([B.lf,B.om,B.md,B.dw],r),B.r,B.t,B.x),s)],r)
+J(a){var s=null,r=t.p,q=A.b([new A.Oa(A.cn(A.b([B.le,B.om,B.md,B.dw],r),B.r,B.t,B.x),s)],r)
 return A.acr(B.cB,A.jU(B.cd,A.b([new A.J2(q,B.aw,!1,s,s,B.B5,s,!1,s,0,s,s,B.zV,B.an,s,s,B.N,B.au,s),B.dx],r),B.N,B.b9))}}
 A.L6.prototype={
 J(a){var s=t.p
-return A.acr(B.cB,A.jU(B.cd,A.b([A.azC(A.cn(A.b([B.lf,B.yQ,B.yR,B.yO,B.yP,B.dw],s),B.r,B.t,B.x)),B.dx],s),B.N,B.b9))}}
+return A.acr(B.cB,A.jU(B.cd,A.b([A.azC(A.cn(A.b([B.le,B.yQ,B.yR,B.yO,B.yP,B.dw],s),B.r,B.t,B.x)),B.dx],s),B.N,B.b9))}}
 A.L7.prototype={
 J(a){var s=t.p
-return A.acr(B.cB,A.jU(B.cd,A.b([A.azC(A.cn(A.b([B.lf,B.yV,B.yW,B.yS,B.yT,B.yU,B.dw],s),B.r,B.t,B.x)),B.dx],s),B.N,B.b9))}}
+return A.acr(B.cB,A.jU(B.cd,A.b([A.azC(A.cn(A.b([B.le,B.yV,B.yW,B.yS,B.yT,B.yU,B.dw],s),B.r,B.t,B.x)),B.dx],s),B.N,B.b9))}}
 A.nt.prototype={
 aj(){return new A.Xc(null,null)}}
 A.Xc.prototype={
@@ -91022,16 +91022,16 @@ B.Tj=new A.dD(12,null,null,null)
 B.zS=new A.dD(16,null,null,null)
 B.ld=new A.dD(40,null,null,null)
 B.zT=new A.dD(8,null,null,null)
+B.le=new A.dD(null,100,null,null)
 B.cX=new A.dD(null,12,null,null)
 B.c3=new A.dD(null,16,null,null)
-B.le=new A.dD(null,20,null,null)
+B.lf=new A.dD(null,20,null,null)
 B.dS=new A.dD(null,24,null,null)
 B.Tk=new A.dD(null,28,null,null)
 B.Tl=new A.dD(null,2,null,null)
 B.Tm=new A.dD(null,30,null,null)
 B.zU=new A.dD(null,32,null,null)
 B.c4=new A.dD(null,40,null,null)
-B.lf=new A.dD(null,80,null,null)
 B.lg=new A.dD(null,8,null,null)
 B.Tn=new A.BS(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.To=new A.O7(0,0,0,0,0,0,!1,!1,null,0)
