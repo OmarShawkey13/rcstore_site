@@ -82303,7 +82303,7 @@ $2(a,b){var s,r,q=null,p=b.b,o=p<800,n=o?p*0.9:380
 p=$.awl()
 s=o?40:80
 r=this.a
-return A.c5(q,A.PN(B.cq,A.b([r.KL(a,B.kz,"Elevate your chat experience with exclusive iOS design and powerful privacy features.","assets/images/rcwhatsapp.png","/rcwhatsapp",B.Lr,"RCWhatsapp v10.51",n),r.KL(a,B.Or,"Transform your Telegram with a sleek iOS theme and advanced customization tools.","assets/images/rcgram.webp","/rcgram",B.Lx,"RCGram v9.0",n)],t.p),B.Aw,40,40),B.p,q,q,q,q,q,p,q,new A.av(20,s,20,s),q,q,1/0)},
+return A.c5(q,A.PN(B.cq,A.b([r.KL(a,B.kz,"Elevate your chat experience with exclusive iOS design and powerful privacy features.","assets/images/rcwhatsapp.png","/rcwhatsapp",B.Lr,"RCWhatsapp v10.51",n),r.KL(a,B.Or,"Transform your Telegram with a sleek iOS theme and advanced customization tools.","assets/images/rcgram.webp","/rcgram",B.Lx,"RCGram v9.1",n)],t.p),B.Aw,40,40),B.p,q,q,q,q,q,p,q,new A.av(20,s,20,s),q,q,1/0)},
 $S:78}
 A.a_9.prototype={
 $0(){return A.l1(this.a,!1).VN(this.b,null,t.X)},
@@ -82467,7 +82467,7 @@ if(r!=null)r.K(s.gdX())
 s.aW$=null
 s.aF()}}
 A.Mq.prototype={
-J(a){var s=this,r=null,q=t.p,p=A.b([A.bQ("RCGram App Info",r,r,r,B.cZ.bQ(B.h),r),B.cV,s.wa("Developer","Omar Shawkey"),s.wa("Version","v9.0"),s.wa("Size","89 MB"),s.wa("Platform","Android")],q),o=A.oJ(r,r,B.al,r,r,r,r,r,r,r,r,r,r,r,new A.bV(A.be(30),B.o),r,r,r,r,r)
+J(a){var s=this,r=null,q=t.p,p=A.b([A.bQ("RCGram App Info",r,r,r,B.cZ.bQ(B.h),r),B.cV,s.wa("Developer","Omar Shawkey"),s.wa("Version","v9.1"),s.wa("Size","89 MB"),s.wa("Platform","Android")],q),o=A.oJ(r,r,B.al,r,r,r,r,r,r,r,r,r,r,r,new A.bV(A.be(30),B.o),r,r,r,r,r)
 B.b.F(p,A.b([B.li,A.JM(!1,A.bQ("Close",r,r,r,B.ih.bQ(B.h),r),r,r,r,r,r,r,new A.abl(a),r,o)],q))
 return new A.c8(B.jt,A.cy(p,B.r,B.t,B.aW),r)},
 wa(a,b){var s=null
@@ -82570,7 +82570,7 @@ s=t.Ni
 r=A.d1(B.cA,this.d,n)
 q=b?B.r:B.bD
 p=b?B.aa:B.ap
-p=A.BV(A.eo("RCGram v9.0",b?B.d_.EY(B.h,1.2):B.lE.iW(B.h,60),p),new A.anP())
+p=A.BV(A.eo("RCGram v9.1",b?B.d_.EY(B.h,1.2):B.lE.iW(B.h,60),p),new A.anP())
 o=b?B.aa:B.ap
 return A.hd(A.lt(A.cy(A.b([p,B.c4,A.eo("Premium experience for Telegram with elegant iOS-like design, unmatched privacy, and exclusive features.",B.dT.m2(B.a7,b?16:18,1.5),o),B.zT,this.a2L(a,b)],t.p),q,B.t,B.z),new A.am(r,new A.ay(B.kJ,B.i,s),s.h("am<al.T>")),n,!0),n,m)},
 Oz(a){var s=this.e
@@ -92146,7 +92146,7 @@ B.lR=new A.Pv(1,"focused")
 B.fg=new A.lH(0,0)
 B.ZU=new A.lH(-2,-2)
 B.ZV=new A.PB(null)
-B.ZW=new A.nw("https://www.mediafire.com/file/mqhfzpbrja49ite/RCGram_V9.0.apk/file",null)
+B.ZW=new A.nw("https://www.mediafire.com/file/rq924gx6ot96kdi/RCGram_v9.1.apk/file",null)
 B.ZX=new A.PC(null)
 B.ZY=new A.PE(null)
 B.ZZ=new A.PF(null)
