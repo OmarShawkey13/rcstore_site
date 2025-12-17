@@ -51,6 +51,25 @@
           content="Your one-stop Android Mods Store. Find safe, fast, and up-to-date modded apps and tools.">
     <meta name="twitter:image" content="https://rcmods.online/assets/assets/images/logo.jpg">
 
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "RCMods Store",
+      "description": "RCMods Store is your trusted hub for premium Android Mods, Tweaks, and customized APKs.",
+      "operatingSystem": "Android",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "image": "https://rcmods.online/assets/assets/images/logo.jpg",
+      "url": "https://rcmods.online/"
+    }
+    </script>
+
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
     <script src="adblock_monitor.js" defer></script>
@@ -58,6 +77,10 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+<noscript>
+    <h1>RCMods Store - Mods & Tweaks for Android</h1>
+    <p>RCMods Store is your trusted hub for premium Android Mods, Tweaks, and customized APKs. Please enable JavaScript to access the store.</p>
+</noscript>
 <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
