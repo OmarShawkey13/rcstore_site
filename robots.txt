@@ -1,0 +1,34 @@
+# RCMods Store - Robots.txt
+# Generated: 2026-02-03
+
+# Allow all bots to crawl the website
+User-agent: *
+Allow: /
+
+# Disallow the countdown page from being indexed
+Disallow: /countdown.html
+
+# Allow specific bots to index
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+
+User-agent: Bingbot
+Allow: /
+Allow: /images/
+
+User-agent: Slurp
+Allow: /
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://rcmods.online/sitemap.xml
+
+# Crawl delay (optional - set to 1 second)
+Crawl-delay: 1
+
+# Request rate (optional)
+Request-rate: 1/1s
+
+# Cache settings
+Cache-Control: max-age=86400
