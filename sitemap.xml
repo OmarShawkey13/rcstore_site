@@ -64,13 +64,4 @@
     </image:image>
     <mobile:mobile/>
   </url>
-
-  <!-- Countdown Page (Blocking for indexing via robots.txt) -->
-  <url>
-    <loc>https://rcmods.online/countdown.html</loc>
-    <lastmod>2026-02-03</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.1</priority>
-  </url>
-
 </urlset>
