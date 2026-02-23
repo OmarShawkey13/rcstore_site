@@ -2,8 +2,8 @@ const CONFIG = {
     products: {
         rcgram: {
             name: "RCGram",
-            version: "10.0",
-            download: "https://www.mediafire.com/file/rb7xqh43h2w7isq/RCGram_v10.0.apk/file",
+            version: "11.0",
+            download: "https://www.mediafire.com/file/2g4w528kgrjepk9/RCGram+V11.apk/file",
             description: "Premium Telegram experience with iOS design",
             features: [
                 {
