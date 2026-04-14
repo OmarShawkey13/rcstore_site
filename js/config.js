@@ -2,8 +2,8 @@ const CONFIG = {
     products: {
         rcgram: {
             name: "RCGram",
-            version: "11.0",
-            download: "https://www.mediafire.com/file/2g4w528kgrjepk9/RCGram+V11.apk/file",
+            version: "12.6.4",
+            download: "https://www.mediafire.com/file/z8dnym42shi3f79/RCGram+v12.6.4.apk/file",
             description: "Premium Telegram experience with iOS design",
             features: [
                 {
@@ -25,6 +25,54 @@ const CONFIG = {
                     icon: "phone",
                     title: "Channels & Bots",
                     items: ["View blocked or restricted channels", "Use protected & locked bots", "Copy & screenshot in restricted channels", "Take screenshots in private chats"]
+                }
+            ]
+        },
+        rckeyboard: {
+            name: "RCKeyboard",
+            version: "1.0",
+            download: "https://www.mediafire.com/file/uhgmwajmwhj727o/rckeyboard+v1+beta.apk/file",
+            description: "Premium keyboard for Android",
+            features: [
+                {
+                    icon: "palette",
+                    title: "iOS Design",
+                    items: [
+                        "Elegant iOS-style keyboard interface",
+                        "Smooth key press animations",
+                        "Premium iOS key design",
+                        "Dynamic light & dark themes"
+                    ]
+                },
+                {
+                    icon: "lock",
+                    title: "Privacy",
+                    items: [
+                        "No data collection or tracking",
+                        "Secure local typing processing",
+                        "No cloud storage for input data",
+                        "Full user privacy protection"
+                    ]
+                },
+                {
+                    icon: "settings",
+                    title: "Customization",
+                    items: [
+                        "Custom keyboard themes",
+                        "Adjustable key size and layout",
+                        "Font and color customization",
+                        "Toggle animations and effects"
+                    ]
+                },
+                {
+                    icon: "phone",
+                    title: "Updates",
+                    items: [
+                        "Regular keyboard improvements",
+                        "Bug fixes and stability updates",
+                        "New features and enhancements",
+                        "User feedback driven updates"
+                    ]
                 }
             ]
         },

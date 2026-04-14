@@ -6,7 +6,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://rcmods.online/</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -18,7 +18,7 @@
   <!-- RCWhatsapp Page -->
   <url>
     <loc>https://rcmods.online/rcwhatsapp.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -43,7 +43,7 @@
   <!-- RCGram Page -->
   <url>
     <loc>https://rcmods.online/rcgram.html</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -61,6 +61,31 @@
     <image:image>
       <image:loc>https://rcmods.online/images/telegram_3.webp</image:loc>
       <image:title>RCGram Screenshot 3</image:title>
+    </image:image>
+    <mobile:mobile/>
+  </url>
+
+  <!-- RCKeyboard Page -->
+  <url>
+    <loc>https://rcmods.online/rckeyboard.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://rcmods.online/images/rckeyboard.webp</image:loc>
+      <image:title>RCKeyboard Preview</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://rcmods.online/images/keyboard_1.webp</image:loc>
+      <image:title>RCKeyboard Screenshot 1</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://rcmods.online/images/keyboard_2.webp</image:loc>
+      <image:title>RCKeyboard Screenshot 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://rcmods.online/images/keyboard_3.webp</image:loc>
+      <image:title>RCKeyboard Screenshot 3</image:title>
     </image:image>
     <mobile:mobile/>
   </url>

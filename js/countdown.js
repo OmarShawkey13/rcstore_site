@@ -13,7 +13,14 @@ function init() {
         downloadUrl = data.download;
         document.getElementById('productName').textContent = data.name;
         document.getElementById('productVersion').textContent = 'Version ' + data.version;
-    } else if (product === 'rcwhatsapp' && CONFIG.products.rcwhatsapp) {
+    }
+    else if (product === 'rckeyboard' && CONFIG.products.rckeyboard) {
+        const data = CONFIG.products.rckeyboard;
+        downloadUrl = data.download;
+        document.getElementById('productName').textContent = data.name;
+        document.getElementById('productVersion').textContent = 'Version ' + data.version;
+    }
+    else if (product === 'rcwhatsapp' && CONFIG.products.rcwhatsapp) {
         const rcwa = CONFIG.products.rcwhatsapp;
         if (pkg && rcwa.packages[pkg]) {
             const packageData = rcwa.packages[pkg];
