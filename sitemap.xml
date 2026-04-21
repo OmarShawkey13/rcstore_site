@@ -1,92 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Homepage -->
   <url>
     <loc>https://rcmods.online/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://rcmods.online/images/logo.webp</image:loc>
-      <image:title>RCMods Logo</image:title>
+      <image:title>RCMods Store - Professional Android Mods</image:title>
     </image:image>
   </url>
 
-  <!-- RCWhatsapp Page -->
   <url>
     <loc>https://rcmods.online/rcwhatsapp.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://rcmods.online/images/rcwhatsapp.webp</image:loc>
-      <image:title>RCWhatsapp Preview</image:title>
+      <image:title>RCWhatsapp - Premium Mod Preview</image:title>
     </image:image>
     <image:image>
       <image:loc>https://rcmods.online/images/whatsapp_1.webp</image:loc>
-      <image:title>RCWhatsapp Screenshot 1</image:title>
+      <image:title>RCWhatsapp User Interface 1</image:title>
     </image:image>
     <image:image>
       <image:loc>https://rcmods.online/images/whatsapp_2.webp</image:loc>
-      <image:title>RCWhatsapp Screenshot 2</image:title>
+      <image:title>RCWhatsapp User Interface 2</image:title>
     </image:image>
-    <image:image>
-      <image:loc>https://rcmods.online/images/whatsapp_3.webp</image:loc>
-      <image:title>RCWhatsapp Screenshot 3</image:title>
-    </image:image>
-    <mobile:mobile/>
   </url>
 
-  <!-- RCGram Page -->
   <url>
     <loc>https://rcmods.online/rcgram.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://rcmods.online/images/rcgram.webp</image:loc>
-      <image:title>RCGram Preview</image:title>
+      <image:title>RCGram - Premium Mod Preview</image:title>
     </image:image>
     <image:image>
       <image:loc>https://rcmods.online/images/telegram_1.webp</image:loc>
-      <image:title>RCGram Screenshot 1</image:title>
+      <image:title>RCGram User Interface 1</image:title>
     </image:image>
     <image:image>
       <image:loc>https://rcmods.online/images/telegram_2.webp</image:loc>
-      <image:title>RCGram Screenshot 2</image:title>
+      <image:title>RCGram User Interface 2</image:title>
     </image:image>
-    <image:image>
-      <image:loc>https://rcmods.online/images/telegram_3.webp</image:loc>
-      <image:title>RCGram Screenshot 3</image:title>
-    </image:image>
-    <mobile:mobile/>
   </url>
 
-  <!-- RCKeyboard Page -->
   <url>
     <loc>https://rcmods.online/rckeyboard.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://rcmods.online/images/rckeyboard.webp</image:loc>
-      <image:title>RCKeyboard Preview</image:title>
+      <image:title>RCKeyboard - iOS Style Keyboard for Android</image:title>
     </image:image>
     <image:image>
       <image:loc>https://rcmods.online/images/keyboard_1.webp</image:loc>
-      <image:title>RCKeyboard Screenshot 1</image:title>
+      <image:title>RCKeyboard Layout Preview 1</image:title>
     </image:image>
     <image:image>
       <image:loc>https://rcmods.online/images/keyboard_2.webp</image:loc>
-      <image:title>RCKeyboard Screenshot 2</image:title>
+      <image:title>RCKeyboard Layout Preview 2</image:title>
     </image:image>
-    <image:image>
-      <image:loc>https://rcmods.online/images/keyboard_3.webp</image:loc>
-      <image:title>RCKeyboard Screenshot 3</image:title>
-    </image:image>
-    <mobile:mobile/>
   </url>
+
 </urlset>
