@@ -78,31 +78,31 @@ const CONFIG = {
         },
         rcwhatsapp: {
             name: "RCWhatsapp",
-            version: "10.61",
+            version: "10.70",
             packages: {
                 rc1: {
                     name: "RCWhatsApp",
                     title: "com.rcwhatsapp",
                     description: "Main WhatsApp Account",
-                    download: "https://www.mediafire.com/file/iydypspoafd7yza/RCMods+v10.61+[com.rcwa].apk/file"
+                    download: "https://www.mediafire.com/file/av65zyrtt0ee5jr/RCMods_v10.70_%255Bcom.rcwa%255D.apk/file"
                 },
                 rc2: {
                     name: "GBWhatsApp",
                     title: "com.gbwhatsapp",
                     description: "2nd WhatsApp Account",
-                    download: "https://www.mediafire.com/file/gqeytr65x9j9blr/RCMods_v10.61_%255Bcom.gbwa%255D.apk/file"
+                    download: "https://www.mediafire.com/file/4jfxtz7vcix5ye4/RCMods_v10.70_%255Bcom.gbwa%255D.apk/file"
                 },
                 rc3: {
                     name: "RCWhatsApp",
                     title: "com.universe.messenger",
                     description: "3rd WhatsApp Account",
-                    download: "https://www.mediafire.com/file/q2f14wunkugt3oq/RCMods+v10.61+[com.universe].apk/file"
+                    download: "https://www.mediafire.com/file/pfy5pyddnj5d0my/RCMods_v10.70_%255Bcom.universe%255D.apk/file"
                 },
                 rc4: {
                     name: "RCWhatsApp",
                     title: "com.sathwbg.easymessager",
                     description: "4th WhatsApp Account",
-                    download: "https://www.mediafire.com/file/hc0ffpj2xeafjdw/RCMods+v10.61+[com.sathwbg].apk/file"
+                    download: "https://www.mediafire.com/file/65dgx8ma1k0lh6o/RCMods_v10.70_%255Bcom.sathwbg%255D.apk/file"
                 }
             },
             features: [
