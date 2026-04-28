@@ -31,7 +31,7 @@ const CONFIG = {
         rckeyboard: {
             name: "RCKeyboard",
             version: "3.0",
-            download: "https://www.mediafire.com/file/9qtpb0fyzwywri3/rckeyboard_v3.0.apk/file",
+            download: "https://www.mediafire.com/file/tpolywfdn4jbji0/rckeyboard_v3.0.apk/file",
             description: "Premium keyboard for Android",
             features: [
                 {
