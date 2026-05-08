@@ -2,8 +2,8 @@
 # Optimized & Cleaned: 2026-04-21
 
 User-agent: *
-# منع زحف صفحة العد التنازلي فقط
-Disallow: /countdown.html
+# السماح بدخول صفحة العد التنازلي ليتمكن جوجل من قراءة وسم Noindex وحذفها
+Allow: /countdown.html
 
 # السماح بالدخول لباقي الموقع والصور تلقائياً
 Allow: /
