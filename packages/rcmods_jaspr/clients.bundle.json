@@ -1,0 +1,1 @@
+[{"name":"Navbar","id":["rcmods_jaspr","lib/components/navbar.dart"],"import":"package:rcmods_jaspr/components/navbar.dart","params":[]},{"name":"DownloadPage","id":["rcmods_jaspr","lib/pages/download.dart"],"import":"package:rcmods_jaspr/pages/download.dart","params":[{"name":"id","isNamed":true,"decoder":"p['id'] as String?","encoder":"c.id"}]}]
