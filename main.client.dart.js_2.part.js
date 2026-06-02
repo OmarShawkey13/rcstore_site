@@ -1,14 +1,13 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var B,C,A={
-hB(d,e,f,g){var x
+hA(d,e,f,g){var x
 y.z.a(e)
 x=B.L(y.w,y.a)
-if(e!=null)x.j(0,"click",new A.hC(e))
+if(e!=null)x.j(0,"click",new A.hB(e))
 return x},
-hC:function hC(d){this.a=d},
-aI(d,e){return new A.V(e,d,null)},
-hw(d,e,f,g){return new A.af(f,g,e,null,d,null)},
-V:function V(d,e,f){this.d=d
+hB:function hB(d){this.a=d},
+aR(d,e){return new A.R(e,d,null)},
+R:function R(d,e,f){this.d=d
 this.w=e
 this.a=f},
 bm:function bm(d,e,f,g){var _=this
@@ -16,7 +15,7 @@ _.c=d
 _.w=e
 _.z=f
 _.a=g},
-af:function af(d,e,f,g,h,i){var _=this
+aa:function aa(d,e,f,g,h,i){var _=this
 _.c=d
 _.w=e
 _.y=f
@@ -61,7 +60,7 @@ B=c[0]
 C=c[2]
 A=a.updateHolder(c[5],A)
 D=c[7]
-A.V.prototype={
+A.R.prototype={
 C(d){var x=null
 return new B.J("div",x,this.d,x,x,x,this.w,x)}}
 A.bm.prototype={
@@ -70,7 +69,7 @@ w=B.L(w,w)
 w.j(0,"alt",this.c)
 w.j(0,"src",this.w)
 return new B.J("img",x,this.z,x,w,x,x,x)}}
-A.af.prototype={
+A.aa.prototype={
 C(d){var x=this,w=y.w,v=B.L(w,w),u=x.Q
 if(u!=null)v.J(0,u)
 v.j(0,"href",x.c)
@@ -138,7 +137,7 @@ bb(){return y.i.a(B.f.prototype.gp.call(this)).C(this)},
 a7(){this.w.toString
 this.bu()}}
 var z=a.updateTypes(["r<b,~(o)>({onChange:~(0^)?,onClick:~()?,onInput:~(0^)?})<m?>"])
-A.hC.prototype={
+A.hB.prototype={
 $1(d){var x
 B.q(d)
 x=B.D(d.target)
@@ -148,15 +147,15 @@ this.a.$0()},
 $S:5};(function aliases(){var x=A.a0.prototype
 x.bx=x.aH
 x.ct=x.be})();(function installTearOffs(){var x=a.installStaticTearOff
-x(A,"jY",0,null,["$1$3$onChange$onClick$onInput","$0","$1$0","$1$1$onClick"],["hB",function(){return A.hB(null,null,null,y.b)},function(d){return A.hB(null,null,null,d)},function(d,e){return A.hB(null,d,null,e)}],0,0)})();(function inheritance(){var x=a.inherit,w=a.inheritMany
-x(A.hC,B.ar)
+x(A,"jY",0,null,["$1$3$onChange$onClick$onInput","$0","$1$0","$1$1$onClick"],["hA",function(){return A.hA(null,null,null,y.b)},function(d){return A.hA(null,null,null,d)},function(d,e){return A.hA(null,d,null,e)}],0,0)})();(function inheritance(){var x=a.inherit,w=a.inheritMany
+x(A.hB,B.ar)
 w(B.j,[A.A,A.al])
-w(A.A,[A.V,A.bm,A.af,A.d6])
+w(A.A,[A.R,A.bm,A.aa,A.d6])
 x(A.a0,B.m)
 w(B.bq,[A.dP,A.dQ])})()
-B.h1(b.typeUniverse,JSON.parse('{"V":{"A":[],"j":[]},"bm":{"A":[],"j":[]},"af":{"A":[],"j":[]},"d6":{"A":[],"j":[]},"al":{"j":[]},"dP":{"f":[],"N":[]},"A":{"j":[]},"dQ":{"f":[],"N":[]}}'))
+B.h1(b.typeUniverse,JSON.parse('{"R":{"A":[],"j":[]},"bm":{"A":[],"j":[]},"aa":{"A":[],"j":[]},"d6":{"A":[],"j":[]},"al":{"j":[]},"dP":{"f":[],"N":[]},"A":{"j":[]},"dQ":{"f":[],"N":[]}}'))
 var y={g:B.B("al"),i:B.B("A"),w:B.B("b"),b:B.B("@"),z:B.B("~()?"),v:B.B("~"),k:B.B("~()"),a:B.B("~(o)")};(function constants(){var x=a.makeConstList
 D.i=x([],B.B("u<j>"))})();(function lazyInitializers(){var x=a.lazyFinal
 x($,"nT","kn",()=>B.eE(B.eH(),"HTMLAnchorElement",B.B("az")))})()};
-(a=>{a["H9kZF4UCQdDxNwBnQZTNFA4px+Y="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["fiUECepZ/lFH3XzhxZG8qe/d+ss="]=a.current})($__dart_deferred_initializers__);
 //# sourceMappingURL=main.client.dart.js_2.part.js.map
