@@ -4,6 +4,7 @@
     <base href="/"/>
     <meta charset="utf-8"/>
     <style>@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap);</style>
+    <script src="/js/adblock-detector.js" defer></script>
     <!--$-->
     <title>Terms</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -609,7 +610,7 @@
         gap: 1.25rem;
       }
       .button.primary-glow {
-        color: #000;
+        color: white;
         font-weight: 700;
         background-color: var(--accent-color);
         box-shadow: 0 0 25px rgba(from var(--accent-color) r g b / 0.4);
@@ -1077,12 +1078,19 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+      .card-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        text-align: center;
+      }
       .status-subtext {
-        margin-top: -0.5rem;
         opacity: 0.6;
         color: #cbd5e1;
         text-align: center;
         font-size: 1rem;
+        line-height: 1.4;
       }
       .timer-display {
         display: flex;
@@ -1223,6 +1231,28 @@
         }
       }
       @media screen and (max-width: 768px) {
+        .download-card {
+          padding: 2.5rem 1.5rem;
+          gap: 1.5rem;
+        }
+        .download-page h1 {
+          font-size: 1.75rem;
+        }
+        .status-subtext {
+          font-size: 0.9rem;
+        }
+        .timer-display {
+          width: 140px;
+          height: 140px;
+        }
+        .timer-value {
+          font-size: 3.5rem;
+        }
+        .download-logo-box {
+          width: 70px;
+          height: 70px;
+          padding: 1rem;
+        }
         .navbar {
           padding: 1rem 0;
         }
@@ -1344,7 +1374,6 @@
   </head>
   <body>
     <div class="main">
-      <script src="/js/adblock-detector.js" defer></script>
       <div>
         <!--@navbar-->
         <nav class="navbar scrolled">
