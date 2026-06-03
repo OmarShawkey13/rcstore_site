@@ -1,12 +1,8 @@
 # RCMods Store - Robots.txt
-# Optimized & Cleaned: 2026-04-21
+# Optimized & Cleaned: 2026-06-03
 
 User-agent: *
-# السماح بدخول صفحة العد التنازلي ليتمكن جوجل من قراءة وسم Noindex وحذفها
-Allow: /countdown.html
-
-# السماح بالدخول لباقي الموقع والصور تلقائياً
 Allow: /
 
-# رابط خريطة الموقع لمساعدة العناكب على الفهرسة
+# Sitemap for search engine indexing
 Sitemap: https://rcmods.online/sitemap.xml
