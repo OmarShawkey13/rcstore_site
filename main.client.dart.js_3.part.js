@@ -830,7 +830,7 @@ gbp(){var w=this.f,v=this.r
 return w<v?C.a.p(this.a,w+1,v):""},
 gc2(){var w=this.r,v=this.a
 return w<v.length?C.a.ap(v,w+1):""},
-gca(){if(this.f>=this.r)return D.an
+gca(){if(this.f>=this.r)return D.al
 return new A.bs(A.j4(this.gbp()),x.h)},
 gA(d){var w=this.x
 return w==null?this.x=C.a.gA(this.a):w},
@@ -909,9 +909,9 @@ w=v.d
 w=A.eA(B.f([new B.B(w===0?"Done":""+w,u)],q),"timer-value")
 t=E.a1(B.f([new A.eC("0 0 100 100","timer-svg",r,u),E.a1(B.f([t,w,A.eA(B.f([new B.B(v.d===0?"Tap download":"seconds",u)],q),"timer-caption")],q),u,"timer-content")],q),u,"timer-ring")
 r=B.f([],q)
-if(v.d===0)r.push(E.hr(D.ag,"download-action button primary-glow",v.a.c,u))
+if(v.d===0)r.push(E.hr(D.ah,"download-action button primary-glow",v.a.c,u))
 else r.push(D.bn)
-return E.a1(B.f([t,E.a1(r,u,"download-actions")],q),D.ap,"download-timer"+s)}}
+return E.a1(B.f([t,E.a1(r,u,"download-actions")],q),D.an,"download-timer"+s)}}
 A.cu.prototype={
 C(d){var w=this.c,v=x.N
 return E.a1(B.f([new A.ew("","ad-frame",B.f6(["title",this.d,"loading","lazy","scrolling","no","sandbox","allow-scripts allow-popups allow-forms allow-same-origin","srcdoc",'<!doctype html>\n<html>\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <style>\n    html, body {\n      width: 100%;\n      height: 100%;\n      margin: 0;\n      padding: 0;\n      overflow: hidden;\n      background: transparent;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n    }\n\n    #ad-slot {\n      width: 728px;\n      height: 90px;\n      transform: scale(var(--ad-scale, 1));\n      transform-origin: center center;\n    }\n  </style>\n  <script>\n    function updateScale() {\n      var scale = Math.min(1, window.innerWidth / 728);\n      document.documentElement.style.setProperty(\'--ad-scale\', scale);\n    }\n    window.addEventListener(\'resize\', updateScale);\n    window.addEventListener(\'load\', updateScale);\n  </script>\n</head>\n<body>\n  <div id="ad-slot">\n    <script type="text/javascript">\n      // \u062a\u0639\u0631\u064a\u0641 atOptions \u0628\u062f\u0648\u0646 window \u0644\u0636\u0645\u0627\u0646 \u0648\u0635\u0648\u0644 \u0627\u0644\u0633\u0643\u0631\u0628\u062a \u0625\u0644\u064a\u0647\u0627\n      atOptions = {\n        \'key\': \''+w+"',\n        'format': 'iframe',\n        'height': 90,\n        'width': 728,\n        'params': {}\n      };\n    </script>\n    <script type=\"text/javascript\" src=\"https://recollectsideway.com/"+w+'/invoke.js"></script>\n  </div>\n  <script>updateScale();</script>\n</body>\n</html>\n'],v,v),F.i,null)],x.i),null,"ad-banner")}}
@@ -994,24 +994,24 @@ D.P=new A.X("rcgram","RCGram","org.telegram.messenger","https://www.mediafire.co
 D.Q=new A.X("rckeyboard","RCKeyboard","rc.keyboard","https://www.mediafire.com/file/572bk748lcgcft7/rckeyboard_v3.1.apk/file","3.1")
 D.aa=w([D.U,D.R,D.T,D.S,D.P,D.Q],B.E("t<X>"))
 D.aG=new B.B("Download APK",null)
-D.ag=w([D.aG],x.i)
-D.an=new B.W(C.x,[],x.w)
+D.ah=w([D.aG],x.i)
+D.al=new B.W(C.y,[],x.w)
 D.ar={"aria-live":0}
-D.ap=new B.W(D.ar,["polite"],x.w)
+D.an=new B.W(D.ar,["polite"],x.w)
 D.aV=new A.fm(!1)
 D.aW=new A.cu("09fde3493ba7c5db8cce911f53d6d11a","Top advertisement",null)
 D.aX=new A.cu("f5d79d325eaadcfdd6c1c389beb5cbdb","Bottom advertisement",null)
 D.b8=new A.d2("50","50","45","timer-bg-circle",null,F.i,null)
-D.ai=w([F.D],x.i)
-D.C=new E.a0("download-logo-box",null,D.ai,null)
+D.aj=w([F.D],x.i)
+D.C=new E.a0("download-logo-box",null,D.aj,null)
 D.ax=new B.B("RCMods Store",null)
 D.a2=w([D.ax],x.i)
 D.bo=new E.aS("download-kicker",D.a2,null)
 D.ad=w([D.C,D.bo],x.i)
 D.bb=new E.a0("download-brand",null,D.ad,null)
 D.aH=new B.B("Download link not found",null)
-D.aj=w([D.aH],x.i)
-D.bh=new A.d4(D.aj,null)
+D.ak=w([D.aH],x.i)
+D.bh=new A.d4(D.ak,null)
 D.bk=new A.ey(null)
 D.ac=w([D.bh,D.bk],x.i)
 D.b9=new E.a0("download-copy",null,D.ac,null)
@@ -1021,8 +1021,8 @@ D.b7=new E.a8("/",null,"download-action button primary-glow",null,D.a0,null)
 D.a_=w([D.bb,D.b9,D.b7],x.i)
 D.bf=new E.a0("download-card invalid-card",null,D.a_,null)
 D.a1=w([D.bf],x.i)
-D.bc=new E.a0("download-shell",null,D.a1,null)
-D.a9=w([D.bc],x.i)
+D.bd=new E.a0("download-shell",null,D.a1,null)
+D.a9=w([D.bd],x.i)
 D.bg=new E.a0("download-page invalid",null,D.a9,null)
 D.bl=new A.ez(null)
 D.aC=new B.B("Preparing APK",null)
@@ -1035,5 +1035,5 @@ w($,"nK","ke",()=>A.kZ(4096))
 w($,"nI","kc",()=>new A.h1().$0())
 w($,"nJ","kd",()=>new A.h0().$0())
 w($,"nH","kb",()=>new Int8Array(A.mg(B.f([-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-1,-2,-2,-2,-2,-2,62,-2,62,-2,63,52,53,54,55,56,57,58,59,60,61,-2,-2,-2,-1,-2,-2,-2,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,-2,-2,-2,-2,63,-2,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,-2,-2,-2,-2,-2],x.t))))})()};
-(a=>{a["2wOshEnzwhFMhkI1vkLSs607A+Q="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["x5Co/rxfttmxcbi2cpz4F4XikiE="]=a.current})($__dart_deferred_initializers__);
 //# sourceMappingURL=main.client.dart.js_3.part.js.map
