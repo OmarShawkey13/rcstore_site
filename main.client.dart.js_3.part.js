@@ -882,7 +882,7 @@ cO(){var w,v,u,t={},s=this.a.c
 t.a=s
 if(s==null)try{w=A.lk(B.H(B.y(B.y(b.G.window).location).href))
 t.a=w.gca().n(0,"id")}catch(v){}if(t.a==null)return
-u=new B.av(D.aa,x.D)
+u=new B.av(D.af,x.D)
 this.d=u.dk(u,new A.fv(t),new A.fw())},
 C(d){var w,v=this.d
 if(v==null)return D.bg
@@ -987,12 +987,12 @@ D.V=new B.aY(1e6)
 D.aw=new B.B("The app link is missing or no longer available.",null)
 D.a5=w([D.aw],x.i)
 D.U=new A.X("rcwa_com_rcwa","RCWhatsApp","com.rcwhatsapp","https://www.mediafire.com/file/3aia6m9il33adya/RCMods_v10.71_%255Bcom.rcwa%255D.apk/file","10.71")
-D.R=new A.X("rcwa_com_gbwa","GBWhatsApp","com.gbwhatsapp","https://www.mediafire.com/file/252alvtjvg9xco8/RCMods_v10.71_%255Bcom.gbwa%255D.apk/file","10.71")
-D.T=new A.X("rcwa_com_universe","RCWhatsApp","com.universe.messenger","https://www.mediafire.com/file/lqdogit3wpw8cjs/RCMods_v10.71_%255Bcom.universe%255D.apk/file","10.71")
-D.S=new A.X("rcwa_com_sathwbg","RCWhatsApp","com.sathwbg.easymessager","https://www.mediafire.com/file/4try2rox41y7rdz/RCMods_v10.71_%255Bcom.sathwbg%255D.apk/file","10.71")
-D.P=new A.X("rcgram","RCGram","org.telegram.messenger","https://www.mediafire.com/file/tqmlulabb6fotge/RCGram_v12.6.5.apk/file","12.6.5")
-D.Q=new A.X("rckeyboard","RCKeyboard","rc.keyboard","https://www.mediafire.com/file/572bk748lcgcft7/rckeyboard_v3.1.apk/file","3.1")
-D.aa=w([D.U,D.R,D.T,D.S,D.P,D.Q],B.E("t<X>"))
+D.Q=new A.X("rcwa_com_gbwa","GBWhatsApp","com.gbwhatsapp","https://www.mediafire.com/file/252alvtjvg9xco8/RCMods_v10.71_%255Bcom.gbwa%255D.apk/file","10.71")
+D.S=new A.X("rcwa_com_universe","RCWhatsApp","com.universe.messenger","https://www.mediafire.com/file/lqdogit3wpw8cjs/RCMods_v10.71_%255Bcom.universe%255D.apk/file","10.71")
+D.R=new A.X("rcwa_com_sathwbg","RCWhatsApp","com.sathwbg.easymessager","https://www.mediafire.com/file/4try2rox41y7rdz/RCMods_v10.71_%255Bcom.sathwbg%255D.apk/file","10.71")
+D.T=new A.X("rcgram","RCGram","ellipi.messenger","https://www.mediafire.com/file/c279g6upn10q6ib/RCGram_v12.7.3.apk/file","12.7.3")
+D.P=new A.X("rckeyboard","RCKeyboard","rc.keyboard","https://www.mediafire.com/file/572bk748lcgcft7/rckeyboard_v3.1.apk/file","3.1")
+D.af=w([D.U,D.Q,D.S,D.R,D.T,D.P],B.E("t<X>"))
 D.aG=new B.B("Download APK",null)
 D.ah=w([D.aG],x.i)
 D.al=new B.W(C.y,[],x.w)
@@ -1007,14 +1007,14 @@ D.C=new E.a0("download-logo-box",null,D.aj,null)
 D.ax=new B.B("RCMods Store",null)
 D.a2=w([D.ax],x.i)
 D.bo=new E.aS("download-kicker",D.a2,null)
-D.ad=w([D.C,D.bo],x.i)
-D.bb=new E.a0("download-brand",null,D.ad,null)
+D.ac=w([D.C,D.bo],x.i)
+D.bb=new E.a0("download-brand",null,D.ac,null)
 D.aH=new B.B("Download link not found",null)
 D.ak=w([D.aH],x.i)
 D.bh=new A.d4(D.ak,null)
 D.bk=new A.ey(null)
-D.ac=w([D.bh,D.bk],x.i)
-D.b9=new E.a0("download-copy",null,D.ac,null)
+D.ab=w([D.bh,D.bk],x.i)
+D.b9=new E.a0("download-copy",null,D.ab,null)
 D.aF=new B.B("Back Home",null)
 D.a0=w([D.aF],x.i)
 D.b7=new E.a8("/",null,"download-action button primary-glow",null,D.a0,null)
@@ -1035,5 +1035,5 @@ w($,"nK","ke",()=>A.kZ(4096))
 w($,"nI","kc",()=>new A.h1().$0())
 w($,"nJ","kd",()=>new A.h0().$0())
 w($,"nH","kb",()=>new Int8Array(A.mg(B.f([-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-1,-2,-2,-2,-2,-2,62,-2,62,-2,63,52,53,54,55,56,57,58,59,60,61,-2,-2,-2,-1,-2,-2,-2,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,-2,-2,-2,-2,63,-2,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,-2,-2,-2,-2,-2],x.t))))})()};
-(a=>{a["x5Co/rxfttmxcbi2cpz4F4XikiE="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["LhKtlJBlzgQmSaPyx7HOy3bcTBk="]=a.current})($__dart_deferred_initializers__);
 //# sourceMappingURL=main.client.dart.js_3.part.js.map
