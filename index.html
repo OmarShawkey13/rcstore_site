@@ -327,6 +327,30 @@
         transform: translateY(-7px) rotate(-45deg);
         background-color: #818cf8;
       }
+      .glow-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(100px);
+        z-index: 0;
+        opacity: 0.45;
+        pointer-events: none;
+        animation: floatOrb 10s ease-in-out infinite alternate;
+      }
+      .orb-1 {
+        width: 350px;
+        height: 350px;
+        background-color: #818cf8;
+        top: -5%;
+        left: -5%;
+      }
+      .orb-2 {
+        width: 450px;
+        height: 450px;
+        background-color: #22d3ee;
+        bottom: 5%;
+        right: -10%;
+        animation-delay: -5s;
+      }
       .hero {
         position: relative;
         padding-top: 10rem;
@@ -421,10 +445,11 @@
       .showcase-stage {
         position: relative;
         width: 100%;
-        height: 420px;
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
+        aspect-ratio: 600 / 420;
+        height: auto;
       }
       .showcase-panel {
         position: absolute;
@@ -493,12 +518,27 @@
         text-transform: uppercase;
       }
       .products {
-        padding-top: 3rem;
+        padding-top: 4rem;
         padding-bottom: 8rem;
         position: relative;
       }
+      .products::before {
+        content: "";
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        width: 80vw;
+        height: 60%;
+        transform: translateX(-50%);
+        background: radial-gradient(ellipse at center, rgba(34, 211, 238, 0.08) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 0;
+      }
       .section-header {
+        display: flex;
         margin-bottom: 2.5rem;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
       }
       .section-header h2 {
@@ -516,6 +556,8 @@
       }
       .cards {
         display: grid;
+        position: relative;
+        z-index: 1;
         gap: 1.4rem;
         grid-template-columns: repeat(3, 1fr);
       }
@@ -542,13 +584,23 @@
         border-color: rgba(from var(--accent-color, #818cf8) r g b / 0.5);
         box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px -10px rgba(from var(--accent-color, #818cf8) r g b / 0.4);
       }
-      .product-image {
+      .product-image-wrapper {
+        position: relative;
         width: 100%;
         height: 220px;
         border-radius: 12px;
+        overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .product-image {
+        width: 100%;
+        height: 100%;
+        transition: transform 500ms;
         object-fit: cover;
         object-position: center;
+      }
+      .card:hover .product-image {
+        transform: scale(1.05);
       }
       .card-content {
         display: flex;
@@ -766,6 +818,19 @@
         justify-content: center;
         align-items: center;
       }
+      .hero-mockups::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 90%;
+        height: 90%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(circle, rgba(from var(--accent-color) r g b / 0.15) 0%, transparent 60%);
+        filter: blur(30px);
+        z-index: -1;
+        pointer-events: none;
+      }
       .hero-mockups img {
         width: 100%;
         max-width: 480px;
@@ -888,12 +953,15 @@
         align-items: center;
         gap: 1.25rem;
         text-align: center;
+        background-color: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
       }
       .package-card:hover {
         transform: translateY(-15px);
         border-color: rgba(from var(--accent-color) r g b / 0.4);
-        box-shadow: 0 30px 60px -12px rgba(0,0,0,0.6), 0 0 20px rgba(from var(--accent-color) r g b / 0.2);
-        background-color: rgba(255, 255, 255, 0.04);
+        box-shadow: 0 30px 60px -12px rgba(0,0,0,0.6), 0 0 40px rgba(from var(--accent-color) r g b / 0.15);
+        background-color: rgba(255, 255, 255, 0.05);
       }
       .package-num {
         display: flex;
@@ -929,9 +997,25 @@
         margin-top: 1rem;
       }
       .whatsapp-features, .telegram-features, .keyboard-features {
+        position: relative;
         padding-top: 8rem;
         padding-bottom: 8rem;
-        background-color: rgba(5, 6, 9, 0.3);
+        border-top-style: solid;
+        border-top-color: rgba(255, 255, 255, 0.05);
+        border-top-width: 1px;
+        background-color: rgba(5, 6, 9, 0.5);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .whatsapp-features::before, .telegram-features::before, .keyboard-features::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        opacity: 0.3;
       }
       .section-title {
         margin-bottom: 5rem;
@@ -1013,99 +1097,61 @@
         font-size: 1.2rem;
         font-weight: 900;
       }
-      @keyframes float {
+      @keyframes floatOrb {
         0% {
-          transform: translateY(0px);
+          transform: translate(0, 0) scale(1);
         }
-        50% {
-          transform: translateY(-20px);
+        33% {
+          transform: translate(30px, -50px) scale(1.1);
+        }
+        66% {
+          transform: translate(-20px, 20px) scale(0.9);
         }
         100% {
-          transform: translateY(0px);
+          transform: translate(0, 0) scale(1);
         }
       }
-      @media screen and (max-width: 1200px) {
-        .packages-grid {
-          grid-template-columns: repeat(2, 1fr);
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
       }
-      @media screen and (max-width: 1024px) {
-        .whatsapp-hero, .telegram-hero, .keyboard-hero, .whatsapp-screenshots, .telegram-screenshots, .keyboard-screenshots, .whatsapp-packages, .telegram-packages, .keyboard-packages, .whatsapp-features, .telegram-features, .keyboard-features {
-          padding-top: 4rem;
-          padding-bottom: 4rem;
+      @keyframes textGradientShift {
+        0% {
+          background-position: 0% 50%;
         }
-        .hero-grid {
-          gap: 3rem;
-          grid-template-columns: 1fr;
-        }
-        .hero-text {
-          align-items: center;
-          text-align: center;
-        }
-        .hero-text h1 {
-          font-size: 3.5rem;
-        }
-        .hero-actions {
-          justify-content: center;
-        }
-        .features-grid {
-          grid-template-columns: 1fr;
-        }
-        .screenshot-wrapper {
-          width: calc(50% - 1.5rem);
+        100% {
+          background-position: 100% 50%;
         }
       }
-      @media screen and (max-width: 768px) {
-        .whatsapp-hero, .telegram-hero, .keyboard-hero {
-          padding-top: 8rem;
-          padding-bottom: 3rem;
+      @keyframes pulseGlow {
+        0% {
+          opacity: 0.6;
+          transform: scale(0.9);
         }
-        .hero-text h1 {
-          font-size: 2.75rem;
-        }
-        .hero-text p {
-          font-size: 1.15rem;
-        }
-        .section-title h2 {
-          font-size: 2.5rem;
-        }
-        .section-title p {
-          font-size: 1.1rem;
-        }
-        .packages-grid {
-          grid-template-columns: 1fr;
-        }
-        .hero-mockups img {
-          max-width: 380px;
-        }
-        .slider-arrow {
-          display: none;
-        }
-        .screenshots-container {
-          padding-left: 1rem;
-          padding-right: 1rem;
-          gap: 1.5rem;
-        }
-        .screenshot-wrapper {
-          width: 85%;
-        }
-        .feature-card {
-          padding: 2rem;
+        100% {
+          opacity: 1;
+          transform: scale(1.1);
         }
       }
-      @media screen and (max-width: 480px) {
-        .hero-actions {
-          flex-direction: column;
-          align-items: stretch;
+      @keyframes heartBeat {
+        0% {
+          transform: scale(1);
         }
-        .hero-text h1 {
-          font-size: 2.25rem;
+        50% {
+          transform: scale(1.2);
         }
-        .screenshot-wrapper img {
-          max-width: 200px;
+        100% {
+          transform: scale(1);
         }
       }
       .site-footer {
+        position: relative;
         border-top-style: solid;
         border-top-color: rgba(255, 255, 255, 0.05);
         border-top-width: 1px;
@@ -1115,6 +1161,28 @@
         padding: 5rem 0 2.5rem 0;
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
+        overflow: hidden;
+      }
+      .site-footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--accent-color, #818cf8), transparent);
+        opacity: 0.3;
+      }
+      .footer-glow {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        width: 600px;
+        height: 300px;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(circle, rgba(129, 140, 248, 0.15) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 0;
       }
       .footer-main {
         display: grid;
@@ -1181,6 +1249,7 @@
         border: solid #818cf8 1px;
         background-color: rgba(129, 140, 248, 0.1);
         transform: translateY(-3px);
+        box-shadow: 0 10px 20px -10px rgba(129, 140, 248, 0.5);
       }
       .footer-social-icon img {
         width: 100%;
@@ -1231,6 +1300,16 @@
         .footer-main {
           gap: 2.5rem;
           grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .footer-brand-col {
+          align-items: center;
+        }
+        .footer-links-list {
+          align-items: center;
+        }
+        .footer-socials {
+          justify-content: center;
         }
         .footer-bottom {
           flex-direction: column;
@@ -1239,6 +1318,7 @@
         .footer-bottom-links {
           justify-content: center;
           gap: 1.5rem;
+          flex-wrap: wrap;
         }
       }
       .about-hero {
@@ -1267,6 +1347,16 @@
         color: #cbd5e1;
         font-size: 1.15rem;
         line-height: 1.8;
+      }
+      .document-content {
+        text-align: left;
+      }
+      .document-content h3 {
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        color: white;
+        font-size: 1.75rem;
+        font-weight: 700;
       }
       .download-page {
         display: flex;
@@ -1547,10 +1637,24 @@
           align-items: center;
         }
         .showcase-stage {
-          height: 410px;
           max-width: 560px;
         }
         .cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .hero-grid {
+          gap: 3rem;
+          grid-template-columns: 1fr;
+        }
+        .hero-text {
+          align-items: center;
+          text-align: center;
+        }
+        .hero-actions {
+          justify-content: center;
+        }
+        .packages-grid {
+          gap: 1.5rem;
           grid-template-columns: repeat(2, 1fr);
         }
       }
@@ -1613,7 +1717,6 @@
           max-width: 420px;
         }
         .showcase-stage {
-          height: 330px;
           max-width: 440px;
         }
         .showcase-panel {
@@ -1639,12 +1742,30 @@
         .detail-grid {
           grid-template-columns: 1fr;
         }
+        .features-grid {
+          gap: 1.5rem;
+          grid-template-columns: 1fr;
+        }
+        .packages-grid {
+          gap: 1.5rem;
+          grid-template-columns: 1fr;
+        }
         .detail-content {
           align-items: center;
           text-align: center;
         }
         .detail-content h2 {
           font-size: 2.5rem;
+        }
+        .about-hero {
+          padding-top: 8rem;
+          padding-bottom: 4rem;
+        }
+        .about-content h1 {
+          font-size: 2.2rem;
+        }
+        .about-content p {
+          font-size: 1.05rem;
         }
         .image-stack {
           height: 380px;
@@ -1685,10 +1806,12 @@
           flex-basis: 0px;
         }
         .hero-proof {
-          display: none;
+          display: flex;
+          justify-content: space-between;
+          gap: 0.5rem;
         }
         .showcase-stage {
-          height: 190px;
+          margin-top: 2rem;
         }
         .showcase-caption {
           padding: 0.55rem;
@@ -1697,47 +1820,17 @@
         .section-header h2 {
           font-size: 1.8rem;
         }
+        .about-hero {
+          padding-top: 6rem;
+        }
+        .about-content h1 {
+          font-size: 1.85rem;
+        }
+        .about-content p {
+          font-size: 1rem;
+        }
         .card {
           padding: 2rem 1.5rem 1.5rem 1.5rem;
-        }
-      }
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes textGradientShift {
-        0% {
-          background-position: 0% 50%;
-        }
-        100% {
-          background-position: 100% 50%;
-        }
-      }
-      @keyframes pulseGlow {
-        0% {
-          opacity: 0.6;
-          transform: scale(0.9);
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1.1);
-        }
-      }
-      @keyframes heartBeat {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.2);
-        }
-        100% {
-          transform: scale(1);
         }
       }
     </style>
@@ -1746,7 +1839,7 @@
     <div class="main">
       <div>
         <!--@navbar-->
-        <nav class="navbar scrolled">
+        <nav class="navbar">
           <div class="container navbar-inner">
             <a class="brand" href="/"><img alt="RCMods Logo" src="/images/rcmods.svg"/><span>RCMods</span></a>
             <div class="nav-links">
@@ -1774,6 +1867,8 @@
         </nav>
         <!--/@navbar-->
         <section class="hero container">
+          <div class="glow-orb orb-1"></div>
+          <div class="glow-orb orb-2"></div>
           <div class="hero-layout">
             <div class="hero-content">
               <div class="badge">Official Store</div>
@@ -1811,12 +1906,13 @@
         </section>
         <section id="apps" class="products container">
           <div class="section-header">
-            <h2>Choose Your RC Experience</h2>
+            <div class="badge">Premium Apps</div>
+            <h2><span class="gradient-text">Choose Your RC Experience</span></h2>
             <p>Pick the mod that matches how you chat, customize, and type every day.</p>
           </div>
           <div class="cards">
             <a class="card glass" style="--accent-color: #25D366" href="/rcwhatsapp">
-              <img class="product-image" alt="RCWhatsapp v10.71 screenshot" src="/images/rcwhatsapp.webp"/>
+              <div class="product-image-wrapper"><img class="product-image" alt="RCWhatsapp v10.71 screenshot" src="/images/rcwhatsapp.webp"/></div>
               <div class="card-content">
                 <div class="tags">
                   <span class="tag highlight">#Update</span>
@@ -1832,7 +1928,7 @@
               </div>
             </a>
             <a class="card glass" style="--accent-color: #32AFED" href="/rcgram">
-              <img class="product-image" alt="RCGram v12.7.3 screenshot" src="/images/rcgram.webp"/>
+              <div class="product-image-wrapper"><img class="product-image" alt="RCGram v12.7.3 screenshot" src="/images/rcgram.webp"/></div>
               <div class="card-content">
                 <div class="tags">
                   <span class="tag highlight">#Update</span>
@@ -1848,7 +1944,7 @@
               </div>
             </a>
             <a class="card glass" style="--accent-color: #8E8E93" href="/rckeyboard">
-              <img class="product-image" alt="RCKeyboard v3.1 screenshot" src="/images/rckeyboard.webp"/>
+              <div class="product-image-wrapper"><img class="product-image" alt="RCKeyboard v3.1 screenshot" src="/images/rckeyboard.webp"/></div>
               <div class="card-content">
                 <div class="tags">
                   <span class="tag highlight">#Update</span>
@@ -1866,6 +1962,7 @@
           </div>
         </section>
         <footer class="site-footer">
+          <div class="footer-glow"></div>
           <div class="container">
             <div class="footer-main">
               <div class="footer-brand-col">
