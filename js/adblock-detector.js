@@ -132,11 +132,19 @@
                     <div class="rc-ab-icon">
                         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
                     </div>
+<<<<<<< HEAD
                     <h2>Adblocker Detected</h2>
                     <p>This site relies on ads to keep the mods free. Please disable your <b>Adblocker</b> or <b>Private DNS</b> to continue.</p>
                     <div class="rc-ab-status">
                         <div class="rc-spinner"></div>
                         <span>Verifying connection...</span>
+=======
+                    <h2>تم اكتشاف مانع الإعلانات</h2>
+                    <p>الموقع يعتمد على الإعلانات لتوفير المودات مجاناً. يرجى تعطيل <b>Private DNS</b> أو مانع الإعلانات للمتابعة.</p>
+                    <div class="rc-ab-status">
+                        <div class="rc-spinner"></div>
+                        <span>جاري التحقق من الاتصال تلقائياً...</span>
+>>>>>>> 9e9578e481f552a1e93e475c7a7ba490d606a980
                     </div>
                 </div>
             </div>
@@ -170,12 +178,19 @@
             if (blocked) {
                 showRCModal();
             } else {
+<<<<<<< HEAD
                 // Smart stealth monitor: only check when user returns to the tab
                 document.addEventListener('visibilitychange', async () => {
                     if (document.visibilityState === 'visible' && !isModalActive) {
                         if (await performDetection()) showRCModal();
                     }
                 });
+=======
+                // Background stealth monitor
+                setInterval(async () => {
+                    if (await performDetection()) showRCModal();
+                }, 10000);
+>>>>>>> 9e9578e481f552a1e93e475c7a7ba490d606a980
             }
         }, INITIAL_DELAY);
     }
