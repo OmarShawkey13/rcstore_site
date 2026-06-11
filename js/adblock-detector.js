@@ -1,168 +1,182 @@
 (function () {
-    const KEY_CONFIRMED = 'ab_v2_disabled_confirmed';
-    const INITIAL_DELAY = 1500;
+    /**
+     * RCMods Advanced AdBlock & DNS Shield - v2.1 (Stability Patch)
+     * Optimized for high-precision detection and modern blocker bypass.
+     */
+
+    const INITIAL_DELAY = 800;
     const POLL_INTERVAL = 2000;
-    const MONITOR_INTERVAL = 4000;
+    const UNBLOCK_CONFIRMATIONS_REQUIRED = 2; // Must be unblocked for 2 consecutive checks to reload
 
-    const AD_URL = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+    let unblockCount = 0;
+    let isModalActive = false;
 
-    function safeSetItem(k, v) { try { localStorage.setItem(k, v); } catch (e) { } }
-    function safeRemoveItem(k) { try { localStorage.removeItem(k); } catch (e) { } }
-    function isConfirmed() { try { return localStorage.getItem(KEY_CONFIRMED) === '1'; } catch (e) { return false; } }
+    // Detection Layer 1: DNS & Network
+    async function checkNetwork() {
+        try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 3500);
 
-    function checkDNSBlocking() {
-        return new Promise((resolve) => {
-            const uniqueParam = Date.now() + '_' + Math.floor(Math.random() * 1000000);
-            const bustCacheUrl = AD_URL + '?cb=' + uniqueParam;
-
-            fetch(bustCacheUrl, {
+            // Ping a highly-blocked ad domain with cache busting
+            await fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?cb=' + Date.now(), {
                 method: 'HEAD',
                 mode: 'no-cors',
                 cache: 'no-store',
-                headers: { 'Pragma': 'no-cache', 'Cache-Control': 'no-cache' }
-            })
-                .then(() => {
-                    resolve(false);
-                })
-                .catch(() => {
-                    resolve(true);
-                });
-        });
+                signal: controller.signal
+            });
+            clearTimeout(timeoutId);
+            return false; // Not blocked
+        } catch (e) {
+            return true; // Blocked
+        }
     }
 
-    function checkCSSBait() {
-        let blocked = false;
-        const baitClasses = ['adsbox', 'adunit', 'adsbygoogle', 'textads', 'banner_ads', 'ad-zone'];
-        const baits = [];
-        try {
-            for (let c of baitClasses) {
-                const d = document.createElement('div');
-                d.className = c;
-                d.style.cssText = 'width:1px;height:1px;position:fixed;left:-9999px;top:-9999px;pointer-events:none;opacity:0;z-index:-1';
-                document.body.appendChild(d);
-                baits.push(d);
-            }
+    // Detection Layer 2: CSS Baiting (Advanced)
+    function checkVisual() {
+        const baitClasses = ['adsbox', 'ad-unit', 'adsbygoogle', 'sponsored-content-panel', 'ad-zone'];
+        const container = document.createElement('div');
+        // Randomize container ID to avoid automated hiding rules
+        container.id = 'rc_' + Math.random().toString(36).substring(7);
+        container.style.cssText = 'position:fixed;top:-999px;left:-999px;width:1px;height:1px;opacity:0;pointer-events:none;';
 
-            for (let d of baits) {
-                const s = window.getComputedStyle(d);
-                if (!s || s.display === 'none' || s.visibility === 'hidden' || parseFloat(s.width) === 0) {
-                    blocked = true;
+        const baits = baitClasses.map(c => {
+            const b = document.createElement('div');
+            b.className = c;
+            b.style.cssText = 'width:10px;height:10px;display:block !important;';
+            container.appendChild(b);
+            return b;
+        });
+
+        document.body.appendChild(container);
+
+        let isBlocked = false;
+        try {
+            for (let b of baits) {
+                const s = window.getComputedStyle(b);
+                if (s.display === 'none' || s.visibility === 'hidden' || s.opacity === '0' || b.offsetHeight === 0) {
+                    isBlocked = true;
                     break;
                 }
             }
-        } catch (e) { blocked = true; }
+        } catch (e) { isBlocked = true; }
 
-        for (let el of baits) try { el.remove(); } catch (e) { }
-
-        return blocked;
+        document.body.removeChild(container);
+        return isBlocked;
     }
 
-    function detectAdblockOnce() {
-        return new Promise(async (resolve) => {
-            let isBlocked = false;
-
-            isBlocked = checkCSSBait();
-            if (isBlocked) {
-                resolve(true);
-                return;
-            }
-
-            if (!isBlocked) {
-                const dnsBlocked = await checkDNSBlocking();
-                if (dnsBlocked) {
-                    isBlocked = true;
-                }
-            }
-
-            resolve(isBlocked);
-        });
+    async function performDetection() {
+        if (checkVisual()) return true;
+        return await checkNetwork();
     }
 
-    let monitorIntervalId = null;
+    function showRCModal() {
+        if (isModalActive) return;
+        isModalActive = true;
 
-    function showForcedModal() {
-        if (document.getElementById('ab-forced-overlay')) return;
-
-        if (monitorIntervalId) { clearInterval(monitorIntervalId); monitorIntervalId = null; }
+        const overlayId = 'rc_ov_' + Math.random().toString(36).substring(7);
+        const cardId = 'rc_cd_' + Math.random().toString(36).substring(7);
 
         const css = `
-      :root{--bg:rgba(6,8,12,.96);--card:#041428;--muted:#9fb6cf;--border:rgba(255,255,255,.05)}
-      #ab-forced-overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);z-index:2147483647;padding:18px;backdrop-filter:blur(4px)}
-      #ab-forced-card{width:100%;max-width:600px;border-radius:12px;padding:28px;background:linear-gradient(180deg,var(--card),#021024);color:#eaf3ff;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;border:1px solid var(--border);box-shadow:0 40px 120px rgba(0,0,0,.8)}
-      #ab-forced-head{display:flex;align-items:flex-start;gap:16px}
-      #ab-icon-wrap{min-width:44px;height:44px;background:rgba(255,50,50,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center}
-      #ab-forced-title{font-size:20px;font-weight:700;color:white;margin-bottom:8px}
-      #ab-forced-body{color:var(--muted);line-height:1.6;font-size:15px}
-      .ab-status{margin-top:20px;padding-top:15px;border-top:1px solid var(--border);font-size:13px;color:#566a85;display:flex;align-items:center;gap:8px}
-      .ab-spinner{width:10px;height:10px;border:2px solid #3b82f6;border-radius:50%;border-top-color:transparent;animation:ab-spin 1s linear infinite}
-      @keyframes ab-spin{to{transform:rotate(360deg)}}
-      @media(max-width:520px){#ab-forced-card{padding:20px}#ab-forced-title{font-size:18px}#ab-forced-head{flex-direction:column;align-items:center;text-align:center}}
-    `;
+            #${overlayId} {
+                position: fixed; inset: 0; z-index: 2147483647;
+                background: rgba(5, 6, 9, 0.94);
+                display: flex; align-items: center; justify-content: center;
+                padding: 20px; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+                font-family: 'Inter', system-ui, -apple-system, sans-serif;
+                animation: rcFadeIn 0.5s ease-out forwards;
+            }
+            #${cardId} {
+                width: 100%; max-width: 480px;
+                background: linear-gradient(165deg, #0a0d16 0%, #050609 100%);
+                border: 1px solid rgba(129, 140, 248, 0.2);
+                border-radius: 32px; padding: 45px 35px;
+                text-align: center; color: #f8fafc;
+                box-shadow: 0 50px 100px rgba(0,0,0,0.7), 0 0 50px rgba(129, 140, 248, 0.1);
+            }
+            .rc-ab-icon {
+                width: 80px; height: 80px; background: rgba(129, 140, 248, 0.12);
+                border-radius: 24px; display: flex; align-items: center; justify-content: center;
+                margin: 0 auto 30px; color: #818cf8;
+                border: 1px solid rgba(129, 140, 248, 0.25);
+            }
+            #${cardId} h2 {
+                font-size: 26px; font-weight: 800; margin: 0 0 18px;
+                background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+                -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+                letter-spacing: -0.02em;
+            }
+            #${cardId} p {
+                color: #cbd5e1; line-height: 1.8; font-size: 16px; margin: 0 0 30px;
+            }
+            .rc-ab-status {
+                display: flex; align-items: center; justify-content: center; gap: 12px;
+                font-size: 14px; color: #64748b; font-weight: 500;
+            }
+            .rc-spinner {
+                width: 16px; height: 16px; border: 2.5px solid rgba(129, 140, 248, 0.2);
+                border-top-color: #818cf8; border-radius: 50%;
+                animation: rcSpin 0.8s linear infinite;
+            }
+            @keyframes rcFadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+            @keyframes rcSpin { to { transform: rotate(360deg); } }
+            @media (max-width: 480px) {
+                #${cardId} { padding: 35px 20px; }
+                #${cardId} h2 { font-size: 22px; }
+            }
+        `;
 
         const html = `
-      <style id="ab-forced-style">${css}</style>
-      <div id="ab-forced-overlay">
-        <div id="ab-forced-card">
-          <div id="ab-forced-head">
-            <div id="ab-icon-wrap">
-               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <style>${css}</style>
+            <div id="${overlayId}">
+                <div id="${cardId}">
+                    <div class="rc-ab-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    </div>
+                    <h2>Adblocker Detected</h2>
+                    <p>This site relies on ads to keep the mods free. Please disable your <b>Adblocker</b> or <b>Private DNS</b> to continue.</p>
+                    <div class="rc-ab-status">
+                        <div class="rc-spinner"></div>
+                        <span>Verifying connection...</span>
+                    </div>
+                </div>
             </div>
-            <div>
-              <div id="ab-forced-title">تم اكتشاف مانع الإعلانات</div>
-              <div id="ab-forced-body">
-                <p>عذراً، لا يمكن متابعة التصفح أثناء تفعيل <strong>Private DNS</strong> أو مانع الإعلانات.</p>
-                <p>الموقع يعتمد على الإعلانات للاستمرار. يرجى تعطيل الحجب وسيقوم الموقع بالعمل تلقائياً.</p>
-              </div>
-            </div>
-          </div>
-          <div class="ab-status">
-            <div class="ab-spinner"></div> جاري التحقق من الاتصال تلقائياً...
-          </div>
-        </div>
-      </div>`;
+        `;
 
         document.body.insertAdjacentHTML('beforeend', html);
-
         document.documentElement.style.overflow = 'hidden';
         document.body.style.overflow = 'hidden';
 
-        const pollLoop = () => {
-            detectAdblockOnce().then(blocked => {
-                if (!blocked) {
-                    safeSetItem(KEY_CONFIRMED, '1');
+        // Re-check loop with confirmation
+        const poll = async () => {
+            const blocked = await performDetection();
+            if (!blocked) {
+                unblockCount++;
+                if (unblockCount >= UNBLOCK_CONFIRMATIONS_REQUIRED) {
                     location.reload();
                 } else {
-                    if (document.getElementById('ab-forced-overlay')) {
-                        setTimeout(pollLoop, POLL_INTERVAL);
-                    }
+                    setTimeout(poll, 1000); // Check again faster to confirm
                 }
-            });
+            } else {
+                unblockCount = 0; // Reset if still blocked
+                setTimeout(poll, POLL_INTERVAL);
+            }
         };
-        setTimeout(pollLoop, 1000);
+        setTimeout(poll, 2500);
     }
 
-    function startBackgroundMonitor() {
-        if (monitorIntervalId) clearInterval(monitorIntervalId);
-        monitorIntervalId = setInterval(() => {
-            detectAdblockOnce().then(blocked => {
-                if (blocked) {
-                    safeRemoveItem(KEY_CONFIRMED);
-                    showForcedModal();
-                }
-            });
-        }, MONITOR_INTERVAL);
-    }
-
-    function init() {
-        setTimeout(() => {
-            detectAdblockOnce().then(blocked => {
-                if (blocked) {
-                    safeRemoveItem(KEY_CONFIRMED);
-                    showForcedModal();
-                } else {
-                    startBackgroundMonitor();
-                }
-            });
+    async function init() {
+        setTimeout(async () => {
+            const blocked = await performDetection();
+            if (blocked) {
+                showRCModal();
+            } else {
+                // Smart stealth monitor: only check when user returns to the tab
+                document.addEventListener('visibilitychange', async () => {
+                    if (document.visibilityState === 'visible' && !isModalActive) {
+                        if (await performDetection()) showRCModal();
+                    }
+                });
+            }
         }, INITIAL_DELAY);
     }
 

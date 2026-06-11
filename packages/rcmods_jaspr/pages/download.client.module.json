@@ -1,0 +1,1 @@
+{"name":"DownloadPage","id":["rcmods_jaspr","lib/pages/download.dart"],"import":"package:rcmods_jaspr/pages/download.dart","params":[{"name":"id","isNamed":true,"decoder":"p['id'] as String?","encoder":"c.id"}]}
