@@ -5270,7 +5270,7 @@ if(s==null){throw"DeferredLoading state error: code with hash '"+a+"' was not lo
 v.deferredInitialized[a]=true},
 deferredLibraryParts:{_navbar:[0,1],_download:[0,2]},
 deferredPartUris:["main.client.dart.js_2.part.js","main.client.dart.js_1.part.js","main.client.dart.js_3.part.js"],
-deferredPartHashes:["mU+MOwN+jr4BkMrkg99pInzVdhk=","53ks6IT2LfLR42Rro0GB87GUB0Y=","9u3ofm5ZshPdjze1kwp/hO4+qqI="],
+deferredPartHashes:["mU+MOwN+jr4BkMrkg99pInzVdhk=","oDp89BgwxE5R/nKS0OBCy7H8ffg=","xtDvzQWxZB47LSxnFMOkgBFJtY0="],
 typeUniverse:{eC:new Map(),tR:{},eT:{},tPV:{},sEA:[]},
 mangledGlobalNames:{a:"int",t:"double",R:"num",b:"String",bc:"bool",r:"Null",k:"List",m:"Object",q:"Map",o:"JSObject"},
 mangledNames:{},

@@ -46,8 +46,8 @@ aI(){var x=this.f
 if(x!=null)C.u(b.G.window).removeEventListener("scroll",x)
 this.bA()},
 cZ(){this.a7(new B.fO(this))},
-C(d){var x=this,w=null,v="mobile-nav-link",u=x.e?" scrolled":"",t=x.d?" menu-open":"",s=x.gcY(),r=y.p,q=D.a0(C.f([A.b2,A.ba,D.a0(C.f([A.be,new B.eu(s,"menu-toggle",A.ae,w)],r),w,"nav-right")],r),w,"container navbar-inner"),p=x.d?" active":""
-return new B.ex("navbar"+u+t,C.f([q,D.a0(C.f([D.ht(A.t,v,"/",s),D.ht(A.r,v,"/#apps",s),D.ht(A.a8,v,"/about",s),A.bc],r),w,"mobile-menu"+p)],r),w)}}
+C(d){var x=this,w=null,v="mobile-nav-link",u=x.e?" scrolled":"",t=x.d?" menu-open":"",s=x.gcY(),r=y.p,q=D.a0(C.f([A.b2,A.ba,D.a0(C.f([A.be,new B.eu(s,"menu-toggle",A.af,w)],r),w,"nav-right")],r),w,"container navbar-inner"),p=x.d?" active":""
+return new B.ex("navbar"+u+t,C.f([q,D.a0(C.f([D.ht(A.t,v,"/",s),D.ht(A.r,v,"/#apps",s),D.ht(A.a9,v,"/about",s),A.bc],r),w,"mobile-menu"+p)],r),w)}}
 var z=a.updateTypes(["~()"])
 B.fQ.prototype={
 $1(d){var x
@@ -86,21 +86,21 @@ A.r=x([A.az],y.p)
 A.aB=new C.B("Home",null)
 A.t=x([A.aB],y.p)
 A.aD=new C.B("About Us",null)
-A.a8=x([A.aD],y.p)
+A.a9=x([A.aD],y.p)
 A.k=new D.a_("hamburger-bar",null,E.i,null)
-A.ae=x([A.k,A.k,A.k],y.p)
+A.af=x([A.k,A.k,A.k],y.p)
 A.aE=new C.B("RCMods",null)
-A.a7=x([A.aE],y.p)
-A.bp=new D.aP(null,A.a7,null)
+A.a8=x([A.aE],y.p)
+A.bp=new D.aP(null,A.a8,null)
 A.ai=x([E.D,A.bp],y.p)
 A.b2=new D.a7("/",null,"brand",null,A.ai,null)
 A.b3=new D.a7("/",null,"nav-link",null,A.t,null)
 A.b6=new D.a7("/#apps",null,"nav-link",null,A.r,null)
 A.ay=new C.B("About",null)
-A.a6=x([A.ay],y.p)
-A.b1=new D.a7("/about",null,"nav-link",null,A.a6,null)
-A.aa=x([A.b3,A.b6,A.b1],y.p)
-A.ba=new D.a_("nav-links",null,A.aa,null)
+A.a7=x([A.ay],y.p)
+A.b1=new D.a7("/about",null,"nav-link",null,A.a7,null)
+A.ab=x([A.b3,A.b6,A.b1],y.p)
+A.ba=new D.a_("nav-links",null,A.ab,null)
 A.at={target:0,rel:1}
 A.v=new C.W(A.at,["_blank","noopener noreferrer"],y.c)
 A.bj=new D.bG("Telegram","/images/telegram.webp","social-icon",null)
@@ -116,7 +116,7 @@ A.ao=new C.W(A.x,["_blank","noopener noreferrer","Telegram"],y.c)
 A.b0=new D.a7("https://t.me/RCModsWA",null,null,A.ao,A.q,null)
 A.ap=new C.W(A.x,["_blank","noopener noreferrer","Instagram"],y.c)
 A.b_=new D.a7("https://instagram.com/x_x_shawkey_x_x",null,null,A.ap,A.u,null)
-A.ad=x([A.b0,A.b_],y.p)
-A.be=new D.a_("nav-socials",null,A.ad,null)})()};
-(a=>{a["53ks6IT2LfLR42Rro0GB87GUB0Y="]=a.current})($__dart_deferred_initializers__);
+A.ae=x([A.b0,A.b_],y.p)
+A.be=new D.a_("nav-socials",null,A.ae,null)})()};
+(a=>{a["oDp89BgwxE5R/nKS0OBCy7H8ffg="]=a.current})($__dart_deferred_initializers__);
 //# sourceMappingURL=main.client.dart.js_1.part.js.map
