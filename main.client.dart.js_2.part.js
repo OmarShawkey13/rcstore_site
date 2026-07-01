@@ -143,7 +143,7 @@ this.bx()}}
 var z=a.updateTypes(["q<b,~(o)>({onChange:~(0^)?,onClick:~()?,onInput:~(0^)?})<m?>"])
 A.hz.prototype={
 $1(d){var x
-B.u(d)
+B.t(d)
 x=B.D(d.target)
 x=x==null?!1:x instanceof $.ki()
 if(x)d.preventDefault()
@@ -162,5 +162,5 @@ var y={g:B.E("ak"),i:B.E("C"),w:B.E("b"),b:B.E("@"),z:B.E("~()?"),v:B.E("~"),k:B
 D.i=x([],B.E("v<l>"))
 D.D=new A.bG("RCMods Logo","/images/rcmods.svg",null,null)})();(function lazyInitializers(){var x=a.lazyFinal
 x($,"nP","ki",()=>B.ev(B.eB(),"HTMLAnchorElement",B.E("aw")))})()};
-(a=>{a["mU+MOwN+jr4BkMrkg99pInzVdhk="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["2B7lK8onxB5lI6PqsH135tr6bpw="]=a.current})($__dart_deferred_initializers__);
 //# sourceMappingURL=main.client.dart.js_2.part.js.map

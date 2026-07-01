@@ -13,10 +13,9 @@
 
     // Detection Layer 1: DNS & Network
     async function checkNetwork() {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3500);
         try {
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 3500);
-
             // Ping a highly-blocked ad domain with cache busting
             await fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?cb=' + Date.now(), {
                 method: 'HEAD',
@@ -24,10 +23,11 @@
                 cache: 'no-store',
                 signal: controller.signal
             });
-            clearTimeout(timeoutId);
             return false; // Not blocked
         } catch (e) {
             return true; // Blocked
+        } finally {
+            clearTimeout(timeoutId);
         }
     }
 
