@@ -843,7 +843,7 @@ C(d){var w=null
 return new B.J("h1",w,w,w,w,w,this.w,w)}}
 A.ey.prototype={
 C(d){var w=null
-return new B.J("p",w,w,w,w,w,D.a5,w)}}
+return new B.J("p",w,w,w,w,w,D.a6,w)}}
 A.ew.prototype={
 C(d){var w=this,v=null,u=x.N
 u=B.K(u,u)
@@ -880,7 +880,7 @@ this.cP()},
 cP(){var w,v,u,t,s=this.a.c,r=s
 if(r==null)try{w=A.ln(B.H(B.t(B.t(b.G.window).location).href))
 s=w.gcc().n(0,"id")}catch(v){}if(s==null)return
-for(u=0;u<6;++u){t=D.ah[u]
+for(u=0;u<6;++u){t=D.a0[u]
 if(t.a===s){this.d=t
 break}}},
 C(d){var w,v=this.d
@@ -908,7 +908,7 @@ w=v.d
 w=A.eA(B.f([new B.B(w===0?"Done":""+w,u)],q),"timer-value")
 t=E.a0(B.f([new A.eC("0 0 100 100","timer-svg",r,u),E.a0(B.f([t,w,A.eA(B.f([new B.B(v.d===0?"Tap download":"seconds",u)],q),"timer-caption")],q),u,"timer-content")],q),u,"timer-ring")
 r=B.f([],q)
-if(v.d===0)r.push(E.ht(D.ag,"download-action button primary-glow",v.a.c,u))
+if(v.d===0)r.push(E.ht(D.ah,"download-action button primary-glow",v.a.c,u))
 else r.push(D.bn)
 return E.a0(B.f([t,E.a0(r,u,"download-actions")],q),D.an,"download-timer"+s)}}
 A.ct.prototype={
@@ -974,17 +974,17 @@ D.bq=new A.eH()
 D.E=new A.d8()
 D.p=new A.dX()
 D.V=new B.aW(1e6)
-D.aw=new B.B("The app link is missing or no longer available.",null)
-D.a5=w([D.aw],x.i)
-D.aG=new B.B("Download APK",null)
-D.ag=w([D.aG],x.i)
 D.U=new A.at("rcwa_com_rcwa","RCWhatsApp","com.rcwhatsapp","https://www.mediafire.com/file/3aia6m9il33adya/RCMods_v10.71_%255Bcom.rcwa%255D.apk/file","10.71")
 D.P=new A.at("rcwa_com_gbwa","GBWhatsApp","com.gbwhatsapp","https://www.mediafire.com/file/252alvtjvg9xco8/RCMods_v10.71_%255Bcom.gbwa%255D.apk/file","10.71")
 D.S=new A.at("rcwa_com_universe","RCWhatsApp","com.universe.messenger","https://www.mediafire.com/file/lqdogit3wpw8cjs/RCMods_v10.71_%255Bcom.universe%255D.apk/file","10.71")
 D.R=new A.at("rcwa_com_sathwbg","RCWhatsApp","com.sathwbg.easymessager","https://www.mediafire.com/file/4try2rox41y7rdz/RCMods_v10.71_%255Bcom.sathwbg%255D.apk/file","10.71")
 D.T=new A.at("rcgram","RCGram","ellipi.messenger","https://www.mediafire.com/file/c279g6upn10q6ib/RCGram_v12.7.3.apk/file","12.7.3")
-D.Q=new A.at("rckeyboard","RCKeyboard","rc.keyboard","https://play.google.com/store/apps/details?id=rc.keyboard","3.5.4")
-D.ah=w([D.U,D.P,D.S,D.R,D.T,D.Q],B.E("v<at>"))
+D.Q=new A.at("rckeyboard","RCKeyboard","rc.keyboard","https://play.google.com/store/apps/details?id=rc.keyboard","4.0.0")
+D.a0=w([D.U,D.P,D.S,D.R,D.T,D.Q],B.E("v<at>"))
+D.aw=new B.B("The app link is missing or no longer available.",null)
+D.a6=w([D.aw],x.i)
+D.aG=new B.B("Download APK",null)
+D.ah=w([D.aG],x.i)
 D.al=new B.W(C.y,[],x.w)
 D.ar={"aria-live":0}
 D.an=new B.W(D.ar,["polite"],x.w)
@@ -995,35 +995,35 @@ D.b8=new A.d1("50","50","45","timer-bg-circle",null,F.i,null)
 D.aj=w([F.D],x.i)
 D.C=new E.a_("download-logo-box",null,D.aj,null)
 D.ax=new B.B("RCMods Store",null)
-D.a2=w([D.ax],x.i)
-D.bo=new E.aP("download-kicker",D.a2,null)
-D.ac=w([D.C,D.bo],x.i)
-D.bb=new E.a_("download-brand",null,D.ac,null)
+D.a3=w([D.ax],x.i)
+D.bo=new E.aP("download-kicker",D.a3,null)
+D.ad=w([D.C,D.bo],x.i)
+D.bb=new E.a_("download-brand",null,D.ad,null)
 D.aH=new B.B("Download link not found",null)
 D.ak=w([D.aH],x.i)
 D.bh=new A.d3(D.ak,null)
 D.bk=new A.ey(null)
-D.ab=w([D.bh,D.bk],x.i)
-D.b9=new E.a_("download-copy",null,D.ab,null)
+D.ac=w([D.bh,D.bk],x.i)
+D.b9=new E.a_("download-copy",null,D.ac,null)
 D.aF=new B.B("Back Home",null)
-D.a0=w([D.aF],x.i)
-D.b7=new E.a7("/",null,"download-action button primary-glow",null,D.a0,null)
+D.a1=w([D.aF],x.i)
+D.b7=new E.a7("/",null,"download-action button primary-glow",null,D.a1,null)
 D.a_=w([D.bb,D.b9,D.b7],x.i)
 D.bf=new E.a_("download-card invalid-card",null,D.a_,null)
-D.a1=w([D.bf],x.i)
-D.bd=new E.a_("download-shell",null,D.a1,null)
-D.a9=w([D.bd],x.i)
-D.bg=new E.a_("download-page invalid",null,D.a9,null)
+D.a2=w([D.bf],x.i)
+D.bd=new E.a_("download-shell",null,D.a2,null)
+D.aa=w([D.bd],x.i)
+D.bg=new E.a_("download-page invalid",null,D.aa,null)
 D.bl=new A.ez(null)
 D.aC=new B.B("Preparing APK",null)
-D.a4=w([D.aC],x.i)
-D.bm=new E.aP("download-kicker",D.a4,null)
+D.a5=w([D.aC],x.i)
+D.bm=new E.aP("download-kicker",D.a5,null)
 D.aA=new B.B("Preparing link",null)
-D.a3=w([D.aA],x.i)
-D.bn=new E.aP("download-action disabled",D.a3,null)})();(function lazyInitializers(){var w=a.lazyFinal
+D.a4=w([D.aA],x.i)
+D.bn=new E.aP("download-action disabled",D.a4,null)})();(function lazyInitializers(){var w=a.lazyFinal
 w($,"nN","kh",()=>A.l1(4096))
 w($,"nL","kf",()=>new A.h3().$0())
 w($,"nM","kg",()=>new A.h2().$0())
 w($,"nK","ke",()=>new Int8Array(A.mj(B.f([-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-1,-2,-2,-2,-2,-2,62,-2,62,-2,63,52,53,54,55,56,57,58,59,60,61,-2,-2,-2,-1,-2,-2,-2,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,-2,-2,-2,-2,63,-2,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,-2,-2,-2,-2,-2],x.t))))})()};
-(a=>{a["9LxT9lBrQk4lNYltE910vz08ACU="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["CzqRpjlC6ux7OHcY4sMYFB4NvO0="]=a.current})($__dart_deferred_initializers__);
 //# sourceMappingURL=main.client.dart.js_3.part.js.map
