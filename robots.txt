@@ -1,8 +1,7 @@
 # RCMods Store - Robots.txt
-# Optimized & Cleaned: 2026-06-03
+# Optimized & Cleaned: 2026-07-25
 
 User-agent: *
-Allow: /
+Disallow:
 
-# Sitemap for search engine indexing
 Sitemap: https://rcmods.online/sitemap.xml
