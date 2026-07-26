@@ -1,0 +1,66 @@
+[
+  {
+    "id": "user-experience",
+    "title": "User Experience",
+    "subtitle": "Native Android Responsiveness",
+    "icon": "smile",
+    "details": "Engineered from scratch to offer an intuitive typing interface, seamless spacebar cursor trackpad gestures, and smooth keypress feedback.",
+    "evidence": "Official Play Store description confirms native Android UI design with zero-friction key input and instant touch response."
+  },
+  {
+    "id": "performance",
+    "title": "Performance",
+    "subtitle": "Built with Kotlin",
+    "icon": "cpu",
+    "details": "Written in native Kotlin to deliver minimal keystroke delay, optimal memory utilization, and zero background battery drain.",
+    "evidence": "Developed using Kotlin and optimized specifically for maximum efficiency on modern Android devices."
+  },
+  {
+    "id": "design",
+    "title": "Design",
+    "subtitle": "Glassmorphism & Personalized Aesthetics",
+    "icon": "layout",
+    "details": "Offers full color customization for keys and text, custom background image integration with opacity controls, and custom TTF/OTF font loading.",
+    "evidence": "Play Store features list complete color control, custom gallery background support, and TTF/OTF font file loading."
+  },
+  {
+    "id": "ease-of-use",
+    "title": "Ease of Use",
+    "subtitle": "Intelligent Utilities At Your Fingertips",
+    "icon": "check-circle",
+    "details": "Includes context-aware predictions, instant spell checking, and an embedded math solver that calculates math equations like '=4*25' on the fly.",
+    "evidence": "Calculates math equations starting with '=' directly in the suggestion bar and auto-corrects typos effortlessly."
+  },
+  {
+    "id": "speed",
+    "title": "Speed",
+    "subtitle": "Multi-Touch & Fast Input Pipeline",
+    "icon": "zap",
+    "details": "Designed to handle rapid consecutive typing with multi-touch key logging and ultra-low input latency for fast typists.",
+    "evidence": "Official store specifications list multi-touch logging support and low latency typing response."
+  },
+  {
+    "id": "privacy",
+    "title": "Privacy",
+    "subtitle": "100% On-Device Local Processing",
+    "icon": "shield",
+    "details": "Keeps all text predictions, corrections, and personal dictionaries locally in a secure SQLite database. Auto-disables learning on sensitive fields (passwords, payment details).",
+    "evidence": "Play Store privacy specification states all data processing occurs locally on-device without sending typing data to external servers."
+  },
+  {
+    "id": "compatibility",
+    "title": "Compatibility",
+    "subtitle": "Offline Functionality & Global Devices",
+    "icon": "smartphone",
+    "details": "Functions completely offline without requiring continuous internet connectivity. Uses network access solely when activating external services like live translation.",
+    "evidence": "Store metadata confirms no constant internet is required; network permissions are limited to optional cloud translation features."
+  },
+  {
+    "id": "customization",
+    "title": "Customization",
+    "subtitle": "Height, Layouts & Multilingual Fonts",
+    "icon": "sliders",
+    "details": "Allows users to adjust keyboard height, modify layout dimensions, import custom TTF/OTF fonts, and seamlessly switch between 8 supported languages.",
+    "evidence": "Play Store listing explicitly details keyboard height adjustment, width controls, font loading, and multi-language support."
+  }
+]

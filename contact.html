@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact & Support for RCKeyboard - Developer Elsayed Khater">
+    <title>Contact & Support - RCKeyboard</title>
+    <!-- Synchronous Anti-FOUC Theme, Language & Global Event Handler Initializer -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('user_theme');
+                var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var effectiveTheme = savedTheme ? savedTheme : (systemDark ? 'dark' : 'light');
+                if (effectiveTheme === 'light') {
+                    document.documentElement.classList.add('light-mode');
+                } else {
+                    document.documentElement.classList.remove('light-mode');
+                }
+
+                var savedLang = localStorage.getItem('lang');
+                var effectiveLang = 'en';
+                if (savedLang) {
+                    effectiveLang = savedLang;
+                } else {
+                    var navLang = navigator.language || (navigator.languages && navigator.languages[0]) || '';
+                    if (navLang.indexOf('ar') === 0) effectiveLang = 'ar';
+                }
+                document.documentElement.lang = effectiveLang;
+                document.documentElement.dir = (effectiveLang === 'ar' || effectiveLang === 'ur') ? 'rtl' : 'ltr';
+            } catch(e) {}
+
+            // Immediate Global Handlers (Guarantees zero ReferenceErrors on inline HTML events)
+            window.openLangModal = function() {
+                var m = document.getElementById('langModal');
+                if (m) { m.classList.add('open'); document.body.style.overflow = 'hidden'; }
+            };
+            window.closeLangModal = function() {
+                var m = document.getElementById('langModal');
+                if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
+            };
+            window.selectLangFromModal = function(code) {
+                if (window.switchLanguage) window.switchLanguage(code, true);
+                if (window.closeLangModal) window.closeLangModal();
+            };
+            window.filterLanguages = function(query) {
+                var q = (query || '').toLowerCase().trim();
+                document.querySelectorAll('.lang-item-btn').forEach(function(btn) {
+                    var txt = btn.textContent.toLowerCase();
+                    btn.style.display = txt.indexOf(q) !== -1 ? 'flex' : 'none';
+                });
+            };
+            window.filterFAQ = function(query) {
+                var q = (query || '').toLowerCase().trim();
+                document.querySelectorAll('.faq-item').forEach(function(item) {
+                    var text = item.textContent.toLowerCase();
+                    item.style.display = text.indexOf(q) !== -1 ? 'block' : 'none';
+                });
+            };
+            window.filterReviews = function(rating) {};
+            window.prevReviewPage = function() {};
+            window.nextReviewPage = function() {};
+            window.toggleReadMore = function(id) {
+                var el = document.getElementById('rev-text-' + id);
+                if (el) el.classList.toggle('truncated');
+            };
+            window.openFullscreenModal = function(idx) {};
+            window.closeFullscreenModal = function() {};
+            window.navigateModal = function(dir) {};
+            window.switchLanguage = function(lang) {};
+        })();
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="Main Navigation">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="./src/images/icon.png" alt="RCKeyboard App Icon" width="34" height="34" style="width: 34px; height: 34px; border-radius: 8px;">
+                RCKeyboard
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#features" data-i18n="nav.features">Features</a>
+                <a href="index.html#experience" data-i18n="nav.experience">Experience</a>
+                <a href="index.html#showcase" data-i18n="nav.screenshots">Screenshots</a>
+                <a href="index.html#reviews" data-i18n="nav.reviews">Reviews</a>
+                <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+            </div>
+            <div class="nav-actions">
+                <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark or Light Theme" title="Toggle Theme">
+                    <span id="themeIcon">🌓</span>
+                </button>
+                <button class="lang-trigger-btn" onclick="openLangModal()" aria-label="Open Language Selector">
+                    <span id="currentLangFlag">🇺🇸</span>
+                    <span id="currentLangName" class="lang-name-text">English</span>
+                    <span class="chevron">▾</span>
+                </button>
+                <a href="https://play.google.com/store/apps/details?id=rc.keyboard" class="btn-primary small magnetic nav-get-app" target="_blank" rel="noopener" data-i18n="nav.getApp">
+                    Get App
+                </a>
+                <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="navLinks">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 120px; padding-bottom: 100px; max-width: 800px;">
+        <a href="index.html" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-bottom: 1.5rem;">&larr; Back to Home</a>
+        
+        <div class="glass" style="padding: 3rem; border-radius: 28px;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Developer Contact & Support</h1>
+            <p class="text-muted" style="margin-bottom: 2rem;">
+                Official contact information derived directly from the Google Play Store listing for RCKeyboard.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div style="padding: 1.2rem; background: rgba(157, 78, 221, 0.1); border-radius: 16px; border: 1px solid var(--glass-border);">
+                    <div style="font-size: 0.85rem; color: var(--accent); font-weight: 700; text-transform: uppercase;" data-i18n="infoGrid.developer">Developer Name</div>
+                    <div style="font-size: 1.2rem; font-weight: 700; margin-top: 0.2rem;">Elsayed Khater</div>
+                </div>
+
+                <div style="padding: 1.2rem; background: rgba(157, 78, 221, 0.1); border-radius: 16px; border: 1px solid var(--glass-border);">
+                    <div style="font-size: 0.85rem; color: var(--accent); font-weight: 700; text-transform: uppercase;" data-i18n="footer.support">Support Email</div>
+                    <div style="font-size: 1.2rem; font-weight: 700; margin-top: 0.2rem;">
+                        <a href="mailto:Khaterbr@gmail.com" style="color: var(--text-main); text-decoration: none;">Khaterbr@gmail.com</a>
+                    </div>
+                </div>
+
+                <div style="padding: 1.2rem; background: rgba(157, 78, 221, 0.1); border-radius: 16px; border: 1px solid var(--glass-border);">
+                    <div style="font-size: 0.85rem; color: var(--accent); font-weight: 700; text-transform: uppercase;">Official Website</div>
+                    <div style="font-size: 1.2rem; font-weight: 700; margin-top: 0.2rem;">
+                        <a href="https://rcmods.online" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">https://rcmods.online</a>
+                    </div>
+                </div>
+
+                <div style="padding: 1.2rem; background: rgba(157, 78, 221, 0.1); border-radius: 16px; border: 1px solid var(--glass-border);">
+                    <div style="font-size: 0.85rem; color: var(--accent); font-weight: 700; text-transform: uppercase;">Google Play Listing</div>
+                    <div style="font-size: 1.2rem; font-weight: 700; margin-top: 0.2rem;">
+                        <a href="https://play.google.com/store/apps/details?id=rc.keyboard" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">play.google.com/store/apps/details?id=rc.keyboard</a>
+                    </div>
+                </div>
+
+                <div style="padding: 1.2rem; background: rgba(157, 78, 221, 0.1); border-radius: 16px; border: 1px solid var(--glass-border);">
+                    <div style="font-size: 0.85rem; color: var(--accent); font-weight: 700; text-transform: uppercase;" data-i18n="infoGrid.privacyPolicy">Official Privacy Policy</div>
+                    <div style="font-size: 1.2rem; font-weight: 700; margin-top: 0.2rem;">
+                        <a href="https://omarshawkey13.github.io/keyboard/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">https://omarshawkey13.github.io/keyboard/</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Language Picker Modal -->
+    <div id="langModal" class="lang-modal" role="dialog" aria-modal="true" aria-labelledby="langModalTitle">
+        <div class="lang-modal-backdrop" onclick="closeLangModal()"></div>
+        <div class="lang-modal-card">
+            <div class="lang-modal-header">
+                <h3 id="langModalTitle" data-i18n="langModal.title">Select Language</h3>
+                <button class="modal-close" onclick="closeLangModal()" aria-label="Close Modal">&times;</button>
+            </div>
+            <input type="text" id="langSearchInput" class="lang-search-input" placeholder="Search languages..." oninput="filterLanguages(this.value)" data-i18n-placeholder="langModal.searchPlaceholder">
+            <div id="langListGrid" class="lang-list-grid"></div>
+        </div>
+    </div>
+    <script src="./src/main.js" type="module"></script>
+</body>
+</html>
