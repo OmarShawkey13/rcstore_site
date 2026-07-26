@@ -125,21 +125,20 @@
         <div class="noise"></div>
     </div>
 
-    <!-- Navigation -->
     <nav class="navbar" aria-label="Main Navigation">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <img src="./src/images/icon.png" alt="RCKeyboard App Icon" style="width: 34px; height: 34px; border-radius: 8px;">
+                <img src="./src/images/icon.png" alt="RCKeyboard App Icon" width="34" height="34" style="width: 34px; height: 34px; border-radius: 8px;">
                 RCKeyboard
             </a>
-            <div class="nav-links">
+            <div class="nav-links" id="navLinks">
                 <a href="#features" data-i18n="nav.features">Features</a>
                 <a href="#experience" data-i18n="nav.experience">Experience</a>
                 <a href="#showcase" data-i18n="nav.screenshots">Screenshots</a>
                 <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
                 <a href="#faq" data-i18n="nav.faq">FAQ</a>
             </div>
-            <div style="display: flex; gap: 0.8rem; align-items: center;">
+            <div class="nav-actions">
                 <!-- Theme Toggle Button -->
                 <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark or Light Theme" title="Toggle Theme">
                     <span id="themeIcon">🌓</span>
@@ -148,13 +147,20 @@
                 <!-- Language Trigger Button -->
                 <button class="lang-trigger-btn" onclick="openLangModal()" aria-label="Open Language Selector">
                     <span id="currentLangFlag">🇺🇸</span>
-                    <span id="currentLangName">English</span>
-                    <span>▾</span>
+                    <span id="currentLangName" class="lang-name-text">English</span>
+                    <span class="chevron">▾</span>
                 </button>
 
-                <a href="https://play.google.com/store/apps/details?id=rc.keyboard" class="btn-primary small magnetic" target="_blank" rel="noopener" data-i18n="nav.getApp">
+                <a href="https://play.google.com/store/apps/details?id=rc.keyboard" class="btn-primary small magnetic nav-get-app" target="_blank" rel="noopener" data-i18n="nav.getApp">
                     Get App
                 </a>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="navLinks">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
         </div>
         <div class="scroll-progress"></div>
@@ -540,15 +546,11 @@
                         </div>
                         <div class="info-item">
                             <span class="info-label">Price</span>
-                            <span class="info-value"><div class="info-grid">
-                        <!-- Populated dynamically via main.js from app.json -->
-                    </div>.00 (Free)</span>
+                            <span class="info-value">$0.00 (Free)</span>
                         </div>
                         <div class="info-item">
                             <span class="info-label">In-App Purchases</span>
-                            <span class="info-value"><div class="info-grid">
-                        <!-- Populated dynamically via main.js from app.json -->
-                    </div>.99 per item</span>
+                            <span class="info-value">$0.99 - $9.99 per item</span>
                         </div>
                         <div class="info-item">
                             <span class="info-label">Package Name</span>
@@ -774,9 +776,7 @@
             <details class="faq-item glass reveal-up active" style="transition-delay: 40ms;" >
                 <summary>Is RC Keyboard free to use?</summary>
                 <div class="faq-content">
-                    <p>Yes, RC Keyboard is 100% free to download and use on Google Play. It contains optional in-app purchases (<div class="faq-list">
-                    <!-- Populated dynamically via main.js from faq.json -->
-                </div>.99 per item) for premium themes and customization options.</p>
+                    <p>Yes, RC Keyboard is 100% free to download and use on Google Play. It contains optional in-app purchases ($0.99 per item) for premium themes and customization options.</p>
                     <span class="faq-source-tag">Source: Google Play Metadata (Price &amp; In-App Products)</span>
                 </div>
             </details>

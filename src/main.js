@@ -3668,9 +3668,6 @@ function renderReviews() {
         });
     });
 }
-        `;
-    }).join('');
-}
 
 function renderFAQ() {
     const container = document.querySelector('.faq-list');
