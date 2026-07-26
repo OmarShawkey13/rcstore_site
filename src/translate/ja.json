@@ -44,5 +44,11 @@
   "footer.features": "機能",
   "footer.themes": "テーマ",
   "footer.store": "Playストア",
-  "footer.copy": "RCKeyBoard © 2026 — より速く、よりスマートに、よりパーソナルにタイプするために設計されました。"
+  "footer.copy": "RCKeyBoard © 2026 — より速く、よりスマートに、よりパーソナルにタイプするために設計されました。",
+  "footer.about": "About Us",
+  "footer.privacy": "Privacy Policy",
+  "footer.terms": "Terms of Service",
+  "nav.about": "About",
+  "nav.privacy": "Privacy",
+  "nav.terms": "Terms"
 }

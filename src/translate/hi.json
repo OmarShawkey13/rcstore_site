@@ -44,5 +44,11 @@
   "footer.features": "फ़ीचर्स",
   "footer.themes": "थीम",
   "footer.store": "Play Store",
-  "footer.copy": "RCKeyBoard © 2026 — तेज़, स्मार्ट और अधिक व्यक्तिगत टाइपिंग के लिए डिज़ाइन किया गया."
+  "footer.copy": "RCKeyBoard © 2026 — तेज़, स्मार्ट और अधिक व्यक्तिगत टाइपिंग के लिए डिज़ाइन किया गया.",
+  "footer.about": "About Us",
+  "footer.privacy": "Privacy Policy",
+  "footer.terms": "Terms of Service",
+  "nav.about": "About",
+  "nav.privacy": "Privacy",
+  "nav.terms": "Terms"
 }

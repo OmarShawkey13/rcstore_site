@@ -44,5 +44,11 @@
   "footer.features": "Fitur",
   "footer.themes": "Tema",
   "footer.store": "Play Store",
-  "footer.copy": "RCKeyBoard © 2026 — Dirancang untuk mengetik lebih cepat, lebih cerdas, dan lebih personal."
+  "footer.copy": "RCKeyBoard © 2026 — Dirancang untuk mengetik lebih cepat, lebih cerdas, dan lebih personal.",
+  "footer.about": "About Us",
+  "footer.privacy": "Privacy Policy",
+  "footer.terms": "Terms of Service",
+  "nav.about": "About",
+  "nav.privacy": "Privacy",
+  "nav.terms": "Terms"
 }

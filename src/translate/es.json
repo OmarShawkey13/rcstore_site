@@ -44,5 +44,11 @@
   "footer.features": "Características",
   "footer.themes": "Temas",
   "footer.store": "Play Store",
-  "footer.copy": "RCKeyBoard © 2026 — Diseñado para escribir más rápido, más inteligente y con más personalidad."
+  "footer.copy": "RCKeyBoard © 2026 — Diseñado para escribir más rápido, más inteligente y con más personalidad.",
+  "footer.about": "About Us",
+  "footer.privacy": "Privacy Policy",
+  "footer.terms": "Terms of Service",
+  "nav.about": "About",
+  "nav.privacy": "Privacy",
+  "nav.terms": "Terms"
 }

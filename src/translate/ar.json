@@ -44,5 +44,11 @@
   "footer.features": "الميزات",
   "footer.themes": "الثيمات",
   "footer.store": "متجر Play",
-  "footer.copy": "RCKeyBoard © 2026 — مصمم للكتابة الأسرع، الأذكى، والأكثر شخصية."
+  "footer.copy": "RCKeyBoard © 2026 — مصمم للكتابة الأسرع، الأذكى، والأكثر شخصية.",
+  "footer.about": "About Us",
+  "footer.privacy": "Privacy Policy",
+  "footer.terms": "Terms of Service",
+  "nav.about": "About",
+  "nav.privacy": "Privacy",
+  "nav.terms": "Terms"
 }

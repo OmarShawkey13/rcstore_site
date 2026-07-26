@@ -44,5 +44,11 @@
   "footer.features": "Recursos",
   "footer.themes": "Temas",
   "footer.store": "Play Store",
-  "footer.copy": "RCKeyBoard © 2026 — Projetado para digitar mais rápido, mais inteligente e com mais personalidade."
+  "footer.copy": "RCKeyBoard © 2026 — Projetado para digitar mais rápido, mais inteligente e com mais personalidade.",
+  "footer.about": "About Us",
+  "footer.privacy": "Privacy Policy",
+  "footer.terms": "Terms of Service",
+  "nav.about": "About",
+  "nav.privacy": "Privacy",
+  "nav.terms": "Terms"
 }
