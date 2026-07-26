@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Terms of Service for RCKeyboard">
-    <title>Terms of Service - RCKeyboard</title>
+    <title>Thank You - RCKeyboard</title>
+    
     <!-- Synchronous Anti-FOUC Theme, Language & Global Event Handler Initializer -->
     <script>
         (function() {
@@ -84,6 +84,7 @@
             window.switchLanguage = function(lang) {};
         })();
     </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/styles.css">
 </head>
@@ -126,21 +127,11 @@
         </div>
     </nav>
 
-    <main class="container" style="padding-top: 120px; padding-bottom: 100px; max-width: 850px;">
-        <a href="index.html" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-bottom: 1.5rem;" data-i18n="subpage.backHome">&larr; Back to Home</a>
-        
-        <div class="glass" style="padding: 3rem; border-radius: 28px; line-height: 1.8;">
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;" data-i18n="footer.terms">Terms of Service</h1>
-            <p class="text-muted" style="margin-bottom: 2rem;">Effective Date: 2026 • RCKeyboard by Elsayed Khater</p>
-
-            <h2 style="font-size: 1.5rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.5rem;">1. License & Use</h2>
-            <p>RCKeyboard is made available via Google Play under standard Android application terms. You may use the software for personal, non-commercial typing on supported Android devices.</p>
-
-            <h2 style="font-size: 1.5rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.5rem;">2. Software Updates</h2>
-            <p>Updates are delivered through official Google Play Store channels to improve performance, security, and feature functionality.</p>
-
-            <h2 style="font-size: 1.5rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.5rem;">3. Contact & Support</h2>
-            <p>For support or feedback, contact developer Elsayed Khater at <a href="mailto:Khaterbr@gmail.com" style="color: var(--accent);">Khaterbr@gmail.com</a>.</p>
+    <main class="container" style="min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 100px;">
+        <div class="glass" style="padding: 4rem 3rem; border-radius: 32px; max-width: 550px;">
+            <h1 style="font-size: 3rem; font-weight: 800; color: var(--accent); margin-bottom: 1rem;" data-i18n="subpage.thanksTitle">Thank You!</h1>
+            <p class="text-muted" style="margin-bottom: 2rem;" data-i18n="subpage.thanksSub">Thank you for using RCKeyboard. Download the app directly from Google Play Store.</p>
+            <a href="https://play.google.com/store/apps/details?id=rc.keyboard" class="btn-primary large" target="_blank" rel="noopener" data-i18n="subpage.thanksBtn">Download on Google Play</a>
         </div>
     </main>
 
@@ -156,6 +147,7 @@
             <div id="langListGrid" class="lang-list-grid"></div>
         </div>
     </div>
+
     <script src="./src/main.js" type="module"></script>
 </body>
 </html>

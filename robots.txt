@@ -1,7 +1,4 @@
-# RCMods Store - Robots.txt
-# Optimized & Cleaned: 2026-07-25
-
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://rcmods.online/sitemap.xml
+Sitemap: https://rc-keyboard.com/sitemap.xml

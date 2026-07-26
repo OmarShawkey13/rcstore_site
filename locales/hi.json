@@ -1,0 +1,38 @@
+{
+  "meta": { "lang": "hi", "dir": "ltr" },
+  "nav": { "features": "विशेषताएं", "experience": "अनुभव", "screenshots": "स्क्रीनशॉट", "reviews": "समीक्षाएं", "faq": "सवाल-जवाब", "getApp": "ऐप डाउनलोड करें" },
+  "hero": {
+    "badge": "गूगल प्ले ऑफिशियल ऐप • rc.keyboard",
+    "title1": "बुद्धिमत्ता की गति से ",
+    "titleGradient": "टाइप करें",
+    "subtitle": "RCKeyboard एक उन्नत एंड्रॉइड कीबोर्ड है जो उच्च कोटलिन प्रदर्शन, स्मार्ट एआई संदर्भ पूर्वानुमान, त्वरित गणित समाधान और 100% स्थानीय गोपनीयता प्रदान करता है।",
+    "downloadBtn": "गूगल प्ले पर डाउनलोड करें",
+    "exploreBtn": "विशेषताएं देखें",
+    "ratingLabel": "रेटिंग",
+    "downloadsLabel": "डाउनलोड",
+    "categoryLabel": "निजीकरण"
+  },
+  "sections": {
+    "featuresTitle": "उत्कृष्टता के लिए निर्मित",
+    "featuresSub": "आधिकारिक गूगल प्ले लिस्टिंग से ली गई सभी विशेषताएं।",
+    "expTitle": "वास्तविक ऐप अनुभव",
+    "expSub": "आधिकारिक तकनीकी विनिर्देशों द्वारा सत्यापित ब्रेकडाउन।",
+    "screenshotsTitle": "आधिकारिक स्क्रीनशॉट",
+    "screenshotsSub": "गूगल प्ले से सीधे इंटरफेस और थीम देखें।",
+    "reviewsTitle": "उपयोगकर्ता समीक्षाएं",
+    "reviewsSub": "गूगल प्ले स्टोर से ली गई प्रामाणिक समीक्षाएं।",
+    "faqTitle": "अक्सर पूछे जाने वाले प्रश्न",
+    "faqSub": "आधिकारिक विनिर्देशों पर आधारित उत्तर।",
+    "ctaTitle": "आज ही अपना एंड्रॉइड टाइपिंग अनुभव अपग्रेड करें",
+    "ctaSub": "100,000 से अधिक उपयोगकर्ताओं में शामिल हों।",
+    "ctaBtn": "गूगल प्ले पर मुफ्त डाउनलोड करें"
+  },
+  "reviews": { "snapshotBadge": "✓ गूगल प्ले सत्यापित समीक्षाएं", "allRatings": "सभी रेटिंग", "helpful": "उपयोगी", "verified": "✓ सत्यापित समीक्षा", "readMore": "और पढ़ें", "showLess": "कम दिखाएं", "devReply": "डेवलपर जवाब" },
+  "faq": { "searchPlaceholder": "प्रश्न खोजें...", "sourceLabel": "स्रोत" },
+  "infoGrid": { "developer": "डेवलपर", "category": "श्रेणी", "version": "संस्करण", "lastUpdated": "अंतिम अपडेट", "released": "रिलीज की तारीख", "realInstalls": "सत्यापित डाउनलोड", "price": "मूल्य", "inApp": "इन-ऐप खरीदारी", "packageId": "पैकेज नाम", "supportedLangs": "समर्थित भाषाएं", "contentRating": "सामग्री रेटिंग", "privacyPolicy": "गोपनीयता नीति", "officialPolicy": "आधिकारिक नीति →" },
+  "stats": { "totalDownloads": "कुल डाउनलोड", "avgScore": "औसत स्कोर", "verifiedRatings": "सत्यापित रेटिंग", "onDevicePrivacy": "स्थानीय गोपनीयता" },
+  "theme": { "selectTitle": "थीम मोड", "light": "लाइट", "dark": "डार्क", "system": "सिस्टम डिफॉल्ट" },
+  "langModal": { "title": "भाषा चुनें", "searchPlaceholder": "भाषा खोजें...", "close": "बंद करें" },
+  "footer": { "description": "सर्वश्रेष्ठ स्मार्ट एंड्रॉइड कीबोर्ड। गति और गोपनीयता के लिए कोटलिन में निर्मित।", "navHeader": "नेविगेशन", "legalHeader": "कानूनी व गोपनीयता", "contactHeader": "डेवलपर संपर्क", "privacyPolicy": "गोपनीयता नीति", "terms": "सेवा की शर्तें", "support": "डेवलपर सहायता", "copyright": "© 2026 RCKeyboard. Elsayed Khater." },
+  "subpage": { "backHome": "← होम पर वापस जाएं", "contactTitle": "डेवलपर संपर्क व सहायता", "contactSub": "गूगल प्ले से ली गई आधिकारिक जानकारी।", "officialSite": "आधिकारिक वेबसाइट", "googlePlayListing": "गूगल प्ले पेज", "privacyTitle": "गोपनीयता नीति", "termsTitle": "सेवा की शर्तें", "thanksTitle": "धन्यवाद!", "thanksSub": "RCKeyboard का उपयोग करने के लिए धन्यवाद।", "thanksBtn": "गूगल प्ले पर डाउनलोड करें", "notfoundTitle": "पृष्ठ नहीं मिला", "notfoundSub": "आपके द्वारा मांगा गया पृष्ठ मौजूद नहीं है।", "notfoundBtn": "होम पर वापस जाएं" }
+}

@@ -1,0 +1,96 @@
+{
+  "meta": { "lang": "es", "dir": "ltr" },
+  "nav": {
+    "features": "Características",
+    "experience": "Experiencia",
+    "screenshots": "Capturas",
+    "reviews": "Reseñas",
+    "faq": "Preguntas frecuentes",
+    "getApp": "Obtener App"
+  },
+  "hero": {
+    "badge": "Aplicación oficial de Google Play • rc.keyboard",
+    "title1": "Escribe a la ",
+    "titleGradient": "Velocidad de la Inteligencia",
+    "subtitle": "RCKeyboard es un teclado avanzado para Android que combina alto rendimiento en Kotlin, predicciones inteligentes por IA, calculadora instantánea, control de cursor trackpad y privacidad local 100% en el dispositivo.",
+    "downloadBtn": "Descargar en Google Play",
+    "exploreBtn": "Explorar funciones",
+    "ratingLabel": "Calificación",
+    "downloadsLabel": "Descargas",
+    "categoryLabel": "Personalización"
+  },
+  "sections": {
+    "featuresTitle": "Diseñado para la Excelencia",
+    "featuresSub": "Cada función extraída de la lista oficial de Google Play integrada en una experiencia Android fluida.",
+    "expTitle": "Experiencia de Uso Real",
+    "expSub": "Desglose visual de las capacidades principales de RCKeyboard, verificadas por especificaciones técnicas.",
+    "screenshotsTitle": "Capturas de Pantalla Oficiales",
+    "screenshotsSub": "Explora la interfaz intuitiva, los temas y el diseño directamente desde Google Play.",
+    "reviewsTitle": "Reseñas y Comentarios de Usuarios",
+    "reviewsSub": "Reseñas auténticas obtenidas directamente de la ficha oficial en Google Play.",
+    "faqTitle": "Preguntas Frecuentes",
+    "faqSub": "Respuestas derivadas exclusivamente de la información oficial y política de privacidad de Google Play.",
+    "ctaTitle": "Mejora tu Escritura en Android Hoy",
+    "ctaSub": "Únete a más de 100.000 usuarios que disfrutan de la velocidad, inteligencia y privacidad local de RCKeyboard.",
+    "ctaBtn": "Descarga Gratis en Google Play",
+    "overviewTitle": "Especificaciones Técnicas",
+    "overviewSub": "Datos técnicos y propiedades verificadas de la página oficial de Google Play.",
+    "descTitle": "Descripción Oficial de la Tienda",
+    "descSub": "Desglose completo del motor IA, privacidad local, rendimiento Kotlin y personalización."
+  },
+  "reviews": {
+    "snapshotBadge": "✓ Captura Verificada de Reseñas de Google Play",
+    "allRatings": "Todas las Calificaciones",
+    "helpful": "Útil",
+    "verified": "✓ Reseña Verificada de Play Store",
+    "readMore": "Leer más",
+    "showLess": "Mostrar menos",
+    "devReply": "Respuesta del Desarrollador"
+  },
+  "faq": {
+    "searchPlaceholder": "Buscar en preguntas frecuentes (ej. privacidad, gratis, internet)...",
+    "sourceLabel": "Fuente"
+  },
+  "infoGrid": {
+    "developer": "Desarrollador",
+    "category": "Categoría",
+    "version": "Versión",
+    "lastUpdated": "Última actualización",
+    "released": "Fecha de lanzamiento",
+    "realInstalls": "Descargas verificadas",
+    "price": "Precio",
+    "inApp": "Compras en la app",
+    "packageId": "Nombre del paquete",
+    "supportedLangs": "Idiomas compatibles",
+    "contentRating": "Clasificación de contenido",
+    "privacyPolicy": "Política de Privacidad",
+    "officialPolicy": "Política Oficial →"
+  },
+  "stats": {
+    "totalDownloads": "Descargas Totales",
+    "avgScore": "Puntuación Media",
+    "verifiedRatings": "Calificaciones Verificadas",
+    "onDevicePrivacy": "Privacidad en Dispositivo"
+  },
+  "theme": {
+    "selectTitle": "Modo de Tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Predeterminado del sistema"
+  },
+  "langModal": {
+    "title": "Seleccionar Idioma",
+    "searchPlaceholder": "Buscar idiomas...",
+    "close": "Cerrar"
+  },
+  "footer": {
+    "description": "El teclado inteligente definitivo para Android. Diseñado nativamente en Kotlin para velocidad, inteligencia y privacidad.",
+    "navHeader": "Navegación",
+    "legalHeader": "Legal y Privacidad",
+    "contactHeader": "Contacto del Desarrollador",
+    "privacyPolicy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "support": "Soporte",
+    "copyright": "© 2026 RCKeyboard. Teclado oficial de Elsayed Khater."
+  }
+}

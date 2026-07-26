@@ -1,0 +1,96 @@
+{
+  "meta": { "lang": "pt", "dir": "ltr" },
+  "nav": {
+    "features": "Recursos",
+    "experience": "Experiência",
+    "screenshots": "Capturas",
+    "reviews": "Avaliações",
+    "faq": "Perguntas Frequentes",
+    "getApp": "Baixar App"
+  },
+  "hero": {
+    "badge": "Aplicativo Oficial do Google Play • rc.keyboard",
+    "title1": "Digite na ",
+    "titleGradient": "Velocidade da Inteligência",
+    "subtitle": "RCKeyboard é um teclado avançado para Android que combina alto desempenho em Kotlin, predições inteligentes com IA, resolvedor de matemática instantâneo e privacidade 100% local no dispositivo.",
+    "downloadBtn": "Baixar no Google Play",
+    "exploreBtn": "Explorar Recursos",
+    "ratingLabel": "Classificação",
+    "downloadsLabel": "Downloads",
+    "categoryLabel": "Personalização"
+  },
+  "sections": {
+    "featuresTitle": "Projetado para a Excelência",
+    "featuresSub": "Todos os recursos extraídos da lista oficial do Google Play integrados para Android.",
+    "expTitle": "Experiência Real do Usuário",
+    "expSub": "Análise visual dos recursos do RCKeyboard verificados por especificações técnicas.",
+    "screenshotsTitle": "Capturas de Tela Oficiais",
+    "screenshotsSub": "Explore a interface intuitiva e temas diretamente do Google Play.",
+    "reviewsTitle": "Avaliações e Comentários dos Usuários",
+    "reviewsSub": "Avaliações autênticas obtidas diretamente do Google Play.",
+    "faqTitle": "Perguntas Frequentes",
+    "faqSub": "Respostas derivadas exclusivamente das informações e políticas oficiais do Google Play.",
+    "ctaTitle": "Melhore sua Digitação no Android Hoje",
+    "ctaSub": "Junte-se a mais de 100.000 usuários que aproveitam a velocidade, inteligência e privacidade do RCKeyboard.",
+    "ctaBtn": "Baixar Grátis no Google Play",
+    "overviewTitle": "Especificações Técnicas",
+    "overviewSub": "Propriedades técnicas verificadas da página oficial do Google Play.",
+    "descTitle": "Descrição Oficial do Aplicativo",
+    "descSub": "Detalhamento completo do motor de IA, privacidade local, desempenho em Kotlin e personalização."
+  },
+  "reviews": {
+    "snapshotBadge": "✓ Captura Verificada de Avaliações do Google Play",
+    "allRatings": "Todas as Avaliações",
+    "helpful": "Útil",
+    "verified": "✓ Avaliação Verificada do Play Store",
+    "readMore": "Ler mais",
+    "showLess": "Mostrar menos",
+    "devReply": "Resposta do Desenvolvedor"
+  },
+  "faq": {
+    "searchPlaceholder": "Pesquisar perguntas frequentes (ex: privacidade, grátis, internet)...",
+    "sourceLabel": "Fonte"
+  },
+  "infoGrid": {
+    "developer": "Desenvolvedor",
+    "category": "Categoria",
+    "version": "Versão",
+    "lastUpdated": "Última atualização",
+    "released": "Data de lançamento",
+    "realInstalls": "Downloads verificados",
+    "price": "Preço",
+    "inApp": "Compras no app",
+    "packageId": "Nome do pacote",
+    "supportedLangs": "Idiomas suportados",
+    "contentRating": "Classificação de conteúdo",
+    "privacyPolicy": "Política de Privacidade",
+    "officialPolicy": "Política Oficial →"
+  },
+  "stats": {
+    "totalDownloads": "Downloads Totais",
+    "avgScore": "Nota Média",
+    "verifiedRatings": "Avaliações Verificadas",
+    "onDevicePrivacy": "Privacidade no Dispositivo"
+  },
+  "theme": {
+    "selectTitle": "Modo de Tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Padrão do Sistema"
+  },
+  "langModal": {
+    "title": "Selecionar Idioma",
+    "searchPlaceholder": "Pesquisar idiomas...",
+    "close": "Fechar"
+  },
+  "footer": {
+    "description": "O teclado Android inteligente definitivo. Projetado nativamente em Kotlin para velocidade, inteligência e privacidade.",
+    "navHeader": "Navegação",
+    "legalHeader": "Legal e Privacidade",
+    "contactHeader": "Contato do Desenvolvedor",
+    "privacyPolicy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "support": "Suporte ao Desenvolvedor",
+    "copyright": "© 2026 RCKeyboard. Teclado Android oficial por Elsayed Khater."
+  }
+}

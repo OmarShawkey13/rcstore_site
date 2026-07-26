@@ -1,0 +1,96 @@
+{
+  "meta": { "lang": "zh-CN", "dir": "ltr" },
+  "nav": {
+    "features": "核心功能",
+    "experience": "应用体验",
+    "screenshots": "应用截图",
+    "reviews": "用户评价",
+    "faq": "常见问题",
+    "getApp": "下载应用"
+  },
+  "hero": {
+    "badge": "Google Play 官方应用 • rc.keyboard",
+    "title1": "体验 ",
+    "titleGradient": "智能极致打字速度",
+    "subtitle": "RCKeyboard 是一款先进的 Android 智能键盘，结合 Kotlin 高能原生性能、AI 上下文预测、实时数学计算、触控板光标控制与 100% 本地设备隐私保护。",
+    "downloadBtn": "前往 Google Play 下载",
+    "exploreBtn": "探索核心功能",
+    "ratingLabel": "应用评分",
+    "downloadsLabel": "下载总量",
+    "categoryLabel": "个性化"
+  },
+  "sections": {
+    "featuresTitle": "专为卓越性能打造",
+    "featuresSub": "各项功能均直接源自 Google Play 官方应用说明，打造流畅打字体验。",
+    "expTitle": "真实应用体验",
+    "expSub": "核心功能直观展示，经 Google Play 官方技术规范认证。",
+    "screenshotsTitle": "官方应用截图",
+    "screenshotsSub": "直接探索清爽界面、精美主题与键盘布局。",
+    "reviewsTitle": "真实用户评价与反馈",
+    "reviewsSub": "直接提取自 Google Play 官方页面的真实验证评价。",
+    "faqTitle": "常见问题解答",
+    "faqSub": "解答均源自 Google Play 官方说明与隐私政策。",
+    "ctaTitle": "立即提升您的 Android 打字体验",
+    "ctaSub": "加入超过 100,000 名用户的行列，享受 RCKeyboard 的高速、智能与本地隐私。",
+    "ctaBtn": "在 Google Play 免费下载",
+    "overviewTitle": "Google Play 规格参数",
+    "overviewSub": "直接源自官方应用的完整元数据与技术参数。",
+    "descTitle": "官方详细说明",
+    "descSub": "全面了解 AI 预测引擎、本地隐私架构、Kotlin 原生性能与个性化定制。"
+  },
+  "reviews": {
+    "snapshotBadge": "✓ Google Play 官方真实评价快照",
+    "allRatings": "所有评分",
+    "helpful": "赞同",
+    "verified": "✓ Play 商店已验证评价",
+    "readMore": "展开阅读",
+    "showLess": "收起",
+    "devReply": "开发者回复"
+  },
+  "faq": {
+    "searchPlaceholder": "搜索常见问题（如：隐私、免费、网络、权限）...",
+    "sourceLabel": "来源"
+  },
+  "infoGrid": {
+    "developer": "开发者",
+    "category": "应用类别",
+    "version": "当前版本",
+    "lastUpdated": "最近更新",
+    "released": "发布日期",
+    "realInstalls": "真实下载量",
+    "price": "价格",
+    "inApp": "应用内购买",
+    "packageId": "应用包名",
+    "supportedLangs": "支持语言",
+    "contentRating": "分级",
+    "privacyPolicy": "隐私政策",
+    "officialPolicy": "官方政策链接 →"
+  },
+  "stats": {
+    "totalDownloads": "总下载量",
+    "avgScore": "平均评分",
+    "verifiedRatings": "验证评价数",
+    "onDevicePrivacy": "本地设备隐私"
+  },
+  "theme": {
+    "selectTitle": "主题模式",
+    "light": "浅色",
+    "dark": "深色",
+    "system": "跟随系统"
+  },
+  "langModal": {
+    "title": "选择语言",
+    "searchPlaceholder": "搜索语言...",
+    "close": "关闭"
+  },
+  "footer": {
+    "description": "终极智能 Android 键盘。采用 Kotlin 原生开发，兼具速度、智能与隐私。",
+    "navHeader": "导航",
+    "legalHeader": "法律与隐私",
+    "contactHeader": "开发者联系方式",
+    "privacyPolicy": "隐私政策",
+    "terms": "服务条款",
+    "support": "开发者支持",
+    "copyright": "© 2026 RCKeyboard. Elsayed Khater 官方 Android 键盘。"
+  }
+}
