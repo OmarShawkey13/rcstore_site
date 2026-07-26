@@ -34,11 +34,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/styles/main.css" />
-    <meta name="theme-color" content="#06080f" />
+    <meta name="theme-color" content="#060814" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -53,115 +53,256 @@
     </script>
   </head>
   <body>
+    <!-- Ambient Background Gradients & Mesh -->
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
     <div class="bg-orb orb-3"></div>
+    <div class="bg-grid-overlay"></div>
 
-    <!-- Navigation -->
-    <nav class="topbar" id="main-nav">
-      <a class="brand" href="index.html">
-        <img src="src/images/logo.webp" alt="RCKeyBoard logo" />
-        <span>RCKeyBoard</span>
-      </a>
-      <div class="nav-links">
-        <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
-        <a href="#themes" class="nav-link" data-i18n="nav.themes">Themes</a>
-        <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
-      </div>
-      <div class="nav-actions">
-        <div class="language-selector">
-          <button class="language-toggle" type="button" aria-label="Open language selector">
-            <span class="language-icon">🌐</span>
-            <span class="language-label">EN</span>
-          </button>
-          <div class="language-menu" aria-hidden="true">
-            <button class="language-item" type="button" data-lang="en">English</button>
-            <button class="language-item" type="button" data-lang="ar">العربية</button>
-            <button class="language-item" type="button" data-lang="es">Español</button>
-            <button class="language-item" type="button" data-lang="fr">Français</button>
-            <button class="language-item" type="button" data-lang="de">Deutsch</button>
-            <button class="language-item" type="button" data-lang="ru">Русский</button>
-            <button class="language-item" type="button" data-lang="pt">Português</button>
-            <button class="language-item" type="button" data-lang="hi">हिन्दी</button>
-            <button class="language-item" type="button" data-lang="tr">Türkçe</button>
-            <button class="language-item" type="button" data-lang="ur">اردو</button>
-            <button class="language-item" type="button" data-lang="ja">日本語</button>
-            <button class="language-item" type="button" data-lang="zh">中文</button>
-            <button class="language-item" type="button" data-lang="it">Italiano</button>
-            <button class="language-item" type="button" data-lang="ko">한국어</button>
-            <button class="language-item" type="button" data-lang="id">Bahasa Indonesia</button>
-            <button class="language-item" type="button" data-lang="vi">Tiếng Việt</button>
-            <button class="language-item" type="button" data-lang="nl">Nederlands</button>
-            <button class="language-item" type="button" data-lang="th">ไทย</button>
+    <!-- Header Navigation -->
+    <header class="topbar-wrapper">
+      <nav class="topbar" id="main-nav">
+        <a class="brand" href="index.html" aria-label="RCKeyBoard Homepage">
+          <div class="brand-logo-wrap">
+            <img src="src/images/logo.webp" alt="RCKeyBoard Logo" width="38" height="38" />
+            <span class="brand-glow"></span>
           </div>
-        </div>
-        <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode">
-          <span class="toggle-icon">☀️</span>
-          <span class="toggle-label">Light</span>
-        </button>
-        <a class="nav-cta" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download
+          <span class="brand-name">RCKeyBoard</span>
         </a>
-      </div>
-      <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero" id="hero">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div class="pill" data-i18n="hero.pill">✨ New themes • 2026 redesign</div>
-          <div class="hero-badges">
-            <span data-i18n="hero.badge1">⚡ Lightning fast</span>
-            <span data-i18n="hero.badge2">🎨 Bold customization</span>
-            <span data-i18n="hero.badge3">🔒 Privacy-first</span>
-          </div>
-          <h1>
-            <span data-i18n="hero.title" class="gradient-text">Type faster. Look bolder. Own your keyboard.</span>
-          </h1>
-          <p data-i18n="hero.description">
-            RCKeyBoard is a premium Android keyboard built for speed, privacy, and deep personalization.
-            It combines intelligent typing, custom themes, multilingual tools, and a polished experience designed for everyday power users.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener" data-i18n="hero.install">
-              Install Now
-            </a>
-            <a class="btn btn-secondary" href="#features" data-i18n="hero.explore">Explore Features</a>
-          </div>
-
-          <div class="stats">
-            <div class="stat-card reveal">
-              <strong>100K+</strong>
-              <span data-i18n="stats.installs">installs</span>
-            </div>
-            <div class="stat-card reveal">
-              <strong>4.5★</strong>
-              <span data-i18n="stats.rating">average rating</span>
-            </div>
-            <div class="stat-card reveal">
-              <strong>16</strong>
-              <span data-i18n="stats.languages">languages</span>
-            </div>
-          </div>
+        <div class="nav-links">
+          <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
+          <a href="#demo" class="nav-link">Live Demo</a>
+          <a href="#themes" class="nav-link" data-i18n="nav.themes">Themes</a>
+          <a href="#identity" class="nav-link">Experience</a>
+          <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
         </div>
 
-        <div class="hero-visual reveal">
-          <div class="phone-card">
-            <div class="glow-ring"></div>
-            <img src="src/images/rckeyboard.webp" alt="RCKeyBoard keyboard preview" />
+        <div class="nav-actions">
+          <div class="language-selector">
+            <button class="language-toggle" type="button" aria-label="Open language selector">
+              <svg class="language-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span class="language-label">EN</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="language-menu" aria-hidden="true">
+              <div class="language-menu-header">Select Language</div>
+              <div class="language-menu-list">
+                <button class="language-item" type="button" data-lang="en"><span class="flag">🇺🇸</span> English</button>
+                <button class="language-item" type="button" data-lang="ar"><span class="flag">🇸🇦</span> العربية</button>
+                <button class="language-item" type="button" data-lang="es"><span class="flag">🇪🇸</span> Español</button>
+                <button class="language-item" type="button" data-lang="fr"><span class="flag">🇫🇷</span> Français</button>
+                <button class="language-item" type="button" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</button>
+                <button class="language-item" type="button" data-lang="ru"><span class="flag">🇷🇺</span> Русский</button>
+                <button class="language-item" type="button" data-lang="pt"><span class="flag">🇧🇷</span> Português</button>
+                <button class="language-item" type="button" data-lang="hi"><span class="flag">🇮🇳</span> हिन्दी</button>
+                <button class="language-item" type="button" data-lang="tr"><span class="flag">🇹🇷</span> Türkçe</button>
+                <button class="language-item" type="button" data-lang="ja"><span class="flag">🇯🇵</span> 日本語</button>
+                <button class="language-item" type="button" data-lang="zh"><span class="flag">🇨🇳</span> 中文</button>
+                <button class="language-item" type="button" data-lang="id"><span class="flag">🇮🇩</span> Bahasa Indonesia</button>
+                <button class="language-item" type="button" data-lang="vi"><span class="flag">🇻🇳</span> Tiếng Việt</button>
+                <button class="language-item" type="button" data-lang="nl"><span class="flag">🇳🇱</span> Nederlands</button>
+                <button class="language-item" type="button" data-lang="th"><span class="flag">🇹🇭</span> ไทย</button>
+              </div>
+            </div>
           </div>
+
+          <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
+            <span class="toggle-icon-wrap">
+              <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </span>
+          </button>
+
+          <a class="nav-cta" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download</span>
+          </a>
+
+          <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+          </button>
         </div>
-      </div>
+      </nav>
     </header>
 
+    <!-- Mobile Drawer Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-body">
+        <div class="mobile-nav-links">
+          <a href="#features" class="mobile-nav-link" data-i18n="nav.features">Features</a>
+          <a href="#demo" class="mobile-nav-link">Live Demo</a>
+          <a href="#themes" class="mobile-nav-link" data-i18n="nav.themes">Themes</a>
+          <a href="#identity" class="mobile-nav-link">Experience</a>
+          <a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a>
+          <a href="privacy.html" class="mobile-nav-link" data-i18n="nav.privacy">Privacy Policy</a>
+          <a href="terms.html" class="mobile-nav-link" data-i18n="nav.terms">Terms of Service</a>
+        </div>
+        <div class="mobile-menu-footer">
+          <a class="btn btn-primary btn-full" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener" data-i18n="store.button">
+            Get it on Play Store
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Container -->
     <main>
+      <!-- Hero Section -->
+      <section class="hero" id="hero">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="pill">
+              <span class="pulse-dot"></span>
+              <span data-i18n="hero.pill">✨ New themes • 2026 redesign</span>
+            </div>
+
+            <div class="hero-badges">
+              <span data-i18n="hero.badge1">⚡ Lightning fast</span>
+              <span data-i18n="hero.badge2">🎨 Bold customization</span>
+              <span data-i18n="hero.badge3">🔒 Privacy-first</span>
+            </div>
+
+            <h1>
+              <span data-i18n="hero.title" class="gradient-text">Type faster. Look bolder. Own your keyboard.</span>
+            </h1>
+
+            <p data-i18n="hero.description">
+              RCKeyBoard is a premium Android keyboard built for speed, privacy, and deep personalization.
+              It combines intelligent typing, custom themes, multilingual tools, and a polished experience designed for everyday power users.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-glow" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener" data-i18n="hero.install">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.53 1.53 0 0 1-.61-1.222V3.036c0-.476.223-.915.609-1.222zm11.6 8.772l2.673-1.543-2.673-1.543L12.58 10.586l2.629 2.628v-2.628zM4.774.887l10.285 5.938-2.479 2.479L4.774.887zm0 22.226l7.806-7.806 2.479 2.479L4.774 23.113z"/></svg>
+                Install Now
+              </a>
+              <a class="btn btn-secondary" href="#demo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                Try Live Simulator
+              </a>
+            </div>
+
+            <div class="stats">
+              <div class="stat-card reveal">
+                <div class="stat-icon">📥</div>
+                <div class="stat-content">
+                  <strong>100K+</strong>
+                  <span data-i18n="stats.installs">installs</span>
+                </div>
+              </div>
+              <div class="stat-card reveal">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-content">
+                  <strong>4.5★</strong>
+                  <span data-i18n="stats.rating">average rating</span>
+                </div>
+              </div>
+              <div class="stat-card reveal">
+                <div class="stat-icon">🌐</div>
+                <div class="stat-content">
+                  <strong>16+</strong>
+                  <span data-i18n="stats.languages">languages</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="phone-card-wrap">
+              <div class="phone-glow-aura"></div>
+              <div class="phone-card">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <img src="src/images/rckeyboard.webp" alt="RCKeyBoard preview" loading="eager" width="340" height="680" />
+                </div>
+              </div>
+              <!-- Floating Highlight Badges -->
+              <div class="floating-badge badge-1">
+                <span>⚡ Smart Autocorrect</span>
+              </div>
+              <div class="floating-badge badge-2">
+                <span>🎨 50+ Custom Themes</span>
+              </div>
+              <div class="floating-badge badge-3">
+                <span>🔒 100% Offline Privacy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Live Keyboard Simulator Section -->
+      <section class="demo-section" id="demo">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Interactive Simulator</p>
+          <h2>Try RCKeyBoard directly in your browser</h2>
+          <p class="section-subtext">Select a theme preset and type inside the test input box below to experience RCKeyBoard's sleek interface live.</p>
+        </div>
+
+        <div class="simulator-wrapper reveal">
+          <div class="simulator-header">
+            <div class="simulator-controls">
+              <span class="sim-dot red"></span>
+              <span class="sim-dot yellow"></span>
+              <span class="sim-dot green"></span>
+            </div>
+            <div class="simulator-title">RCKeyBoard v2026 — Live Interactive Demo</div>
+            <div class="theme-selector-pills">
+              <button class="sim-theme-btn active" data-theme="amoled">Amoled Dark</button>
+              <button class="sim-theme-btn" data-theme="avocado">Avocado</button>
+              <button class="sim-theme-btn" data-theme="pink">Pink Check</button>
+              <button class="sim-theme-btn" data-theme="minecraft">Minecraft</button>
+              <button class="sim-theme-btn" data-theme="cute">Cute Cat</button>
+              <button class="sim-theme-btn" data-theme="light">Classic Light</button>
+            </div>
+          </div>
+
+          <div class="simulator-screen theme-amoled" id="keyboard-simulator">
+            <div class="sim-input-box">
+              <label for="sim-input" class="sim-label">Test Typing Area:</label>
+              <div class="sim-input-wrapper">
+                <input type="text" id="sim-input" placeholder="Type here to test RCKeyBoard..." value="Typing with RCKeyBoard is lightning fast! 🚀" />
+                <button class="sim-clear-btn" id="sim-clear" title="Clear text">✕</button>
+              </div>
+            </div>
+
+            <!-- Simulated Keyboard Frame -->
+            <div class="sim-keyboard-frame">
+              <!-- Suggestions Bar -->
+              <div class="sim-suggestions">
+                <span class="sim-suggestion active-suggestion">RCKeyBoard</span>
+                <span class="sim-suggestion">awesome</span>
+                <span class="sim-suggestion">keyboard</span>
+                <span class="sim-suggestion">themes</span>
+              </div>
+
+              <!-- Keyboard Keys Layout -->
+              <div class="sim-keys-rows">
+                <div class="sim-row">
+                  <button class="key">q</button><button class="key">w</button><button class="key">e</button><button class="key">r</button><button class="key">t</button><button class="key">y</button><button class="key">u</button><button class="key">i</button><button class="key">o</button><button class="key">p</button>
+                </div>
+                <div class="sim-row indent">
+                  <button class="key">a</button><button class="key">s</button><button class="key">d</button><button class="key">f</button><button class="key">g</button><button class="key">h</button><button class="key">j</button><button class="key">k</button><button class="key">l</button>
+                </div>
+                <div class="sim-row">
+                  <button class="key key-shift">⇧</button><button class="key">z</button><button class="key">x</button><button class="key">c</button><button class="key">v</button><button class="key">b</button><button class="key">n</button><button class="key">m</button><button class="key key-backspace">⌫</button>
+                </div>
+                <div class="sim-row bottom-row">
+                  <button class="key key-special">?123</button>
+                  <button class="key key-special">🌐</button>
+                  <button class="key key-space">space</button>
+                  <button class="key key-special">.</button>
+                  <button class="key key-enter">↵</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Features Section -->
       <section class="features" id="features">
         <div class="section-heading reveal">
@@ -171,43 +312,48 @@
 
         <div class="feature-grid">
           <article class="feature-card reveal">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v4a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M9 18h6"/><path d="M12 18v4"/><path d="M5 10a7 7 0 0 0 14 0"/></svg>
+            <div class="feature-icon glow-cyan">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v4a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M9 18h6"/><path d="M12 18v4"/><path d="M5 10a7 7 0 0 0 14 0"/></svg>
             </div>
             <h3 data-i18n="features.smart.title">Smart typing</h3>
             <p data-i18n="features.smart.description">Context-aware suggestions, intelligent autocorrect, and fast prediction flow designed to feel natural.</p>
           </article>
+
           <article class="feature-card reveal">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <div class="feature-icon glow-purple">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
             </div>
             <h3 data-i18n="features.voice.title">Voice, trackpad, math</h3>
             <p data-i18n="features.voice.description">Voice input, trackpad-style cursor control, and inline math solving make everyday typing faster.</p>
           </article>
+
           <article class="feature-card reveal">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5z"/><path d="M2 16l4.5-4.5a2.12 2.12 0 0 1 3 0L14 16"/><path d="M14.5 14.5l1-1a2.12 2.12 0 0 1 3 0L22 17"/></svg>
+            <div class="feature-icon glow-rose">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5z"/><path d="M2 16l4.5-4.5a2.12 2.12 0 0 1 3 0L14 16"/><path d="M14.5 14.5l1-1a2.12 2.12 0 0 1 3 0L22 17"/></svg>
             </div>
             <h3 data-i18n="features.custom.title">Deep customization</h3>
             <p data-i18n="features.custom.description">Dynamic theme controls, custom media backgrounds, custom fonts, and adjustable keyboard sizing.</p>
           </article>
+
           <article class="feature-card reveal">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
+            <div class="feature-icon glow-emerald">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
             </div>
             <h3 data-i18n="features.privacy.title">Privacy-first design</h3>
             <p data-i18n="features.privacy.description">Local learning, protected sensitive fields, and a secure clipboard make your data stay safer.</p>
           </article>
+
           <article class="feature-card reveal">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <div class="feature-icon glow-amber">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
             <h3 data-i18n="features.global.title">Global typing</h3>
             <p data-i18n="features.global.description">Support for Arabic, English, Spanish, French, German, Russian, and more with live translation.</p>
           </article>
+
           <article class="feature-card reveal">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
+            <div class="feature-icon glow-blue">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
             </div>
             <h3 data-i18n="features.core.title">Modern Android core</h3>
             <p data-i18n="features.core.description">Built with Kotlin, Room, Coroutines, Coil, and Play integrations for a polished experience.</p>
@@ -215,7 +361,7 @@
         </div>
       </section>
 
-      <!-- Identity Section -->
+      <!-- Identity & Experience Section -->
       <section class="theme-showcase" id="identity">
         <div class="section-heading reveal">
           <p class="eyebrow" data-i18n="identity.heading.eyebrow">Identity & experience</p>
@@ -246,95 +392,291 @@
         </div>
       </section>
 
-      <!-- Themes Section -->
+      <!-- Themes Showcase & Filter Section (ENHANCED THEME CARDS) -->
       <section class="theme-showcase" id="themes">
         <div class="section-heading reveal">
           <p class="eyebrow" data-i18n="theme.heading.eyebrow">Theme library</p>
           <h2 data-i18n="theme.heading.title">Fresh themes made for a premium keyboard experience</h2>
+          <p class="section-subtext">Hover or tap any card to view full previews or test themes live in the interactive simulator.</p>
+        </div>
+
+        <div class="theme-filter-bar reveal">
+          <button class="theme-filter-btn active" data-filter="all">All Themes (8)</button>
+          <button class="theme-filter-btn" data-filter="dark">Dark & Amoled</button>
+          <button class="theme-filter-btn" data-filter="light">Light & Fresh</button>
+          <button class="theme-filter-btn" data-filter="fun">Fun & Gaming</button>
         </div>
 
         <div class="theme-grid">
-          <article class="theme-card reveal">
+          <!-- Amoled Dark -->
+          <article class="theme-card reveal" data-category="dark">
             <div class="theme-media">
+              <div class="theme-top-badge">
+                <span class="badge-pill">🔥 Popular</span>
+                <span class="rating-pill">★ 4.9</span>
+              </div>
               <img src="src/images/amoled_dark.jpg" alt="Amoled dark keyboard theme preview" loading="lazy" />
+              <div class="theme-preview-overlay">
+                <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span>Full View</span>
+                </button>
+                <button class="theme-action-icon try-sim-btn" data-theme="amoled" title="Try in Live Simulator">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  <span>Try Live</span>
+                </button>
+              </div>
             </div>
             <div class="theme-info">
               <div class="theme-tags">
-                <span>Amoled Dark</span>
-                <span>Dark</span>
+                <span class="tag-amoled">Amoled</span>
+                <span>Dark Mode</span>
+                <span>OLED</span>
               </div>
               <h3>Amoled Dark</h3>
-              <p>Deep black surfaces and clean contrast for a focused and modern feel.</p>
+              <p>Deep OLED blacks and high-contrast neon accents for high focus and battery saving.</p>
+              <div class="theme-card-footer">
+                <button class="btn-theme-action try-sim-btn" data-theme="amoled">⚡ Try Live</button>
+                <a class="btn-theme-action get-play-btn" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">Install</a>
+              </div>
             </div>
           </article>
 
-          <article class="theme-card reveal">
+          <!-- Avocado Fresh -->
+          <article class="theme-card reveal" data-category="light">
             <div class="theme-media">
+              <div class="theme-top-badge">
+                <span class="badge-pill">✨ Trending</span>
+                <span class="rating-pill">★ 4.8</span>
+              </div>
               <img src="src/images/avocado.png" alt="Avocado keyboard theme preview" loading="lazy" />
+              <div class="theme-preview-overlay">
+                <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span>Full View</span>
+                </button>
+                <button class="theme-action-icon try-sim-btn" data-theme="avocado" title="Try in Live Simulator">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  <span>Try Live</span>
+                </button>
+              </div>
             </div>
             <div class="theme-info">
               <div class="theme-tags">
-                <span>Avocado</span>
+                <span class="tag-fresh">Avocado</span>
                 <span>Fresh</span>
+                <span>Pastel</span>
               </div>
-              <h3>Avocado</h3>
-              <p>A bright and calm green style with a smooth and playful personality.</p>
+              <h3>Avocado Fresh</h3>
+              <p>A soothing pastel green visual theme with rounded key caps and smooth typing contrast.</p>
+              <div class="theme-card-footer">
+                <button class="btn-theme-action try-sim-btn" data-theme="avocado">⚡ Try Live</button>
+                <a class="btn-theme-action get-play-btn" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">Install</a>
+              </div>
             </div>
           </article>
 
-          <article class="theme-card reveal">
+          <!-- Pink Check -->
+          <article class="theme-card reveal" data-category="fun">
             <div class="theme-media">
+              <div class="theme-top-badge">
+                <span class="badge-pill">💖 Cute</span>
+                <span class="rating-pill">★ 4.9</span>
+              </div>
+              <img src="src/images/pink_check.png" alt="Pink check keyboard theme preview" loading="lazy" />
+              <div class="theme-preview-overlay">
+                <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span>Full View</span>
+                </button>
+                <button class="theme-action-icon try-sim-btn" data-theme="pink" title="Try in Live Simulator">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  <span>Try Live</span>
+                </button>
+              </div>
+            </div>
+            <div class="theme-info">
+              <div class="theme-tags">
+                <span class="tag-cute">Pink Check</span>
+                <span>Grid</span>
+                <span>Aesthetic</span>
+              </div>
+              <h3>Pink Check Grid</h3>
+              <p>Stylish pink grid pattern design with subtle neon highlights and custom keycap fonts.</p>
+              <div class="theme-card-footer">
+                <button class="btn-theme-action try-sim-btn" data-theme="pink">⚡ Try Live</button>
+                <a class="btn-theme-action get-play-btn" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">Install</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Minecraft -->
+          <article class="theme-card reveal" data-category="fun">
+            <div class="theme-media">
+              <div class="theme-top-badge">
+                <span class="badge-pill">🎮 Gaming</span>
+                <span class="rating-pill">★ 5.0</span>
+              </div>
+              <img src="src/images/minecraft.png" alt="Minecraft keyboard theme preview" loading="lazy" />
+              <div class="theme-preview-overlay">
+                <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span>Full View</span>
+                </button>
+                <button class="theme-action-icon try-sim-btn" data-theme="minecraft" title="Try in Live Simulator">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  <span>Try Live</span>
+                </button>
+              </div>
+            </div>
+            <div class="theme-info">
+              <div class="theme-tags">
+                <span class="tag-gaming">Minecraft</span>
+                <span>Pixel Art</span>
+                <span>Bold</span>
+              </div>
+              <h3>Minecraft Gamer</h3>
+              <p>Blocky 8-bit aesthetic with strong green/earth tones designed for gaming enthusiasts.</p>
+              <div class="theme-card-footer">
+                <button class="btn-theme-action try-sim-btn" data-theme="minecraft">⚡ Try Live</button>
+                <a class="btn-theme-action get-play-btn" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">Install</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cute Cat -->
+          <article class="theme-card reveal" data-category="fun">
+            <div class="theme-media">
+              <div class="theme-top-badge">
+                <span class="badge-pill">🐾 Kawaii</span>
+                <span class="rating-pill">★ 4.9</span>
+              </div>
+              <img src="src/images/cute_cat.png" alt="Cute cat keyboard theme preview" loading="lazy" />
+              <div class="theme-preview-overlay">
+                <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span>Full View</span>
+                </button>
+                <button class="theme-action-icon try-sim-btn" data-theme="cute" title="Try in Live Simulator">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  <span>Try Live</span>
+                </button>
+              </div>
+            </div>
+            <div class="theme-info">
+              <div class="theme-tags">
+                <span class="tag-cute">Cute Cat</span>
+                <span>Playful</span>
+                <span>Warm</span>
+              </div>
+              <h3>Cute Cat Meow</h3>
+              <p>A charming feline illustration theme that brings warmth and personality to every message.</p>
+              <div class="theme-card-footer">
+                <button class="btn-theme-action try-sim-btn" data-theme="cute">⚡ Try Live</button>
+                <a class="btn-theme-action get-play-btn" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">Install</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Penguin Elite -->
+          <article class="theme-card reveal" data-category="dark">
+            <div class="theme-media">
+              <div class="theme-top-badge">
+                <span class="badge-pill">👑 Premium</span>
+                <span class="rating-pill">★ 4.9</span>
+              </div>
+              <img src="src/images/penguin_elite.png" alt="Penguin elite keyboard theme preview" loading="lazy" />
+              <div class="theme-preview-overlay">
+                <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span>Full View</span>
+                </button>
+                <button class="theme-action-icon try-sim-btn" data-theme="amoled" title="Try in Live Simulator">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  <span>Try Live</span>
+                </button>
+              </div>
+            </div>
+            <div class="theme-info">
+              <div class="theme-tags">
+                <span class="tag-premium">Penguin Elite</span>
+                <span>Pro</span>
+                <span>Navy</span>
+              </div>
+              <h3>Penguin Elite</h3>
+              <p>Sleek midnight blue surfaces with polished glowing keys for business and power typing.</p>
+              <div class="theme-card-footer">
+                <button class="btn-theme-action try-sim-btn" data-theme="amoled">⚡ Try Live</button>
+                <a class="btn-theme-action get-play-btn" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">Install</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Penguin Blue -->
+          <article class="theme-card reveal" data-category="dark">
+            <div class="theme-media">
+              <div class="theme-top-badge">
+                <span class="badge-pill">❄️ Cool</span>
+                <span class="rating-pill">★ 4.7</span>
+              </div>
+              <img src="src/images/Penguin.jpeg" alt="Penguin blue keyboard theme preview" loading="lazy" />
+              <div class="theme-preview-overlay">
+                <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span>Full View</span>
+                </button>
+                <button class="theme-action-icon try-sim-btn" data-theme="amoled" title="Try in Live Simulator">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  <span>Try Live</span>
+                </button>
+              </div>
+            </div>
+            <div class="theme-info">
+              <div class="theme-tags">
+                <span class="tag-amoled">Penguin Blue</span>
+                <span>Clean</span>
+                <span>Minimal</span>
+              </div>
+              <h3>Penguin Classic</h3>
+              <p>Deep ice blue tones with minimal key borders for clean visibility in any lighting.</p>
+              <div class="theme-card-footer">
+                <button class="btn-theme-action try-sim-btn" data-theme="amoled">⚡ Try Live</button>
+                <a class="btn-theme-action get-play-btn" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">Install</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Classic Light -->
+          <article class="theme-card reveal" data-category="light">
+            <div class="theme-media">
+              <div class="theme-top-badge">
+                <span class="badge-pill">☀️ Day Mode</span>
+                <span class="rating-pill">★ 4.8</span>
+              </div>
               <img src="src/images/classic_light.jpg" alt="Classic light keyboard theme preview" loading="lazy" />
+              <div class="theme-preview-overlay">
+                <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span>Full View</span>
+                </button>
+                <button class="theme-action-icon try-sim-btn" data-theme="light" title="Try in Live Simulator">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  <span>Try Live</span>
+                </button>
+              </div>
             </div>
             <div class="theme-info">
               <div class="theme-tags">
                 <span>Classic Light</span>
-                <span>Light</span>
+                <span>Minimalist</span>
+                <span>Clean</span>
               </div>
               <h3>Classic Light</h3>
-              <p>Clean light tones and simple styling for a sharp everyday keyboard look.</p>
-            </div>
-          </article>
-
-          <article class="theme-card reveal">
-            <div class="theme-media">
-              <img src="src/images/cute_cat.png" alt="Cute cat keyboard theme preview" loading="lazy" />
-            </div>
-            <div class="theme-info">
-              <div class="theme-tags">
-                <span>Cute Cat</span>
-                <span>Fun</span>
+              <p>Clean daylight interface with crisp contrast and high legibility under direct sunlight.</p>
+              <div class="theme-card-footer">
+                <button class="btn-theme-action try-sim-btn" data-theme="light">⚡ Try Live</button>
+                <a class="btn-theme-action get-play-btn" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">Install</a>
               </div>
-              <h3>Cute Cat</h3>
-              <p>A charming and friendly look that adds personality without losing clarity.</p>
-            </div>
-          </article>
-
-          <article class="theme-card reveal">
-            <div class="theme-media">
-              <img src="src/images/minecraft.png" alt="Minecraft keyboard theme preview" loading="lazy" />
-            </div>
-            <div class="theme-info">
-              <div class="theme-tags">
-                <span>Minecraft</span>
-                <span>Bold</span>
-              </div>
-              <h3>Minecraft</h3>
-              <p>Blocky and strong colors that feel playful, direct, and memorable.</p>
-            </div>
-          </article>
-
-          <article class="theme-card reveal">
-            <div class="theme-media">
-              <img src="src/images/penguin_elite.png" alt="Penguin elite keyboard theme preview" loading="lazy" />
-            </div>
-            <div class="theme-info">
-              <div class="theme-tags">
-                <span>Penguin Elite</span>
-                <span>Premium</span>
-              </div>
-              <h3>Penguin Elite</h3>
-              <p>A polished and stylish theme with bold shapes and a premium finish.</p>
             </div>
           </article>
         </div>
@@ -348,9 +690,18 @@
         </div>
 
         <div class="gallery-grid">
-          <img class="reveal" src="src/images/Penguin.jpeg" alt="Penguin keyboard preview" loading="lazy" />
-          <img class="reveal" src="src/images/pink_check.png" alt="Pink check keyboard preview" loading="lazy" />
-          <img class="reveal" src="src/images/amoled_dark.jpg" alt="Amoled dark keyboard preview" loading="lazy" />
+          <div class="gallery-item reveal">
+            <img src="src/images/Penguin.jpeg" alt="Penguin keyboard preview" loading="lazy" />
+            <div class="gallery-caption">Penguin Blue Theme</div>
+          </div>
+          <div class="gallery-item reveal">
+            <img src="src/images/pink_check.png" alt="Pink check keyboard preview" loading="lazy" />
+            <div class="gallery-caption">Pink Check Grid</div>
+          </div>
+          <div class="gallery-item reveal">
+            <img src="src/images/amoled_dark.jpg" alt="Amoled dark keyboard preview" loading="lazy" />
+            <div class="gallery-caption">Amoled OLED Contrast</div>
+          </div>
         </div>
       </section>
 
@@ -361,22 +712,23 @@
             <p class="eyebrow">Play Store</p>
             <h2>See the full app listing and install in seconds</h2>
             <p>RCKeyBoard is designed to feel premium from the first tap, whether you want faster typing, custom styling, or a cleaner keyboard experience.</p>
-            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
+            <a class="btn btn-primary btn-glow" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.53 1.53 0 0 1-.61-1.222V3.036c0-.476.223-.915.609-1.222zm11.6 8.772l2.673-1.543-2.673-1.543L12.58 10.586l2.629 2.628v-2.628zM4.774.887l10.285 5.938-2.479 2.479L4.774.887zm0 22.226l7.806-7.806 2.479 2.479L4.774 23.113z"/></svg>
               Open in Play Store
             </a>
           </div>
           <div class="preview-frame">
             <div class="store-card">
               <div class="store-top">
-                <img src="src/images/logo.webp" alt="RCKeyBoard app icon" />
+                <img src="src/images/logo.webp" alt="RCKeyBoard app icon" width="56" height="56" />
                 <div>
                   <h3 data-i18n="store.name">RCKeyBoard</h3>
                   <p data-i18n="store.subtitle">Premium Android Keyboard</p>
                 </div>
               </div>
-              <div class="store-rating">★★★★★ 4.5</div>
+              <div class="store-rating">★★★★★ <span>4.5</span></div>
               <div class="store-stats" data-i18n="store.stats">100K+ downloads • Privacy-first • Multilingual</div>
-              <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener" data-i18n="store.button">
+              <a class="btn btn-primary btn-full" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener" data-i18n="store.button">
                 Get it on Play Store
               </a>
             </div>
@@ -385,17 +737,41 @@
       </section>
     </main>
 
+    <!-- Theme Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true">
+      <div class="lightbox-backdrop"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close" title="Close preview">✕</button>
+        <div class="lightbox-image-wrap">
+          <img id="lightbox-img" src="" alt="Theme high resolution preview" />
+        </div>
+        <div class="lightbox-caption">
+          <h3 id="lightbox-title">Theme Title</h3>
+          <p id="lightbox-desc">Theme description goes here</p>
+          <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">Install Theme on Play Store</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back To Top Button -->
+    <button class="back-to-top" id="back-to-top" title="Back to top" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-shell">
         <div class="footer-brand">
-          <strong>RCKeyBoard</strong>
+          <div class="footer-logo">
+            <img src="src/images/logo.webp" alt="RCKeyBoard Logo" width="32" height="32" />
+            <strong>RCKeyBoard</strong>
+          </div>
           <span data-i18n="footer.brand">Premium keyboard experience for Android.</span>
         </div>
         <div class="footer-links">
           <a href="about.html" data-i18n="footer.about">About Us</a>
           <a href="index.html#features" data-i18n="footer.features">Features</a>
-          <a href="index.html" data-i18n="footer.themes">Themes</a>
+          <a href="index.html#themes" data-i18n="footer.themes">Themes</a>
           <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
           <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
           <a href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener" data-i18n="footer.store">Play Store</a>

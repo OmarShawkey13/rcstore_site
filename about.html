@@ -11,13 +11,13 @@
     <meta name="keywords" content="Android keyboard, smart typing, custom themes, privacy-first keyboard, multilingual keyboard, RCKeyBoard" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="RCKeyBoard" />
-    <link rel="canonical" href="https://rcmods.online/about.html" />
+    <link rel="canonical" href="https://rcmods.online/" />
 
     <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="About Us — RCKeyBoard" />
+    <meta property="og:title" content="RCKeyBoard — Premium Android Keyboard" />
     <meta property="og:description" content="RCKeyBoard is a premium Android keyboard app with smart predictions, custom themes, multilingual support, and privacy-first performance." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rcmods.online/about.html" />
+    <meta property="og:url" content="https://rcmods.online/" />
     <meta property="og:image" content="https://rcmods.online/src/images/rckeyboard.webp" />
     <meta property="og:image:alt" content="RCKeyBoard keyboard preview" />
     <meta property="og:image:width" content="1200" />
@@ -26,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@RCKeyBoardApp" />
     <meta name="twitter:creator" content="@RCKeyBoardApp" />
-    <meta name="twitter:title" content="About Us — RCKeyBoard" />
+    <meta name="twitter:title" content="RCKeyBoard — Premium Android Keyboard" />
     <meta name="twitter:description" content="RCKeyBoard is a premium Android keyboard app with smart predictions, custom themes, multilingual support, and privacy-first performance." />
     <meta name="twitter:image" content="https://rcmods.online/src/images/rckeyboard.webp" />
 
@@ -34,11 +34,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/styles/main.css" />
-    <meta name="theme-color" content="#050816" />
+    <meta name="theme-color" content="#060814" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -53,104 +53,204 @@
     </script>
   </head>
   <body>
+    <!-- Ambient Background Gradients & Mesh -->
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-grid-overlay"></div>
 
-    <nav class="topbar" id="main-nav">
-      <a class="brand" href="index.html">
-        <img src="src/images/logo.webp" alt="RCKeyBoard logo" />
-        <span>RCKeyBoard</span>
-      </a>
-      <div class="nav-links">
-        <a href="index.html#features" class="nav-link" data-i18n="nav.features">Features</a>
-        <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
-      </div>
-      <div class="nav-actions">
-        <div class="language-selector">
-          <button class="language-toggle" type="button" aria-label="Open language selector">
-            <span class="language-icon">🌐</span>
-            <span class="language-label">EN</span>
-          </button>
-          <div class="language-menu" aria-hidden="true">
-            <button class="language-item" type="button" data-lang="en">English</button>
-            <button class="language-item" type="button" data-lang="ar">العربية</button>
-            <button class="language-item" type="button" data-lang="es">Español</button>
-            <button class="language-item" type="button" data-lang="fr">Français</button>
-            <button class="language-item" type="button" data-lang="de">Deutsch</button>
-            <button class="language-item" type="button" data-lang="ru">Русский</button>
-            <button class="language-item" type="button" data-lang="pt">Português</button>
-            <button class="language-item" type="button" data-lang="hi">हिन्दी</button>
-            <button class="language-item" type="button" data-lang="tr">Türkçe</button>
-            <button class="language-item" type="button" data-lang="ur">اردو</button>
-            <button class="language-item" type="button" data-lang="ja">日本語</button>
-            <button class="language-item" type="button" data-lang="zh">中文</button>
-            <button class="language-item" type="button" data-lang="it">Italiano</button>
-            <button class="language-item" type="button" data-lang="ko">한국어</button>
-            <button class="language-item" type="button" data-lang="id">Bahasa Indonesia</button>
-            <button class="language-item" type="button" data-lang="vi">Tiếng Việt</button>
-            <button class="language-item" type="button" data-lang="nl">Nederlands</button>
-            <button class="language-item" type="button" data-lang="th">ไทย</button>
+    <!-- Header Navigation -->
+    <header class="topbar-wrapper">
+      <nav class="topbar" id="main-nav">
+        <a class="brand" href="index.html" aria-label="RCKeyBoard Homepage">
+          <div class="brand-logo-wrap">
+            <img src="src/images/logo.webp" alt="RCKeyBoard Logo" width="38" height="38" />
+            <span class="brand-glow"></span>
           </div>
-        </div>
-        <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode">
-          <span class="toggle-icon">☀️</span>
-          <span class="toggle-label">Light</span>
-        </button>
-        <a class="nav-cta" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download
+          <span class="brand-name">RCKeyBoard</span>
         </a>
-      </div>
-    </nav>
 
-    <header class="page-header" id="about-header">
-      <h1 data-i18n="about.title">About Us</h1>
-      <p data-i18n="about.subtitle">Learn more about the team behind RCKeyBoard</p>
+        <div class="nav-links">
+          <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
+          <a href="#demo" class="nav-link">Live Demo</a>
+          <a href="#themes" class="nav-link" data-i18n="nav.themes">Themes</a>
+          <a href="#identity" class="nav-link">Experience</a>
+          <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
+        </div>
+
+        <div class="nav-actions">
+          <div class="language-selector">
+            <button class="language-toggle" type="button" aria-label="Open language selector">
+              <svg class="language-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span class="language-label">EN</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="language-menu" aria-hidden="true">
+              <div class="language-menu-header">Select Language</div>
+              <div class="language-menu-list">
+                <button class="language-item" type="button" data-lang="en"><span class="flag">🇺🇸</span> English</button>
+                <button class="language-item" type="button" data-lang="ar"><span class="flag">🇸🇦</span> العربية</button>
+                <button class="language-item" type="button" data-lang="es"><span class="flag">🇪🇸</span> Español</button>
+                <button class="language-item" type="button" data-lang="fr"><span class="flag">🇫🇷</span> Français</button>
+                <button class="language-item" type="button" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</button>
+                <button class="language-item" type="button" data-lang="ru"><span class="flag">🇷🇺</span> Русский</button>
+                <button class="language-item" type="button" data-lang="pt"><span class="flag">🇧🇷</span> Português</button>
+                <button class="language-item" type="button" data-lang="hi"><span class="flag">🇮🇳</span> हिन्दी</button>
+                <button class="language-item" type="button" data-lang="tr"><span class="flag">🇹🇷</span> Türkçe</button>
+                <button class="language-item" type="button" data-lang="ja"><span class="flag">🇯🇵</span> 日本語</button>
+                <button class="language-item" type="button" data-lang="zh"><span class="flag">🇨🇳</span> 中文</button>
+                <button class="language-item" type="button" data-lang="id"><span class="flag">🇮🇩</span> Bahasa Indonesia</button>
+                <button class="language-item" type="button" data-lang="vi"><span class="flag">🇻🇳</span> Tiếng Việt</button>
+                <button class="language-item" type="button" data-lang="nl"><span class="flag">🇳🇱</span> Nederlands</button>
+                <button class="language-item" type="button" data-lang="th"><span class="flag">🇹🇭</span> ไทย</button>
+              </div>
+            </div>
+          </div>
+
+          <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
+            <span class="toggle-icon-wrap">
+              <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </span>
+          </button>
+
+          <a class="nav-cta" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download</span>
+          </a>
+
+          <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+          </button>
+        </div>
+      </nav>
     </header>
 
-    <main class="page-content" id="about-content">
-      <section id="about-intro">
-        <div class="content-card reveal">
-          <p data-i18n="about.intro_text">RCKeyBoard is a premium Android keyboard app with smart predictions, custom themes, multilingual support, and privacy-first performance. Our mission is to provide the best typing experience on Android devices, prioritizing user privacy and extensive customization.</p>
+    <!-- Mobile Drawer Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-body">
+        <div class="mobile-nav-links">
+          <a href="#features" class="mobile-nav-link" data-i18n="nav.features">Features</a>
+          <a href="#demo" class="mobile-nav-link">Live Demo</a>
+          <a href="#themes" class="mobile-nav-link" data-i18n="nav.themes">Themes</a>
+          <a href="#identity" class="mobile-nav-link">Experience</a>
+          <a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a>
+          <a href="privacy.html" class="mobile-nav-link" data-i18n="nav.privacy">Privacy Policy</a>
+          <a href="terms.html" class="mobile-nav-link" data-i18n="nav.terms">Terms of Service</a>
         </div>
+        <div class="mobile-menu-footer">
+          <a class="btn btn-primary btn-full" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener" data-i18n="store.button">
+            Get it on Play Store
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main>
+      <section class="page-header reveal">
+        <div class="breadcrumb-wrap">
+          <a href="index.html" class="pill breadcrumb-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>Back to Home</span>
+          </a>
+        </div>
+        <h1><span class="gradient-text">About Us</span></h1>
+        <p class="page-subtitle">Learn about RCKeyBoard, our mission, performance engineering, and privacy commitment.</p>
       </section>
 
-      <section id="about-identity">
-        <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-          <article class="content-card reveal">
-            <div class="icon">🎯</div>
-            <h3 data-i18n="about.mission_title">Mission</h3>
-            <p data-i18n="about.mission_desc">To deliver the most responsive and customizable typing experience on Android.</p>
-          </article>
-          <article class="content-card reveal">
-            <div class="icon">👁️</div>
-            <h3 data-i18n="about.vision_title">Vision</h3>
-            <p data-i18n="about.vision_desc">A world where every user owns their digital expressions securely.</p>
-          </article>
-          <article class="content-card reveal">
-            <div class="icon">💎</div>
-            <h3 data-i18n="about.values_title">Values</h3>
-            <p data-i18n="about.values_desc">Privacy, speed, inclusivity, and continuous innovation.</p>
-          </article>
-          <article class="content-card reveal">
-            <div class="icon">👥</div>
-            <h3 data-i18n="about.team_title">Team</h3>
-            <p data-i18n="about.team_desc">Passionate developers dedicated to improving mobile communication.</p>
-          </article>
-        </div>
+      <section class="page-content reveal">
+        
+  <div class="subpage-hero-card">
+    <div class="subpage-badge">🏆 Premium Android IME</div>
+    <h2>Reinventing Mobile Communication for Everyone</h2>
+    <p>RCKeyBoard was built with a clear mission: to provide Android users with a hyper-responsive, privacy-first typing experience that looks stunning and feels effortless. Combining machine learning predictions with deep aesthetic customization, RCKeyBoard empowers power users to type faster while maintaining complete data ownership.</p>
+  </div>
+
+  <div class="content-grid bento-subpage">
+    <div class="subpage-card">
+      <div class="card-icon glow-cyan">⚡</div>
+      <h3>Lightning-Fast Performance</h3>
+      <p>Built using Kotlin and modern Coroutines, RCKeyBoard executes under 5ms latency per keypress, ensuring fluid input even on budget devices.</p>
+    </div>
+    <div class="subpage-card">
+      <div class="card-icon glow-purple">🎨</div>
+      <h3>Unlimited Customization</h3>
+      <p>Choose from over 50 curated themes (Amoled, Avocado, Pink Check, Minecraft, Cute Cat) or build your own custom background with custom key fonts and height sizing.</p>
+    </div>
+    <div class="subpage-card">
+      <div class="card-icon glow-emerald">🔒</div>
+      <h3>Privacy By Design</h3>
+      <p>Your typing dictionary and language models stay 100% local on your Android device. Zero key logging, zero remote tracking, zero telemetry on sensitive fields.</p>
+    </div>
+    <div class="subpage-card">
+      <div class="card-icon glow-rose">🌍</div>
+      <h3>Global Expressiveness</h3>
+      <p>Supporting over 16 languages including Arabic, English, Spanish, French, German, Russian, Portuguese, Hindi, Turkish, and more with integrated live translation tools.</p>
+    </div>
+  </div>
+
+  <div class="subpage-section-card">
+    <h3>Modern Engineering Architecture</h3>
+    <p>RCKeyBoard leverages Android's Input Method Editor (IME) architecture powered by modern Jetpack libraries, Room DB for encrypted local dictionary storage, and Coil for instant image rendering.</p>
+    <div class="tech-tags">
+      <span class="tech-tag">Kotlin</span>
+      <span class="tech-tag">Android IME</span>
+      <span class="tech-tag">Coroutines</span>
+      <span class="tech-tag">Room Encryption</span>
+      <span class="tech-tag">Play Services</span>
+      <span class="tech-tag">Local ML</span>
+    </div>
+  </div>
+
+  <div class="subpage-cta-card">
+    <h3>Ready to transform your typing?</h3>
+    <p>Download RCKeyBoard for Android today and join over 100,000 satisfied typists worldwide.</p>
+    <a class="btn btn-primary btn-glow" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
+      Download on Google Play
+    </a>
+  </div>
+
       </section>
     </main>
 
+    <!-- Theme Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true">
+      <div class="lightbox-backdrop"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close" title="Close preview">✕</button>
+        <div class="lightbox-image-wrap">
+          <img id="lightbox-img" src="" alt="Theme high resolution preview" />
+        </div>
+        <div class="lightbox-caption">
+          <h3 id="lightbox-title">Theme Title</h3>
+          <p id="lightbox-desc">Theme description goes here</p>
+          <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">Install Theme on Play Store</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back To Top Button -->
+    <button class="back-to-top" id="back-to-top" title="Back to top" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-shell">
         <div class="footer-brand">
-          <strong>RCKeyBoard</strong>
+          <div class="footer-logo">
+            <img src="src/images/logo.webp" alt="RCKeyBoard Logo" width="32" height="32" />
+            <strong>RCKeyBoard</strong>
+          </div>
           <span data-i18n="footer.brand">Premium keyboard experience for Android.</span>
         </div>
         <div class="footer-links">
           <a href="about.html" data-i18n="footer.about">About Us</a>
           <a href="index.html#features" data-i18n="footer.features">Features</a>
-          <a href="index.html" data-i18n="footer.themes">Themes</a>
+          <a href="index.html#themes" data-i18n="footer.themes">Themes</a>
           <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
           <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
           <a href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener" data-i18n="footer.store">Play Store</a>

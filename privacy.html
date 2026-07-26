@@ -6,18 +6,18 @@
     <title>Privacy Policy — RCKeyBoard</title>
     <meta
       name="description"
-      content="Privacy Policy for RCKeyBoard. We prioritize user privacy and secure data handling."
+      content="RCKeyBoard is a premium Android keyboard app with smart predictions, custom themes, multilingual support, and privacy-first performance."
     />
-    <meta name="keywords" content="Privacy policy, Android keyboard privacy, RCKeyBoard privacy" />
+    <meta name="keywords" content="Android keyboard, smart typing, custom themes, privacy-first keyboard, multilingual keyboard, RCKeyBoard" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="RCKeyBoard" />
-    <link rel="canonical" href="https://rcmods.online/privacy.html" />
+    <link rel="canonical" href="https://rcmods.online/" />
 
     <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="Privacy Policy — RCKeyBoard" />
-    <meta property="og:description" content="Privacy Policy for RCKeyBoard. We prioritize user privacy and secure data handling." />
+    <meta property="og:title" content="RCKeyBoard — Premium Android Keyboard" />
+    <meta property="og:description" content="RCKeyBoard is a premium Android keyboard app with smart predictions, custom themes, multilingual support, and privacy-first performance." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rcmods.online/privacy.html" />
+    <meta property="og:url" content="https://rcmods.online/" />
     <meta property="og:image" content="https://rcmods.online/src/images/rckeyboard.webp" />
     <meta property="og:image:alt" content="RCKeyBoard keyboard preview" />
     <meta property="og:image:width" content="1200" />
@@ -26,19 +26,19 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@RCKeyBoardApp" />
     <meta name="twitter:creator" content="@RCKeyBoardApp" />
-    <meta name="twitter:title" content="Privacy Policy — RCKeyBoard" />
-    <meta name="twitter:description" content="Privacy Policy for RCKeyBoard. We prioritize user privacy and secure data handling." />
+    <meta name="twitter:title" content="RCKeyBoard — Premium Android Keyboard" />
+    <meta name="twitter:description" content="RCKeyBoard is a premium Android keyboard app with smart predictions, custom themes, multilingual support, and privacy-first performance." />
     <meta name="twitter:image" content="https://rcmods.online/src/images/rckeyboard.webp" />
 
     <link rel="icon" href="src/images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/styles/main.css" />
-    <meta name="theme-color" content="#050816" />
+    <meta name="theme-color" content="#060814" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -53,100 +53,203 @@
     </script>
   </head>
   <body>
+    <!-- Ambient Background Gradients & Mesh -->
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-grid-overlay"></div>
 
-    <nav class="topbar" id="main-nav">
-      <a class="brand" href="index.html">
-        <img src="src/images/logo.webp" alt="RCKeyBoard logo" />
-        <span>RCKeyBoard</span>
-      </a>
-      <div class="nav-links">
-        <a href="index.html#features" class="nav-link" data-i18n="nav.features">Features</a>
-        <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
-      </div>
-      <div class="nav-actions">
-        <div class="language-selector">
-          <button class="language-toggle" type="button" aria-label="Open language selector">
-            <span class="language-icon">🌐</span>
-            <span class="language-label">EN</span>
-          </button>
-          <div class="language-menu" aria-hidden="true">
-            <button class="language-item" type="button" data-lang="en">English</button>
-            <button class="language-item" type="button" data-lang="ar">العربية</button>
-            <button class="language-item" type="button" data-lang="es">Español</button>
-            <button class="language-item" type="button" data-lang="fr">Français</button>
-            <button class="language-item" type="button" data-lang="de">Deutsch</button>
-            <button class="language-item" type="button" data-lang="ru">Русский</button>
-            <button class="language-item" type="button" data-lang="pt">Português</button>
-            <button class="language-item" type="button" data-lang="hi">हिन्दी</button>
-            <button class="language-item" type="button" data-lang="tr">Türkçe</button>
-            <button class="language-item" type="button" data-lang="ur">اردو</button>
-            <button class="language-item" type="button" data-lang="ja">日本語</button>
-            <button class="language-item" type="button" data-lang="zh">中文</button>
-            <button class="language-item" type="button" data-lang="it">Italiano</button>
-            <button class="language-item" type="button" data-lang="ko">한국어</button>
-            <button class="language-item" type="button" data-lang="id">Bahasa Indonesia</button>
-            <button class="language-item" type="button" data-lang="vi">Tiếng Việt</button>
-            <button class="language-item" type="button" data-lang="nl">Nederlands</button>
-            <button class="language-item" type="button" data-lang="th">ไทย</button>
+    <!-- Header Navigation -->
+    <header class="topbar-wrapper">
+      <nav class="topbar" id="main-nav">
+        <a class="brand" href="index.html" aria-label="RCKeyBoard Homepage">
+          <div class="brand-logo-wrap">
+            <img src="src/images/logo.webp" alt="RCKeyBoard Logo" width="38" height="38" />
+            <span class="brand-glow"></span>
           </div>
-        </div>
-        <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode">
-          <span class="toggle-icon">☀️</span>
-          <span class="toggle-label">Light</span>
-        </button>
-        <a class="nav-cta" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download
+          <span class="brand-name">RCKeyBoard</span>
         </a>
-      </div>
-    </nav>
 
-    <header class="page-header" id="privacy-header">
-      <h1 data-i18n="privacy.title">Privacy Policy</h1>
-      <p data-i18n="privacy.subtitle">Your data, your control</p>
+        <div class="nav-links">
+          <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
+          <a href="#demo" class="nav-link">Live Demo</a>
+          <a href="#themes" class="nav-link" data-i18n="nav.themes">Themes</a>
+          <a href="#identity" class="nav-link">Experience</a>
+          <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
+        </div>
+
+        <div class="nav-actions">
+          <div class="language-selector">
+            <button class="language-toggle" type="button" aria-label="Open language selector">
+              <svg class="language-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span class="language-label">EN</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="language-menu" aria-hidden="true">
+              <div class="language-menu-header">Select Language</div>
+              <div class="language-menu-list">
+                <button class="language-item" type="button" data-lang="en"><span class="flag">🇺🇸</span> English</button>
+                <button class="language-item" type="button" data-lang="ar"><span class="flag">🇸🇦</span> العربية</button>
+                <button class="language-item" type="button" data-lang="es"><span class="flag">🇪🇸</span> Español</button>
+                <button class="language-item" type="button" data-lang="fr"><span class="flag">🇫🇷</span> Français</button>
+                <button class="language-item" type="button" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</button>
+                <button class="language-item" type="button" data-lang="ru"><span class="flag">🇷🇺</span> Русский</button>
+                <button class="language-item" type="button" data-lang="pt"><span class="flag">🇧🇷</span> Português</button>
+                <button class="language-item" type="button" data-lang="hi"><span class="flag">🇮🇳</span> हिन्दी</button>
+                <button class="language-item" type="button" data-lang="tr"><span class="flag">🇹🇷</span> Türkçe</button>
+                <button class="language-item" type="button" data-lang="ja"><span class="flag">🇯🇵</span> 日本語</button>
+                <button class="language-item" type="button" data-lang="zh"><span class="flag">🇨🇳</span> 中文</button>
+                <button class="language-item" type="button" data-lang="id"><span class="flag">🇮🇩</span> Bahasa Indonesia</button>
+                <button class="language-item" type="button" data-lang="vi"><span class="flag">🇻🇳</span> Tiếng Việt</button>
+                <button class="language-item" type="button" data-lang="nl"><span class="flag">🇳🇱</span> Nederlands</button>
+                <button class="language-item" type="button" data-lang="th"><span class="flag">🇹🇭</span> ไทย</button>
+              </div>
+            </div>
+          </div>
+
+          <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
+            <span class="toggle-icon-wrap">
+              <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </span>
+          </button>
+
+          <a class="nav-cta" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download</span>
+          </a>
+
+          <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+          </button>
+        </div>
+      </nav>
     </header>
 
-    <main class="page-content" id="privacy-content">
-      <section id="privacy-intro">
-        <div class="content-card reveal">
-          <p data-i18n="privacy.intro_text">Your privacy is important to us. RCKeyBoard does not collect, store, or transmit your personal data without your explicit consent. All learning and prediction processes are performed locally on your device to ensure maximum security. We do not sell data to third parties.</p>
+    <!-- Mobile Drawer Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-body">
+        <div class="mobile-nav-links">
+          <a href="#features" class="mobile-nav-link" data-i18n="nav.features">Features</a>
+          <a href="#demo" class="mobile-nav-link">Live Demo</a>
+          <a href="#themes" class="mobile-nav-link" data-i18n="nav.themes">Themes</a>
+          <a href="#identity" class="mobile-nav-link">Experience</a>
+          <a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a>
+          <a href="privacy.html" class="mobile-nav-link" data-i18n="nav.privacy">Privacy Policy</a>
+          <a href="terms.html" class="mobile-nav-link" data-i18n="nav.terms">Terms of Service</a>
         </div>
+        <div class="mobile-menu-footer">
+          <a class="btn btn-primary btn-full" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener" data-i18n="store.button">
+            Get it on Play Store
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main>
+      <section class="page-header reveal">
+        <div class="breadcrumb-wrap">
+          <a href="index.html" class="pill breadcrumb-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>Back to Home</span>
+          </a>
+        </div>
+        <h1><span class="gradient-text">Privacy Policy</span></h1>
+        <p class="page-subtitle">Your privacy is guaranteed. Read our complete offline local processing policy.</p>
       </section>
 
-      <section id="privacy-details">
-        <div class="feature-grid" style="grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem;">
-          <article class="content-card reveal">
-            <h3 data-i18n="privacy.collection_title">Data Collection</h3>
-            <p data-i18n="privacy.collection_desc">RCKeyBoard does not collect personal typing data. All predictions and learning happen locally on your device.</p>
-          </article>
-          <article class="content-card reveal">
-            <h3 data-i18n="privacy.storage_title">Data Storage</h3>
-            <p data-i18n="privacy.storage_desc">No keystroke data is stored on external servers. Your typing patterns remain private.</p>
-          </article>
-          <article class="content-card reveal">
-            <h3 data-i18n="privacy.third_party_title">Third Parties</h3>
-            <p data-i18n="privacy.third_party_desc">We do not share any user data with third parties. Your privacy is our priority.</p>
-          </article>
-          <article class="content-card reveal">
-            <h3 data-i18n="privacy.rights_title">Your Rights</h3>
-            <p data-i18n="privacy.rights_desc">You can clear all local learning data at any time through the app settings.</p>
-          </article>
-        </div>
+      <section class="page-content reveal">
+        
+  <div class="subpage-hero-card">
+    <div class="subpage-badge">🛡️ Privacy Commitment</div>
+    <h2>Your Data Remains Yours. Period.</h2>
+    <p class="effective-date">Effective Date: July 27, 2026 • Version 2.4</p>
+    <p>At RCKeyBoard, we believe your keystrokes are deeply personal. Whether you're typing private messages, passwords, or financial information, our application is engineered so that your data never leaves your device.</p>
+  </div>
+
+  <div class="policy-sections-wrapper">
+    <article class="policy-card">
+      <div class="policy-header">
+        <span class="policy-num">01</span>
+        <h3>Zero Keystroke Logging</h3>
+      </div>
+      <p>RCKeyBoard does <strong>NOT</strong> collect, record, or transmit typed text, passwords, credit card numbers, address book contacts, or search queries to any remote servers or third parties. All text predictions and autocorrect operations execute entirely in your device's local memory.</p>
+    </article>
+
+    <article class="policy-card">
+      <div class="policy-header">
+        <span class="policy-num">02</span>
+        <h3>Local Machine Learning & Dictionaries</h3>
+      </div>
+      <p>When RCKeyBoard learns your typing habits and vocabulary, the resulting personal dictionary is saved exclusively in encrypted local app storage on your device. You can clear or reset your learned dictionary data at any time directly through the RCKeyBoard settings menu.</p>
+    </article>
+
+    <article class="policy-card">
+      <div class="policy-header">
+        <span class="policy-num">03</span>
+        <h3>Permissions & Network Access</h3>
+      </div>
+      <p>RCKeyBoard requires only standard IME (Input Method Editor) permissions to operate as your system keyboard. Network permissions are used strictly for optional features (such as live text translation or downloading new theme packages from Google Play) and never for uploading typing data.</p>
+    </article>
+
+    <article class="policy-card">
+      <div class="policy-header">
+        <span class="policy-num">04</span>
+        <h3>Third-Party Analytics & Crash Diagnostics</h3>
+      </div>
+      <p>To maintain stability and fix bugs, RCKeyBoard uses anonymized, aggregated crash reporting through Google Play Console. This data contains zero personal text information and includes only technical diagnostic data (e.g. device model, Android OS version, app version).</p>
+    </article>
+
+    <article class="policy-card">
+      <div class="policy-header">
+        <span class="policy-num">05</span>
+        <h3>Your Rights & Data Control</h3>
+      </div>
+      <p>You maintain 100% control over your data. You can clear all local app storage, uninstall the app, or revoke optional permissions at any time. For questions regarding our privacy practices, contact us at <strong>privacy@rcmods.online</strong>.</p>
+    </article>
+  </div>
+
       </section>
     </main>
 
+    <!-- Theme Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true">
+      <div class="lightbox-backdrop"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close" title="Close preview">✕</button>
+        <div class="lightbox-image-wrap">
+          <img id="lightbox-img" src="" alt="Theme high resolution preview" />
+        </div>
+        <div class="lightbox-caption">
+          <h3 id="lightbox-title">Theme Title</h3>
+          <p id="lightbox-desc">Theme description goes here</p>
+          <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">Install Theme on Play Store</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back To Top Button -->
+    <button class="back-to-top" id="back-to-top" title="Back to top" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-shell">
         <div class="footer-brand">
-          <strong>RCKeyBoard</strong>
+          <div class="footer-logo">
+            <img src="src/images/logo.webp" alt="RCKeyBoard Logo" width="32" height="32" />
+            <strong>RCKeyBoard</strong>
+          </div>
           <span data-i18n="footer.brand">Premium keyboard experience for Android.</span>
         </div>
         <div class="footer-links">
           <a href="about.html" data-i18n="footer.about">About Us</a>
           <a href="index.html#features" data-i18n="footer.features">Features</a>
-          <a href="index.html" data-i18n="footer.themes">Themes</a>
+          <a href="index.html#themes" data-i18n="footer.themes">Themes</a>
           <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
           <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
           <a href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener" data-i18n="footer.store">Play Store</a>
