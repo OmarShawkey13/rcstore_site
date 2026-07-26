@@ -1,7 +1,19 @@
-# RCMods Store - Robots.txt
-# Optimized & Cleaned: 2026-07-25
+# RCKeyBoard — Robots.txt for Google Search Console & Indexing
+# Updated: 2026-07-27
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 User-agent: *
-Disallow:
+Allow: /
 
 Sitemap: https://rcmods.online/sitemap.xml
