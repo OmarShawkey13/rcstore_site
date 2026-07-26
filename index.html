@@ -30,59 +30,6 @@
                 document.documentElement.lang = effectiveLang;
                 document.documentElement.dir = (effectiveLang === 'ar' || effectiveLang === 'ur') ? 'rtl' : 'ltr';
             } catch(e) {}
-
-            // Immediate Global Handlers (Guarantees zero ReferenceErrors on inline HTML events)
-            window.toggleTheme = window.toggleTheme || function() {
-                var isLight = document.documentElement.classList.contains('light-mode');
-                var newTheme = isLight ? 'dark' : 'light';
-                if (newTheme === 'light') {
-                    document.documentElement.classList.add('light-mode');
-                    if (document.body) document.body.classList.add('light-mode');
-                } else {
-                    document.documentElement.classList.remove('light-mode');
-                    if (document.body) document.body.classList.remove('light-mode');
-                }
-                try { localStorage.setItem('user_theme', newTheme); } catch(e) {}
-                var icons = document.querySelectorAll('#themeIcon');
-                icons.forEach(function(i) { i.textContent = (newTheme === 'light') ? '🌙' : '☀️'; });
-            };
-            window.openLangModal = function() {
-                var m = document.getElementById('langModal');
-                if (m) { m.classList.add('open'); document.body.style.overflow = 'hidden'; }
-            };
-            window.closeLangModal = function() {
-                var m = document.getElementById('langModal');
-                if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
-            };
-            window.selectLangFromModal = function(code) {
-                if (window.switchLanguage) window.switchLanguage(code, true);
-                if (window.closeLangModal) window.closeLangModal();
-            };
-            window.filterLanguages = function(query) {
-                var q = (query || '').toLowerCase().trim();
-                document.querySelectorAll('.lang-item-btn').forEach(function(btn) {
-                    var txt = btn.textContent.toLowerCase();
-                    btn.style.display = txt.indexOf(q) !== -1 ? 'flex' : 'none';
-                });
-            };
-            window.filterFAQ = function(query) {
-                var q = (query || '').toLowerCase().trim();
-                document.querySelectorAll('.faq-item').forEach(function(item) {
-                    var text = item.textContent.toLowerCase();
-                    item.style.display = text.indexOf(q) !== -1 ? 'block' : 'none';
-                });
-            };
-            window.filterReviews = function(rating) {};
-            window.prevReviewPage = function() {};
-            window.nextReviewPage = function() {};
-            window.toggleReadMore = function(id) {
-                var el = document.getElementById('rev-text-' + id);
-                if (el) el.classList.toggle('truncated');
-            };
-            window.openFullscreenModal = function(idx) {};
-            window.closeFullscreenModal = function() {};
-            window.navigateModal = function(dir) {};
-            window.switchLanguage = function(lang) {};
         })();
     </script>
 
@@ -1004,6 +951,6 @@
         <svg viewBox="0 0 24 24" width="28" height="28"><path d="M5 4v16l15-8-15-8z" fill="currentColor"/></svg>
     </a>
 
-    <script src="./src/main.js"></script>
+    <script src="./src/main.js" type="module"></script>
 </body>
 </html>
