@@ -34,11 +34,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/styles/main.css" />
-    <meta name="theme-color" content="#050816" />
+    <meta name="theme-color" content="#06080f" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -55,50 +55,64 @@
   <body>
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
 
-    <header class="hero">
-      <nav class="topbar">
-        <a class="brand" href="#">
-          <img src="src/images/logo.webp" alt="RCKeyBoard logo" />
-          <span>RCKeyBoard</span>
-        </a>
-        <div class="nav-actions">
-          <div class="language-selector">
-            <button class="language-toggle" type="button" aria-label="Open language selector">
-              <span class="language-icon">🌐</span>
-              <span class="language-label">EN</span>
-            </button>
-            <div class="language-menu" aria-hidden="true">
-              <button class="language-item" type="button" data-lang="en">English</button>
-              <button class="language-item" type="button" data-lang="ar">العربية</button>
-              <button class="language-item" type="button" data-lang="es">Español</button>
-              <button class="language-item" type="button" data-lang="fr">Français</button>
-              <button class="language-item" type="button" data-lang="de">Deutsch</button>
-              <button class="language-item" type="button" data-lang="ru">Русский</button>
-              <button class="language-item" type="button" data-lang="pt">Português</button>
-              <button class="language-item" type="button" data-lang="hi">हिन्दी</button>
-              <button class="language-item" type="button" data-lang="tr">Türkçe</button>
-              <button class="language-item" type="button" data-lang="ur">اردو</button>
-              <button class="language-item" type="button" data-lang="ja">日本語</button>
-              <button class="language-item" type="button" data-lang="zh">中文</button>
-              <button class="language-item" type="button" data-lang="it">Italiano</button>
-              <button class="language-item" type="button" data-lang="ko">한국어</button>
-              <button class="language-item" type="button" data-lang="id">Bahasa Indonesia</button>
-              <button class="language-item" type="button" data-lang="vi">Tiếng Việt</button>
-              <button class="language-item" type="button" data-lang="nl">Nederlands</button>
-              <button class="language-item" type="button" data-lang="th">ไทย</button>
-            </div>
-          </div>
-          <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode">
-            <span class="toggle-icon">☀️</span>
-            <span class="toggle-label">Light</span>
+    <!-- Navigation -->
+    <nav class="topbar" id="main-nav">
+      <a class="brand" href="index.html">
+        <img src="src/images/logo.webp" alt="RCKeyBoard logo" />
+        <span>RCKeyBoard</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
+        <a href="#themes" class="nav-link" data-i18n="nav.themes">Themes</a>
+        <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
+      </div>
+      <div class="nav-actions">
+        <div class="language-selector">
+          <button class="language-toggle" type="button" aria-label="Open language selector">
+            <span class="language-icon">🌐</span>
+            <span class="language-label">EN</span>
           </button>
-          <a class="nav-cta" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
-            Download on Play Store
-          </a>
+          <div class="language-menu" aria-hidden="true">
+            <button class="language-item" type="button" data-lang="en">English</button>
+            <button class="language-item" type="button" data-lang="ar">العربية</button>
+            <button class="language-item" type="button" data-lang="es">Español</button>
+            <button class="language-item" type="button" data-lang="fr">Français</button>
+            <button class="language-item" type="button" data-lang="de">Deutsch</button>
+            <button class="language-item" type="button" data-lang="ru">Русский</button>
+            <button class="language-item" type="button" data-lang="pt">Português</button>
+            <button class="language-item" type="button" data-lang="hi">हिन्दी</button>
+            <button class="language-item" type="button" data-lang="tr">Türkçe</button>
+            <button class="language-item" type="button" data-lang="ur">اردو</button>
+            <button class="language-item" type="button" data-lang="ja">日本語</button>
+            <button class="language-item" type="button" data-lang="zh">中文</button>
+            <button class="language-item" type="button" data-lang="it">Italiano</button>
+            <button class="language-item" type="button" data-lang="ko">한국어</button>
+            <button class="language-item" type="button" data-lang="id">Bahasa Indonesia</button>
+            <button class="language-item" type="button" data-lang="vi">Tiếng Việt</button>
+            <button class="language-item" type="button" data-lang="nl">Nederlands</button>
+            <button class="language-item" type="button" data-lang="th">ไทย</button>
+          </div>
         </div>
-      </nav>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode">
+          <span class="toggle-icon">☀️</span>
+          <span class="toggle-label">Light</span>
+        </button>
+        <a class="nav-cta" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
 
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
       <div class="hero-grid">
         <div class="hero-copy">
           <div class="pill" data-i18n="hero.pill">✨ New themes • 2026 redesign</div>
@@ -107,7 +121,9 @@
             <span data-i18n="hero.badge2">🎨 Bold customization</span>
             <span data-i18n="hero.badge3">🔒 Privacy-first</span>
           </div>
-          <h1 data-i18n="hero.title">Type faster. Look bolder. Own your keyboard.</h1>
+          <h1>
+            <span data-i18n="hero.title" class="gradient-text">Type faster. Look bolder. Own your keyboard.</span>
+          </h1>
           <p data-i18n="hero.description">
             RCKeyBoard is a premium Android keyboard built for speed, privacy, and deep personalization.
             It combines intelligent typing, custom themes, multilingual tools, and a polished experience designed for everyday power users.
@@ -121,15 +137,15 @@
           </div>
 
           <div class="stats">
-            <div>
+            <div class="stat-card reveal">
               <strong>100K+</strong>
               <span data-i18n="stats.installs">installs</span>
             </div>
-            <div>
+            <div class="stat-card reveal">
               <strong>4.5★</strong>
               <span data-i18n="stats.rating">average rating</span>
             </div>
-            <div>
+            <div class="stat-card reveal">
               <strong>16</strong>
               <span data-i18n="stats.languages">languages</span>
             </div>
@@ -146,66 +162,93 @@
     </header>
 
     <main>
+      <!-- Features Section -->
       <section class="features" id="features">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow" data-i18n="features.heading.eyebrow">What makes RCKeyBoard different</p>
           <h2 data-i18n="features.heading.title">Built for real keyboard power, not just a basic typing app</h2>
         </div>
 
         <div class="feature-grid">
           <article class="feature-card reveal">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v4a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M9 18h6"/><path d="M12 18v4"/><path d="M5 10a7 7 0 0 0 14 0"/></svg>
+            </div>
             <h3 data-i18n="features.smart.title">Smart typing</h3>
             <p data-i18n="features.smart.description">Context-aware suggestions, intelligent autocorrect, and fast prediction flow designed to feel natural.</p>
           </article>
           <article class="feature-card reveal">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </div>
             <h3 data-i18n="features.voice.title">Voice, trackpad, math</h3>
             <p data-i18n="features.voice.description">Voice input, trackpad-style cursor control, and inline math solving make everyday typing faster.</p>
           </article>
           <article class="feature-card reveal">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5z"/><path d="M2 16l4.5-4.5a2.12 2.12 0 0 1 3 0L14 16"/><path d="M14.5 14.5l1-1a2.12 2.12 0 0 1 3 0L22 17"/></svg>
+            </div>
             <h3 data-i18n="features.custom.title">Deep customization</h3>
             <p data-i18n="features.custom.description">Dynamic theme controls, custom media backgrounds, custom fonts, and adjustable keyboard sizing.</p>
           </article>
           <article class="feature-card reveal">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
+            </div>
             <h3 data-i18n="features.privacy.title">Privacy-first design</h3>
             <p data-i18n="features.privacy.description">Local learning, protected sensitive fields, and a secure clipboard make your data stay safer.</p>
           </article>
           <article class="feature-card reveal">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
             <h3 data-i18n="features.global.title">Global typing</h3>
             <p data-i18n="features.global.description">Support for Arabic, English, Spanish, French, German, Russian, and more with live translation.</p>
           </article>
           <article class="feature-card reveal">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
+            </div>
             <h3 data-i18n="features.core.title">Modern Android core</h3>
             <p data-i18n="features.core.description">Built with Kotlin, Room, Coroutines, Coil, and Play integrations for a polished experience.</p>
           </article>
         </div>
       </section>
 
-      <section class="theme-showcase">
-        <div class="section-heading">
+      <!-- Identity Section -->
+      <section class="theme-showcase" id="identity">
+        <div class="section-heading reveal">
           <p class="eyebrow" data-i18n="identity.heading.eyebrow">Identity & experience</p>
           <h2 data-i18n="identity.heading.title">A keyboard that feels premium, private, and deeply personal</h2>
         </div>
 
         <div class="identity-grid">
           <article class="identity-card reveal">
+            <div class="identity-icon">🏆</div>
             <h3 data-i18n="identity.premium.title">Premium Android IME</h3>
             <p data-i18n="identity.premium.description">RCKeyBoard is designed as a full-featured Android Input Method Editor with a modern, polished typing experience.</p>
           </article>
           <article class="identity-card reveal">
+            <div class="identity-icon">⚡</div>
             <h3 data-i18n="identity.power.title">Built for power users</h3>
             <p data-i18n="identity.power.description">From predictive typing and autocorrect to voice input and trackpad-style cursor control, every interaction is optimized.</p>
           </article>
           <article class="identity-card reveal">
+            <div class="identity-icon">🛡️</div>
             <h3 data-i18n="identity.privacy.title">Privacy by design</h3>
             <p data-i18n="identity.privacy.description">Learning and correction stay local, sensitive fields are isolated, and clipboard handling is protected.</p>
           </article>
           <article class="identity-card reveal">
+            <div class="identity-icon">🌍</div>
             <h3 data-i18n="identity.global.title">Global and expressive</h3>
             <p data-i18n="identity.global.description">Multi-language layouts, translation support, emoji tools, and theme flexibility make it usable and expressive worldwide.</p>
           </article>
         </div>
+      </section>
 
-        <div class="section-heading" style="margin-top: 1.4rem;">
+      <!-- Themes Section -->
+      <section class="theme-showcase" id="themes">
+        <div class="section-heading reveal">
           <p class="eyebrow" data-i18n="theme.heading.eyebrow">Theme library</p>
           <h2 data-i18n="theme.heading.title">Fresh themes made for a premium keyboard experience</h2>
         </div>
@@ -213,7 +256,7 @@
         <div class="theme-grid">
           <article class="theme-card reveal">
             <div class="theme-media">
-              <img src="src/images/amoled_dark.jpg" alt="Amoled dark keyboard theme preview" />
+              <img src="src/images/amoled_dark.jpg" alt="Amoled dark keyboard theme preview" loading="lazy" />
             </div>
             <div class="theme-info">
               <div class="theme-tags">
@@ -227,7 +270,7 @@
 
           <article class="theme-card reveal">
             <div class="theme-media">
-              <img src="src/images/avocado.png" alt="Avocado keyboard theme preview" />
+              <img src="src/images/avocado.png" alt="Avocado keyboard theme preview" loading="lazy" />
             </div>
             <div class="theme-info">
               <div class="theme-tags">
@@ -241,7 +284,7 @@
 
           <article class="theme-card reveal">
             <div class="theme-media">
-              <img src="src/images/classic_light.jpg" alt="Classic light keyboard theme preview" />
+              <img src="src/images/classic_light.jpg" alt="Classic light keyboard theme preview" loading="lazy" />
             </div>
             <div class="theme-info">
               <div class="theme-tags">
@@ -255,7 +298,7 @@
 
           <article class="theme-card reveal">
             <div class="theme-media">
-              <img src="src/images/cute_cat.png" alt="Cute cat keyboard theme preview" />
+              <img src="src/images/cute_cat.png" alt="Cute cat keyboard theme preview" loading="lazy" />
             </div>
             <div class="theme-info">
               <div class="theme-tags">
@@ -269,7 +312,7 @@
 
           <article class="theme-card reveal">
             <div class="theme-media">
-              <img src="src/images/minecraft.png" alt="Minecraft keyboard theme preview" />
+              <img src="src/images/minecraft.png" alt="Minecraft keyboard theme preview" loading="lazy" />
             </div>
             <div class="theme-info">
               <div class="theme-tags">
@@ -283,7 +326,7 @@
 
           <article class="theme-card reveal">
             <div class="theme-media">
-              <img src="src/images/penguin_elite.png" alt="Penguin elite keyboard theme preview" />
+              <img src="src/images/penguin_elite.png" alt="Penguin elite keyboard theme preview" loading="lazy" />
             </div>
             <div class="theme-info">
               <div class="theme-tags">
@@ -297,20 +340,22 @@
         </div>
       </section>
 
-      <section class="gallery">
-        <div class="section-heading">
+      <!-- Gallery Section -->
+      <section class="gallery" id="gallery">
+        <div class="section-heading reveal">
           <p class="eyebrow">App experience</p>
           <h2>More keyboard styles to match your mood</h2>
         </div>
 
         <div class="gallery-grid">
-          <img class="reveal" src="src/images/Penguin.jpeg" alt="Penguin keyboard preview" />
-          <img class="reveal" src="src/images/pink_check.png" alt="Pink check keyboard preview" />
-          <img class="reveal" src="src/images/amoled_dark.jpg" alt="Amoled dark keyboard preview" />
+          <img class="reveal" src="src/images/Penguin.jpeg" alt="Penguin keyboard preview" loading="lazy" />
+          <img class="reveal" src="src/images/pink_check.png" alt="Pink check keyboard preview" loading="lazy" />
+          <img class="reveal" src="src/images/amoled_dark.jpg" alt="Amoled dark keyboard preview" loading="lazy" />
         </div>
       </section>
 
-      <section class="store-preview">
+      <!-- Store Preview Section -->
+      <section class="store-preview" id="download">
         <div class="preview-card reveal">
           <div class="preview-copy">
             <p class="eyebrow">Play Store</p>
@@ -340,6 +385,7 @@
       </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-shell">
         <div class="footer-brand">
