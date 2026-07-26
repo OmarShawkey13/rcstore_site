@@ -1,7 +1,7 @@
-import { currentReviewPage, setCurrentReviewPage, currentModalImageIdx, setCurrentModalImageIdx, setCurrentReviewRatingFilter, appData, languagesManifest } from './state.js';
-import { switchLanguage } from './localization.js';
-import { renderReviews, renderLangGrid } from './renderers.js';
-import { FALLBACK_MANIFEST } from './manifest.js';
+import { currentReviewPage, setCurrentReviewPage, currentModalImageIdx, setCurrentModalImageIdx, setCurrentReviewRatingFilter, appData, languagesManifest } from '../core/state.js';
+import { switchLanguage, renderLangGrid } from '../i18n/localization.js';
+import { renderReviews } from './renderers.js';
+import { FALLBACK_MANIFEST } from '../i18n/manifest.js';
 
 // 8. Interactive Controls & Accessibility Handlers
 export function initInteractivity() {
@@ -82,44 +82,6 @@ export function initInteractivity() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
-
-    // Review Filters
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const rating = btn.getAttribute('data-rating');
-            if (rating && window.filterReviews) {
-                window.filterReviews(rating);
-            }
-        });
-    });
-
-    const prevReviewBtn = document.getElementById('prevReviewBtn');
-    if (prevReviewBtn) {
-        prevReviewBtn.addEventListener('click', () => {
-            if (window.prevReviewPage) window.prevReviewPage();
-        });
-    }
-
-    const nextReviewBtn = document.getElementById('nextReviewBtn');
-    if (nextReviewBtn) {
-        nextReviewBtn.addEventListener('click', () => {
-            if (window.nextReviewPage) window.nextReviewPage();
-        });
-    }
-
-    // Dynamic Language Triggers
-    document.querySelectorAll('.lang-trigger-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (window.openLangModal) window.openLangModal();
-        });
-    });
-
-    document.querySelectorAll('.modal-close, .lang-modal-backdrop').forEach(el => {
-        el.addEventListener('click', () => {
-            if (window.closeLangModal) window.closeLangModal();
-        });
-    });
 
     // Keyboard Shortcuts (Escape key listener)
     document.addEventListener('keydown', (e) => {

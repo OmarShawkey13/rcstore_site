@@ -1,4 +1,4 @@
-import { safeGetStorage, safeSetStorage } from './state.js';
+import { safeGetStorage, safeSetStorage } from '../core/state.js';
 
 // 4. Theme Management Engine
 export function toggleTheme() {
@@ -43,12 +43,4 @@ export function initThemeSystem() {
         }
     });
 
-    const themeToggles = document.querySelectorAll('#themeToggle, .theme-toggle-btn');
-    themeToggles.forEach(toggle => {
-        toggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            toggleTheme();
-        });
-    });
 }
-

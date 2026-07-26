@@ -1,4 +1,4 @@
-import { appData, setAppData } from './state.js';
+import { appData, setAppData } from '../core/state.js';
 
 // 6. Data Services
 export async function fetchAllData() {

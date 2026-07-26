@@ -1,19 +1,20 @@
+import { escapeHtml } from '../utils/helpers.js';
 import { FALLBACK_MANIFEST } from './manifest.js';
 import { EMBEDDED_LOCALES } from './embedded.js';
-import { safeGetStorage, safeSetStorage, languagesManifest, setLanguagesManifest, currentLang, setCurrentLang, localeDict, setLocaleDict, getNestedTranslation } from './state.js';
-import { renderAppInfo, renderFeatures, renderExperience, renderAppDescription, renderScreenshots, renderReviews, renderFAQ, renderLangGrid } from './renderers.js';
-import { initObserver } from './observer.js';
+import { safeGetStorage, safeSetStorage, languagesManifest, setLanguagesManifest, currentLang, setCurrentLang, localeDict, setLocaleDict, getNestedTranslation } from '../core/state.js';
+import { renderAppInfo, renderFeatures, renderExperience, renderAppDescription, renderScreenshots, renderReviews, renderFAQ } from '../ui/renderers.js';
+import { initObserver } from '../ui/observer.js';
 
 // 5. Universal Localization Engine
 export async function fetchManifest() {
     try {
         const res = await fetch('./locales/manifest.json');
         if (res.ok) {
-            languagesManifest = await res.json();
+            setLanguagesManifest(await res.json());
             return;
         }
     } catch (e) {}
-    languagesManifest = FALLBACK_MANIFEST;
+    setLanguagesManifest(FALLBACK_MANIFEST);
 }
 
 export async function detectAndInitLanguage() {
@@ -33,7 +34,7 @@ export async function detectAndInitLanguage() {
                 }
             }
         }
-        currentLang = matched;
+        setCurrentLang(matched);
     }
     await switchLanguage(currentLang, false);
 }
@@ -57,8 +58,8 @@ export async function loadLocale(lang) {
         }
     }
 
-    localeDict = loadedDict;
-    currentLang = lang;
+    setLocaleDict(loadedDict);
+    setCurrentLang(lang);
 
     const manifestToUse = (languagesManifest && languagesManifest.length) ? languagesManifest : FALLBACK_MANIFEST;
     let meta = manifestToUse.find(m => m.code === lang || m.code.toLowerCase() === lang.toLowerCase());
@@ -139,7 +140,7 @@ export function applyTranslations() {
     });
 }
 
-function renderLangGrid(list) {
+export function renderLangGrid(list) {
     const grid = document.getElementById('langListGrid');
     if (!grid) return;
     
@@ -154,11 +155,3 @@ function renderLangGrid(list) {
 }
 
 
-export function escapeHtml(str) {
-    if (!str) return '';
-    return str.toString().replace(/&/g, '&amp;')
-              .replace(/</g, '&lt;')
-              .replace(/>/g, '&gt;')
-              .replace(/"/g, '&quot;')
-              .replace(/'/g, '&#039;');
-}

@@ -1,9 +1,9 @@
-import { initThemeSystem, toggleTheme } from './modules/theme.js';
-import { fetchManifest, detectAndInitLanguage, applyTranslations } from './modules/localization.js';
-import { fetchAllData } from './modules/api.js';
-import { renderAppInfo, renderFeatures, renderExperience, renderAppDescription, renderScreenshots, renderReviews, renderFAQ } from './modules/renderers.js';
-import { initInteractivity } from './modules/interactivity.js';
-import { initObserver } from './modules/observer.js';
+import { initThemeSystem, toggleTheme } from './ui/theme.js';
+import { fetchManifest, detectAndInitLanguage, applyTranslations } from './i18n/localization.js';
+import { fetchAllData } from './services/api.js';
+import { renderAppInfo, renderFeatures, renderExperience, renderAppDescription, renderScreenshots, renderReviews, renderFAQ } from './ui/renderers.js';
+import { initInteractivity } from './ui/interactivity.js';
+import { initObserver } from './ui/observer.js';
 
 // Attach things to window that index.html needs right away
 window.toggleTheme = toggleTheme;

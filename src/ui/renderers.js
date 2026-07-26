@@ -1,6 +1,7 @@
-import { ICONS } from './icons.js';
-import { appData, currentLang, currentReviewRatingFilter, currentReviewPage, REVIEWS_PER_PAGE, getNestedTranslation } from './state.js';
-import { escapeHtml } from './localization.js';
+import { escapeHtml } from '../utils/helpers.js';
+import { ICONS } from '../utils/icons.js';
+import { appData, currentLang, currentReviewRatingFilter, currentReviewPage, REVIEWS_PER_PAGE, getNestedTranslation } from '../core/state.js';
+
 
 // 7. Dynamic UI Component Renderers
 export function renderAppInfo() {
@@ -303,12 +304,4 @@ export function renderFAQ() {
     }).join('');
 }
 
-function escapeHtml(str) {
-    if (!str) return '';
-    return str.toString().replace(/&/g, '&amp;')
-              .replace(/</g, '&lt;')
-              .replace(/>/g, '&gt;')
-              .replace(/"/g, '&quot;')
-              .replace(/'/g, '&#039;');
-}
 
