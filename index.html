@@ -1,192 +1,980 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RCKeyBoard — Premium Android Keyboard</title>
-    <meta
-      name="description"
-      content="RCKeyBoard is a premium Android keyboard app with smart predictions, custom themes, multilingual support, and privacy-first performance."
-    />
-    <meta name="keywords" content="Android keyboard, smart typing, custom themes, privacy-first keyboard, multilingual keyboard, RCKeyBoard" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="RCKeyBoard" />
-    <link rel="canonical" href="https://rcmods.online/" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RC Keyboard - Official Smart Android Keyboard. Fast, secure, AI predictions, 100% on-device local privacy, Kotlin engine, and full theme customization.">
+    <title>RC Keyboard - Official Smart Android Keyboard</title>
+    
+    <!-- Synchronous Anti-FOUC Theme, Language & Global Event Handler Initializer -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('user_theme');
+                var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var effectiveTheme = savedTheme ? savedTheme : (systemDark ? 'dark' : 'light');
+                if (effectiveTheme === 'light') {
+                    document.documentElement.classList.add('light-mode');
+                } else {
+                    document.documentElement.classList.remove('light-mode');
+                }
 
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="RCKeyBoard — Premium Android Keyboard" />
-    <meta property="og:description" content="RCKeyBoard is a premium Android keyboard app with smart predictions, custom themes, multilingual support, and privacy-first performance." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rcmods.online/" />
-    <meta property="og:image" content="https://rcmods.online/src/images/rckeyboard.webp" />
-    <meta property="og:image:alt" content="RCKeyBoard keyboard preview" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+                var savedLang = localStorage.getItem('lang');
+                var effectiveLang = 'en';
+                if (savedLang) {
+                    effectiveLang = savedLang;
+                } else {
+                    var navLang = navigator.language || (navigator.languages && navigator.languages[0]) || '';
+                    if (navLang.indexOf('ar') === 0) effectiveLang = 'ar';
+                }
+                document.documentElement.lang = effectiveLang;
+                document.documentElement.dir = (effectiveLang === 'ar' || effectiveLang === 'ur') ? 'rtl' : 'ltr';
+            } catch(e) {}
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@RCKeyBoardApp" />
-    <meta name="twitter:creator" content="@RCKeyBoardApp" />
-    <meta name="twitter:title" content="RCKeyBoard — Premium Android Keyboard" />
-    <meta name="twitter:description" content="RCKeyBoard is a premium Android keyboard app with smart predictions, custom themes, multilingual support, and privacy-first performance." />
-    <meta name="twitter:image" content="https://rcmods.online/src/images/rckeyboard.webp" />
-
-    <link rel="icon" href="src/images/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="src/styles/main.css" />
-    <meta name="theme-color" content="#050816" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "RCKeyBoard",
-        "url": "https://rcmods.online/",
-        "applicationCategory": "MobileApplication",
-        "operatingSystem": "Android",
-        "description": "RCKeyBoard is a premium Android keyboard app with smart predictions, custom themes, multilingual support, and privacy-first performance.",
-        "image": "https://rcmods.online/src/images/rckeyboard.webp"
-      }
+            // Immediate Global Handlers (Guarantees zero ReferenceErrors on inline HTML events)
+            window.openLangModal = function() {
+                var m = document.getElementById('langModal');
+                if (m) { m.classList.add('open'); document.body.style.overflow = 'hidden'; }
+            };
+            window.closeLangModal = function() {
+                var m = document.getElementById('langModal');
+                if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
+            };
+            window.selectLangFromModal = function(code) {
+                if (window.switchLanguage) window.switchLanguage(code, true);
+                if (window.closeLangModal) window.closeLangModal();
+            };
+            window.filterLanguages = function(query) {
+                var q = (query || '').toLowerCase().trim();
+                document.querySelectorAll('.lang-item-btn').forEach(function(btn) {
+                    var txt = btn.textContent.toLowerCase();
+                    btn.style.display = txt.indexOf(q) !== -1 ? 'flex' : 'none';
+                });
+            };
+            window.filterFAQ = function(query) {
+                var q = (query || '').toLowerCase().trim();
+                document.querySelectorAll('.faq-item').forEach(function(item) {
+                    var text = item.textContent.toLowerCase();
+                    item.style.display = text.indexOf(q) !== -1 ? 'block' : 'none';
+                });
+            };
+            window.filterReviews = function(rating) {};
+            window.prevReviewPage = function() {};
+            window.nextReviewPage = function() {};
+            window.toggleReadMore = function(id) {
+                var el = document.getElementById('rev-text-' + id);
+                if (el) el.classList.toggle('truncated');
+            };
+            window.openFullscreenModal = function(idx) {};
+            window.closeFullscreenModal = function() {};
+            window.navigateModal = function(dir) {};
+            window.switchLanguage = function(lang) {};
+        })();
     </script>
-  </head>
-  <body>
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
 
-    <header class="hero">
-      <nav class="topbar">
-        <a class="brand" href="#">
-          <img src="src/images/logo.webp" alt="RCKeyBoard logo" />
-          <span>RCKeyBoard</span>
-        </a>
-        <a class="nav-cta" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
-          Download on Play Store
-        </a>
-      </nav>
+    <!-- SEO & Open Graph -->
+    <meta property="og:title" content="RC Keyboard - Official Smart Android Keyboard">
+    <meta property="og:description" content="Official website for RC Keyboard. Fast typing, AI context prediction, instant math solver, on-device privacy, and full theme customization.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://play.google.com/store/apps/details?id=rc.keyboard">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://rcmods.online">
 
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div class="pill">100K+ downloads • 4.5★ rating</div>
-          <div class="hero-badges">
-            <span>⚡ Lightning fast</span>
-            <span>🎨 Fully customizable</span>
-            <span>🔒 Privacy-first</span>
-          </div>
-          <h1>Type faster. Look sharper. Stay private.</h1>
-          <p>
-            RCKeyBoard brings a premium typing experience to Android with smart predictions,
-            rich personalization, multilingual support, and a privacy-first design that feels effortless.
-          </p>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./src/styles.css">
+    
+    <!-- Schema.org for App -->
+    <link rel="manifest" href="./manifest.webmanifest">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "RCKeyboard",
+      "operatingSystem": "ANDROID",
+      "applicationCategory": "PersonalizationApplication",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.25",
+        "ratingCount": "327",
+        "reviewCount": "47"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Elsayed Khater",
+        "email": "Khaterbr@gmail.com",
+        "url": "https://rcmods.online"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="bg-effects" aria-hidden="true">
+        <div class="glow blob-1"></div>
+        <div class="glow blob-2"></div>
+        <div class="glow blob-3"></div>
+        <div class="noise"></div>
+    </div>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
-              Install Now
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="Main Navigation">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="./src/images/icon.png" alt="RCKeyboard App Icon" style="width: 34px; height: 34px; border-radius: 8px;">
+                RCKeyboard
             </a>
-            <a class="btn btn-secondary" href="#features">Explore Features</a>
-          </div>
+            <div class="nav-links">
+                <a href="#features" data-i18n="nav.features">Features</a>
+                <a href="#experience" data-i18n="nav.experience">Experience</a>
+                <a href="#showcase" data-i18n="nav.screenshots">Screenshots</a>
+                <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+                <a href="#faq" data-i18n="nav.faq">FAQ</a>
+            </div>
+            <div style="display: flex; gap: 0.8rem; align-items: center;">
+                <!-- Theme Toggle Button -->
+                <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark or Light Theme" title="Toggle Theme">
+                    <span id="themeIcon">🌓</span>
+                </button>
 
-          <div class="stats">
-            <div>
-              <strong>100K+</strong>
-              <span>installs</span>
-            </div>
-            <div>
-              <strong>4.5★</strong>
-              <span>average rating</span>
-            </div>
-            <div>
-              <strong>16</strong>
-              <span>languages</span>
-            </div>
-          </div>
-        </div>
+                <!-- Language Trigger Button -->
+                <button class="lang-trigger-btn" onclick="openLangModal()" aria-label="Open Language Selector">
+                    <span id="currentLangFlag">🇺🇸</span>
+                    <span id="currentLangName">English</span>
+                    <span>▾</span>
+                </button>
 
-        <div class="hero-visual reveal">
-          <div class="phone-card">
-            <div class="glow-ring"></div>
-            <img src="src/images/rckeyboard.webp" alt="RCKeyBoard keyboard preview" />
-          </div>
+                <a href="https://play.google.com/store/apps/details?id=rc.keyboard" class="btn-primary small magnetic" target="_blank" rel="noopener" data-i18n="nav.getApp">
+                    Get App
+                </a>
+            </div>
         </div>
-      </div>
-    </header>
+        <div class="scroll-progress"></div>
+    </nav>
 
     <main>
-      <section class="features" id="features">
-        <div class="section-heading">
-          <p class="eyebrow">Why people love it</p>
-          <h2>Built for speed, style, and everyday comfort</h2>
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature-card reveal">
-            <h3>Smart Predictions</h3>
-            <p>Fast suggestions, autocorrect, and context-aware typing that feels natural and reliable.</p>
-          </article>
-          <article class="feature-card reveal">
-            <h3>Custom Themes</h3>
-            <p>Personalize colors, shapes, backgrounds, and layout details to make your keyboard truly yours.</p>
-          </article>
-          <article class="feature-card reveal">
-            <h3>Privacy First</h3>
-            <p>Local processing, secure clipboard handling, and sensitive-field protection keep your typing private.</p>
-          </article>
-          <article class="feature-card reveal">
-            <h3>Multilingual Ready</h3>
-            <p>Switch between languages smoothly with rich layouts and seamless translation support.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="gallery">
-        <div class="section-heading">
-          <p class="eyebrow">App experience</p>
-          <h2>Beautiful visuals built for modern Android</h2>
-        </div>
-
-        <div class="gallery-grid">
-          <img class="reveal" src="src/images/keyboard_1.webp" alt="RCKeyBoard visual preview 1" />
-          <img class="reveal" src="src/images/keyboard_2.webp" alt="RCKeyBoard visual preview 2" />
-          <img class="reveal" src="src/images/keyboard_3.webp" alt="RCKeyBoard visual preview 3" />
-        </div>
-      </section>
-
-      <section class="store-preview">
-        <div class="preview-card reveal">
-          <div class="preview-copy">
-            <p class="eyebrow">Play Store</p>
-            <h2>See the full app listing and install in seconds</h2>
-            <p>RCKeyBoard is designed to feel premium from the first tap, whether you want faster typing, custom styling, or a cleaner keyboard experience.</p>
-            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
-              Open in Play Store
-            </a>
-          </div>
-          <div class="preview-frame">
-            <div class="store-card">
-              <div class="store-top">
-                <img src="src/images/logo.webp" alt="RCKeyBoard app icon" />
-                <div>
-                  <h3>RCKeyBoard</h3>
-                  <p>Premium Android Keyboard</p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content reveal-up active">
+                    <div class="badge" data-i18n="hero.badge">
+                        <span class="pulse"></span> Official Google Play App • rc.keyboard
+                    </div>
+                    <h1 class="hero-title">
+                        <span data-i18n="hero.title1">Type at the </span><br>
+                        <span class="text-gradient" data-i18n="hero.titleGradient">Speed of Intelligence</span>
+                    </h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">
+                        RCKeyboard is an advanced Android keyboard combining high Kotlin performance, smart AI context predictions, an instant math solver, trackpad cursor control, and 100% on-device local privacy.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="https://play.google.com/store/apps/details?id=rc.keyboard" class="btn-primary large magnetic" target="_blank" rel="noopener" data-i18n="hero.downloadBtn">
+                            <svg viewBox="0 0 24 24" class="play-icon"><path d="M5 4v16l15-8-15-8z" fill="currentColor"/></svg>
+                            Download on Google Play
+                        </a>
+                        <a href="#features" class="btn-secondary large magnetic" data-i18n="hero.exploreBtn">Explore Features</a>
+                    </div>
+                    
+                                        <div class="app-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">4.25 ★</span>
+                            Rating (327)
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">100,000+</span>
+                            Downloads
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">v4.1.1</span>
+                            Personalization
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="store-rating">★★★★★ 4.5</div>
-              <div class="store-stats">100K+ downloads • Privacy-first • Multilingual</div>
-              <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
-                Get it on Play Store
-              </a>
+                
+                <div class="hero-visual reveal-fade active">
+                    <div class="phone-mockup floating">
+                        <div class="phone-screen">
+                            <div class="screen-app-demo">
+                                <div class="chat-bubble received">Hey! Try writing "=4*25" in RCKeyboard!</div>
+                                <div class="chat-bubble sent">=4*25 &rarr; 100</div>
+                                <div class="chat-bubble received">Amazing! It solved the equation instantly! 🔥</div>
+                            </div>
+
+                            <div class="keyboard-preview">
+                                <div class="suggestion-bar">
+                                    <span>=4*25</span>
+                                    <span class="active">100</span>
+                                    <span>Result</span>
+                                </div>
+                                <div class="kb-row"><div class="kb-key">Q</div><div class="kb-key">W</div><div class="kb-key">E</div><div class="kb-key">R</div><div class="kb-key">T</div><div class="kb-key">Y</div><div class="kb-key">U</div><div class="kb-key">I</div><div class="kb-key">O</div><div class="kb-key">P</div></div>
+                                <div class="kb-row"><div class="kb-key">A</div><div class="kb-key">S</div><div class="kb-key">D</div><div class="kb-key">F</div><div class="kb-key">G</div><div class="kb-key">H</div><div class="kb-key">J</div><div class="kb-key">K</div><div class="kb-key">L</div></div>
+                                <div class="kb-row"><div class="kb-key action">⇧</div><div class="kb-key">Z</div><div class="kb-key">X</div><div class="kb-key">C</div><div class="kb-key">V</div><div class="kb-key">B</div><div class="kb-key">N</div><div class="kb-key">M</div><div class="kb-key action">⌫</div></div>
+                                <div class="kb-row"><div class="kb-key action">?123</div><div class="kb-key action">,</div><div class="kb-key spacebar">Trackpad Mode (Hold)</div><div class="kb-key action">.</div><div class="kb-key action enter">⏎</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
+
+        <!-- Features Bento Grid Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header reveal-up active">
+                    <h2 data-i18n="sections.featuresTitle">Engineered for Excellence</h2>
+                    <p data-i18n="sections.featuresSub">Every feature extracted directly from the official Google Play listing and built into a seamless Android experience.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card glass reveal-up active" style="transition-delay: 0ms;">
+                        <div class="card-glow"></div>
+                        <span class="feature-badge">AI Engine</span>
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2z"/></svg>
+                        </div>
+                        <h3>Smart AI Predictions &amp; Auto-Correct</h3>
+                        <p>Balanced auto-correction focusing on exact matches and learned words, with quick one-tap restore to original text.</p>
+                    </div>
+                    <div class="feature-card glass reveal-up active" style="transition-delay: 40ms;">
+                        <div class="card-glow"></div>
+                        <span class="feature-badge">Smart Context</span>
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44L7 19.5a2.5 2.5 0 0 1-2.5-2.5V14a2.5 2.5 0 0 1 1.5-2.3v-1.4A2.5 2.5 0 0 1 9.5 2zm5 0A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44L17 19.5a2.5 2.5 0 0 0 4.96.44L17 19.5a2.5 2.5 0 0 0 2.5-2.5V14a2.5 2.5 0 0 0-1.5-2.3v-1.4A2.5 2.5 0 0 0 14.5 2z"/></svg>
+                        </div>
+                        <h3>Contextual Next-Word Suggestions</h3>
+                        <p>Analyzes sentence structure and context to provide accurate next-word suggestions as you type.</p>
+                    </div>
+                    <div class="feature-card glass reveal-up active" style="transition-delay: 80ms;">
+                        <div class="card-glow"></div>
+                        <span class="feature-badge">Formula Ready</span>
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"/></svg>
+                        </div>
+                        <h3>Instant Math Solver</h3>
+                        <p>Type any equation starting with &#39;=&#39; (e.g. &#39;=4*25&#39;) and RCKeyboard instantly displays the calculated answer in the suggestion bar.</p>
+                    </div>
+                    <div class="feature-card glass reveal-up active" style="transition-delay: 120ms;">
+                        <div class="card-glow"></div>
+                        <span class="feature-badge">Zero Server Logs</span>
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        </div>
+                        <h3>100% On-Device Local Privacy</h3>
+                        <p>All predictions, corrections, and dictionaries are stored and processed locally using a secure SQLite database. Zero typing data sent to external servers.</p>
+                    </div>
+                    <div class="feature-card glass reveal-up active" style="transition-delay: 160ms;">
+                        <div class="card-glow"></div>
+                        <span class="feature-badge">Auto-Shield</span>
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        </div>
+                        <h3>Sensitive Field Auto-Protection</h3>
+                        <p>Detects password and payment input fields automatically, turning off learning and data logging during sensitive entries.</p>
+                    </div>
+                    <div class="feature-card glass reveal-up active" style="transition-delay: 200ms;">
+                        <div class="card-glow"></div>
+                        <span class="feature-badge">Auto-Purge</span>
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                        </div>
+                        <h3>Auto-Clearing Secure Clipboard</h3>
+                        <p>Built-in clipboard manager automatically purges unpinned snippets after a set duration to safeguard confidential text.</p>
+                    </div>
+                    <div class="feature-card glass reveal-up active" style="transition-delay: 240ms;">
+                        <div class="card-glow"></div>
+                        <span class="feature-badge">Zero Lag</span>
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        </div>
+                        <h3>Native Kotlin Performance</h3>
+                        <p>Engineered natively with Kotlin for minimal keystroke latency, smooth frame rates, and negligible battery consumption.</p>
+                    </div>
+                    <div class="feature-card glass reveal-up active" style="transition-delay: 280ms;">
+                        <div class="card-glow"></div>
+                        <span class="feature-badge">Precision Move</span>
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24"><path d="m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="m13 13 6 6"/></svg>
+                        </div>
+                        <h3>Trackpad Cursor Control Mode</h3>
+                        <p>Long-press spacebar and glide your finger to move the cursor with pinpoint accuracy across long text blocks.</p>
+                    </div>
+                    <div class="feature-card glass reveal-up active" style="transition-delay: 320ms;">
+                        <div class="card-glow"></div>
+                        <span class="feature-badge">Unlimited Hues</span>
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.92 0 1.7-.75 1.7-1.67 0-.42-.16-.84-.44-1.17-.28-.34-.44-.76-.44-1.18 0-.92.75-1.67 1.67-1.67h1.67c2.9 0 5.33-2.43 5.33-5.33 0-4.9-3.9-8.9-8.9-8.9z"/></svg>
+                        </div>
+                        <h3>Full Color &amp; Theme Customization</h3>
+                        <p>Customize background hues, key colors, font styles, text colors, and transparency settings to match your personal style.</p>
+                    </div>
+                    <div class="feature-card glass reveal-up active" style="transition-delay: 360ms;">
+                        <div class="card-glow"></div>
+                        <span class="feature-badge">Personal Media</span>
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        </div>
+                        <h3>Custom Images &amp; Font Files (TTF/OTF)</h3>
+                        <p>Set custom photo backgrounds with adjustable opacity and load custom font files (TTF/OTF) for unique typography.</p>
+                    </div>
+                    <div class="feature-card glass reveal-up active" style="transition-delay: 400ms;">
+                        <div class="card-glow"></div>
+                        <span class="feature-badge">8 Languages</span>
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <h3>Multilingual &amp; Live Translation</h3>
+                        <p>Full native support for Arabic, English, Spanish, Portuguese, French, German, Turkish, and Russian with inline direct translation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <div class="section-header reveal-up active">
+                    <h2 data-i18n="sections.expTitle">Real Application Experience</h2>
+                    <p data-i18n="sections.expSub">Visual breakdown of RCKeyboard's core capabilities, verified by official Play Store technical specifications.</p>
+                </div>
+
+                <div class="experience-grid">
+                    <div class="exp-card glass reveal-up active" style="transition-delay: 0ms;">
+                        <div class="exp-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                        </div>
+                        <div class="exp-content">
+                            <div class="exp-subtitle">Native Android Responsiveness</div>
+                            <h3>User Experience</h3>
+                            <p class="exp-details">Engineered from scratch to offer an intuitive typing interface, seamless spacebar cursor trackpad gestures, and smooth keypress feedback.</p>
+                            <div class="exp-evidence">
+                                <strong>Play Store Verification:</strong> Official Play Store description confirms native Android UI design with zero-friction key input and instant touch response.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exp-card glass reveal-up active" style="transition-delay: 50ms;">
+                        <div class="exp-icon">
+                            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/></svg>
+                        </div>
+                        <div class="exp-content">
+                            <div class="exp-subtitle">Built with Kotlin</div>
+                            <h3>Performance</h3>
+                            <p class="exp-details">Written in native Kotlin to deliver minimal keystroke delay, optimal memory utilization, and zero background battery drain.</p>
+                            <div class="exp-evidence">
+                                <strong>Play Store Verification:</strong> Developed using Kotlin and optimized specifically for maximum efficiency on modern Android devices.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exp-card glass reveal-up active" style="transition-delay: 100ms;">
+                        <div class="exp-icon">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        </div>
+                        <div class="exp-content">
+                            <div class="exp-subtitle">Glassmorphism &amp; Personalized Aesthetics</div>
+                            <h3>Design</h3>
+                            <p class="exp-details">Offers full color customization for keys and text, custom background image integration with opacity controls, and custom TTF/OTF font loading.</p>
+                            <div class="exp-evidence">
+                                <strong>Play Store Verification:</strong> Play Store features list complete color control, custom gallery background support, and TTF/OTF font file loading.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exp-card glass reveal-up active" style="transition-delay: 150ms;">
+                        <div class="exp-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div class="exp-content">
+                            <div class="exp-subtitle">Intelligent Utilities At Your Fingertips</div>
+                            <h3>Ease of Use</h3>
+                            <p class="exp-details">Includes context-aware predictions, instant spell checking, and an embedded math solver that calculates math equations like &#39;=4*25&#39; on the fly.</p>
+                            <div class="exp-evidence">
+                                <strong>Play Store Verification:</strong> Calculates math equations starting with &#39;=&#39; directly in the suggestion bar and auto-corrects typos effortlessly.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exp-card glass reveal-up active" style="transition-delay: 200ms;">
+                        <div class="exp-icon">
+                            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        </div>
+                        <div class="exp-content">
+                            <div class="exp-subtitle">Multi-Touch &amp; Fast Input Pipeline</div>
+                            <h3>Speed</h3>
+                            <p class="exp-details">Designed to handle rapid consecutive typing with multi-touch key logging and ultra-low input latency for fast typists.</p>
+                            <div class="exp-evidence">
+                                <strong>Play Store Verification:</strong> Official store specifications list multi-touch logging support and low latency typing response.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exp-card glass reveal-up active" style="transition-delay: 250ms;">
+                        <div class="exp-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <div class="exp-content">
+                            <div class="exp-subtitle">100% On-Device Local Processing</div>
+                            <h3>Privacy</h3>
+                            <p class="exp-details">Keeps all text predictions, corrections, and personal dictionaries locally in a secure SQLite database. Auto-disables learning on sensitive fields (passwords, payment details).</p>
+                            <div class="exp-evidence">
+                                <strong>Play Store Verification:</strong> Play Store privacy specification states all data processing occurs locally on-device without sending typing data to external servers.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exp-card glass reveal-up active" style="transition-delay: 300ms;">
+                        <div class="exp-icon">
+                            <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                        </div>
+                        <div class="exp-content">
+                            <div class="exp-subtitle">Offline Functionality &amp; Global Devices</div>
+                            <h3>Compatibility</h3>
+                            <p class="exp-details">Functions completely offline without requiring continuous internet connectivity. Uses network access solely when activating external services like live translation.</p>
+                            <div class="exp-evidence">
+                                <strong>Play Store Verification:</strong> Store metadata confirms no constant internet is required; network permissions are limited to optional cloud translation features.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exp-card glass reveal-up active" style="transition-delay: 350ms;">
+                        <div class="exp-icon">
+                            <svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+                        </div>
+                        <div class="exp-content">
+                            <div class="exp-subtitle">Height, Layouts &amp; Multilingual Fonts</div>
+                            <h3>Customization</h3>
+                            <p class="exp-details">Allows users to adjust keyboard height, modify layout dimensions, import custom TTF/OTF fonts, and seamlessly switch between 8 supported languages.</p>
+                            <div class="exp-evidence">
+                                <strong>Play Store Verification:</strong> Play Store listing explicitly details keyboard height adjustment, width controls, font loading, and multi-language support.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screenshots Showcase -->
+        <section id="showcase" class="showcase">
+            <div class="container">
+                <div class="section-header reveal-up active">
+                    <h2 data-i18n="sections.screenshotsTitle">Official App Screenshots</h2>
+                    <p data-i18n="sections.screenshotsSub">Explore the crisp interface, themes, and typing layout directly from Google Play.</p>
+                </div>
+                
+                <div class="carousel-container reveal-up active">
+                    <div class="carousel-track">
+                        <div class="carousel-slide" onclick="openFullscreenModal(0)">
+                            <div class="screenshot-mockup-wrapper">
+                                <div class="reflection-glare"></div>
+                                <img src="./src/images/screenshot_1.png" class="screenshot-img" alt="Official RCKeyboard Android Screenshot 1" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="carousel-slide" onclick="openFullscreenModal(1)">
+                            <div class="screenshot-mockup-wrapper">
+                                <div class="reflection-glare"></div>
+                                <img src="./src/images/screenshot_2.png" class="screenshot-img" alt="Official RCKeyboard Android Screenshot 2" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="carousel-slide" onclick="openFullscreenModal(2)">
+                            <div class="screenshot-mockup-wrapper">
+                                <div class="reflection-glare"></div>
+                                <img src="./src/images/screenshot_3.png" class="screenshot-img" alt="Official RCKeyboard Android Screenshot 3" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="carousel-slide" onclick="openFullscreenModal(3)">
+                            <div class="screenshot-mockup-wrapper">
+                                <div class="reflection-glare"></div>
+                                <img src="./src/images/screenshot_4.png" class="screenshot-img" alt="Official RCKeyboard Android Screenshot 4" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="carousel-slide" onclick="openFullscreenModal(4)">
+                            <div class="screenshot-mockup-wrapper">
+                                <div class="reflection-glare"></div>
+                                <img src="./src/images/screenshot_5.png" class="screenshot-img" alt="Official RCKeyboard Android Screenshot 5" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Google Play Store Metadata Info Card -->
+        <section id="specs" class="play-info">
+            <div class="container">
+                <div class="section-header reveal-up active">
+                    <h2 data-i18n="sections.overviewTitle">Google Play Store Specifications</h2>
+                    <p data-i18n="sections.overviewSub">Complete metadata and technical properties extracted directly from the official Google Play store page.</p>
+                </div>
+                <div class="info-card glass reveal-up active">
+                    <div class="feature-banner-wrapper">
+                        <img id="featureGraphicImg" src="./src/images/feature_graphic.png" alt="RCKeyboard Feature Graphic" class="feature-banner-img" loading="lazy">
+                        <div class="feature-banner-overlay">
+                            <span class="badge pulse-glow">Verified Google Play Listing • rc.keyboard</span>
+                        </div>
+                    </div>
+                                        <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Developer</span>
+                            <span class="info-value">Elsayed Khater</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Category</span>
+                            <span class="info-value">Personalization</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Version</span>
+                            <span class="info-value">v4.1.1</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Last Updated</span>
+                            <span class="info-value">Jul 22, 2026</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Release Date</span>
+                            <span class="info-value">Jun 13, 2026</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Verified Downloads</span>
+                            <span class="info-value">130,991</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Price</span>
+                            <span class="info-value"><div class="info-grid">
+                        <!-- Populated dynamically via main.js from app.json -->
+                    </div>.00 (Free)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">In-App Purchases</span>
+                            <span class="info-value"><div class="info-grid">
+                        <!-- Populated dynamically via main.js from app.json -->
+                    </div>.99 per item</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Package Name</span>
+                            <span class="info-value"><code>rc.keyboard</code></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Content Rating</span>
+                            <span class="info-value">Everyone</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Privacy Policy</span>
+                            <span class="info-value">
+                                <a href="https://omarshawkey13.github.io/keyboard/" target="_blank" rel="noopener" class="info-link">Official Policy &rarr;</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="languages-supported-wrapper">
+                        <h4 data-i18n="infoGrid.supportedLangs" style="margin-bottom: 0.8rem; font-size: 0.95rem; color: var(--accent);">Supported Languages</h4>
+                        <div id="supportedLangsTags" class="lang-tags-grid">
+<span class="lang-pill">Arabic</span>
+<span class="lang-pill">English</span>
+<span class="lang-pill">Spanish</span>
+<span class="lang-pill">Portuguese</span>
+<span class="lang-pill">French</span>
+<span class="lang-pill">German</span>
+<span class="lang-pill">Turkish</span>
+<span class="lang-pill">Russian</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Full App Description Showcase Section -->
+        <section id="app-description" class="app-description-section">
+            <div class="container">
+                <div class="section-header reveal-up active">
+                    <h2 data-i18n="sections.descTitle">Official Store Description</h2>
+                    <p data-i18n="sections.descSub">Comprehensive breakdown of RCKeyboard's AI engine, privacy architecture, Kotlin performance, and theme options.</p>
+                </div>
+                <div class="description-card glass reveal-up active">
+                    <div id="appFullDescription" class="description-text"><div class="desc-content">ارتقِ بتجربة الكتابة على هاتفك الذكي مع <strong>RCKeyBoard</strong>، لوحة مفاتيح متطورة لأجهزة أندرويد تجمع بين الأداء العالي، الذكاء، والخصوصية الصارمة. تم تصميم RCKeyBoard من الصفر لتوفير تجربة كتابة سريعة ودقيقة وقابلة للتخصيص، لتمنحك تجربة استخدام احترافية بين يديك.<br><br>سواء كنت تكتب بسرعة كبيرة، أو تبحث عن إنتاجية أعلى، أو تهتم بخصوصية بياناتك، فإن RCKeyBoard صُمم ليلبي احتياجاتك.<br><br><strong>محرك ذكي متطور</strong><br><br>استمتع بتجربة كتابة أكثر ذكاءً وسلاسة مع نظام التنبؤ والتصحيح المتقدم.<br><br><li>تنبؤات نصية دقيقة: تصحيح تلقائي متوازن يركز على التطابق الدقيق والكلمات التي يتعلمها التطبيق، مع إمكانية استخدام النص الأصلي بسهولة.</li>
+<li>اقتراحات مبنية على السياق: يعتمد على تحليل سياق الجملة لتقديم اقتراحات أكثر دقة للكلمة التالية.</li>
+<li>تصحيح إملائي فوري: اكتشاف وتصحيح الأخطاء الإملائية أثناء الكتابة لتحسين تجربة الإدخال.</li>
+<li>حل المعادلات الرياضية بسرعة: اكتب معادلة تبدأ بعلامة &quot;=&quot; مثل `=4*25` وسيعرض RCKeyBoard النتيجة مباشرة ضمن الاقتراحات.</li>
+<li>تعلم محلي ذكي: يتكيف التطبيق مع أسلوب كتابتك ويتعلم الكلمات والعبارات المستخدمة بشكل متكرر محلياً لتحسين دقة الاقتراحات مع مرور الوقت.</li>
+<strong>خصوصية وأمان أولاً</strong><br><br>خصوصيتك أولوية قصوى. يعتمد RCKeyBoard على المعالجة المحلية للحفاظ على بياناتك داخل جهازك.<br><br><li>معالجة محلية بالكامل: تتم معالجة التنبؤات والتصحيح والقواميس محلياً على جهازك باستخدام قاعدة بيانات محلية آمنة، دون إرسال بيانات الكتابة إلى خوادم خارجية.</li>
+<li>حماية الحقول الحساسة: يكتشف التطبيق الحقول الحساسة مثل كلمات المرور وبيانات الدفع، ويعطل التعلم وجمع البيانات تلقائياً أثناء استخدامها.</li>
+<li>حافظة نصوص آمنة: يقوم مدير الحافظة بحذف العناصر غير المثبتة تلقائياً بعد فترة زمنية محددة للمساعدة في حماية المعلومات الحساسة.</li>
+<li>صلاحيات محدودة: لا يتطلب التطبيق اتصالاً دائماً بالإنترنت. يتم استخدام الشبكة فقط عند تفعيل ميزات تعتمد على الخدمات الخارجية مثل الترجمة.</li>
+<strong>أداء سريع واستجابة سلسة</strong><br><br>تم تطوير RCKeyBoard باستخدام Kotlin وتحسينه للعمل بكفاءة على أجهزة أندرويد الحديثة.<br><br><li>استجابة سريعة للكتابة: يوفر تجربة كتابة سلسة مع تحسينات تقلل التأخير أثناء الإدخال السريع.</li>
+<li>دعم اللمس المتعدد: إمكانية تسجيل الإدخالات المتتابعة بكفاءة لدعم أساليب الكتابة السريعة.</li>
+<li>وضع لوحة التتبع (Trackpad): اضغط مطولاً على زر المسافة واسحب لتحريك مؤشر الكتابة بدقة وسهولة.</li>
+<strong>تخصيص وثيمات متقدمة</strong><br><br>اجعل لوحة المفاتيح تعكس أسلوبك الشخصي من خلال خيارات التخصيص المتنوعة.<br><br><li>تحكم كامل بالألوان: تخصيص ألوان المفاتيح والنصوص والعناصر المختلفة حسب تفضيلاتك.</li>
+<li>خلفيات مخصصة: استخدم صورك الخاصة كخلفية للوحة المفاتيح مع إمكانية تعديل مستوى الشفافية.</li>
+<li>خطوط مخصصة: دعم تحميل ملفات الخطوط (TTF/OTF) لتخصيص مظهر النصوص داخل لوحة المفاتيح.</li>
+<li>تعديل الأبعاد: التحكم في ارتفاع لوحة المفاتيح وإعدادات العرض المختلفة لتوفير راحة أكبر أثناء الاستخدام.</li>
+<strong>دعم متعدد اللغات وترجمة مدمجة</strong><br><br>تواصل بسهولة مع الآخرين بلغات مختلفة.<br><br><li>دعم لغات متعددة: دعم كامل للغات العربية، الإنجليزية، الإسبانية، البرتغالية، الفرنسية، الألمانية، التركية، والروسية.</li>
+<li>ترجمة مدمجة: إمكانية ترجمة النصوص مباشرة أثناء الكتابة باستخدام خدمات الترجمة المدعومة.</li>
+<strong>RCKeyBoard</strong> يمنحك تجربة كتابة تجمع بين السرعة، الذكاء، والخصوصية، مع خيارات تخصيص واسعة تناسب احتياجاتك اليومية.</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="statistics">
+                        <div class="container stats-container">
+                <div class="stat-box reveal-up active">
+                    <div class="stat-number">100,000+</div>
+                    <div class="stat-label">Total Downloads</div>
+                </div>
+                <div class="stat-box reveal-up active">
+                    <div class="stat-number">4.25 ★</div>
+                    <div class="stat-label">Average Score</div>
+                </div>
+                <div class="stat-box reveal-up active">
+                    <div class="stat-number">327</div>
+                    <div class="stat-label">Verified Ratings</div>
+                </div>
+                <div class="stat-box reveal-up active">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">On-Device Privacy</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="testimonials">
+            <div class="container">
+                <div class="section-header reveal-up active">
+                    <div class="snapshot-banner" data-i18n="reviews.snapshotBadge">
+                        ✓ Real Google Play Store Reviews Snapshot
+                    </div>
+                    <h2 data-i18n="sections.reviewsTitle">User Reviews & Feedback</h2>
+                    <p data-i18n="sections.reviewsSub">Authentic reviews retrieved directly from the official Google Play listing of RC Keyboard.</p>
+                </div>
+
+                <div class="review-controls reveal-up active">
+                    <div class="rating-filters">
+                        <button class="filter-btn active" data-rating="ALL" onclick="filterReviews('ALL')" data-i18n="reviews.allRatings">All Ratings</button>
+                        <button class="filter-btn" data-rating="5" onclick="filterReviews('5')">5 ★</button>
+                        <button class="filter-btn" data-rating="4" onclick="filterReviews('4')">4 ★</button>
+                        <button class="filter-btn" data-rating="3" onclick="filterReviews('3')">3 ★</button>
+                        <button class="filter-btn" data-rating="2" onclick="filterReviews('2')">2 ★</button>
+                        <button class="filter-btn" data-rating="1" onclick="filterReviews('1')">1 ★</button>
+                    </div>
+
+                    <div class="carousel-nav-btns">
+                        <button id="prevReviewBtn" class="nav-arrow" onclick="prevReviewPage()" aria-label="Previous Reviews Page">&larr;</button>
+                        <button id="nextReviewBtn" class="nav-arrow" onclick="nextReviewPage()" aria-label="Next Reviews Page">&rarr;</button>
+                    </div>
+                </div>
+                
+                <div class="reviews-carousel-wrapper">
+                    <div class="reviews-grid">
+                    <div class="review-card glass reveal-up active" style="transition-delay: 0ms;">
+                        <div>
+                            <div class="review-header">
+                                <img src="https://play-lh.googleusercontent.com/a-/ALV-UjV4lshpUv6PTEy9fqpb-G6IhPg4FuhS2x-m-ifcPt5HHBe1wlKL" class="avatar" alt="MGP SHADOW's avatar" loading="lazy">
+                                <div class="reviewer-info">
+                                    <h4>MGP SHADOW</h4>
+                                    <span class="review-date">July 22, 2026 • v4.1.0</span>
+                                </div>
+                            </div>
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="review-text" id="rev-text-7266067b-9d0a-46fc-9e37-b642ebd4a84f">
+                                "Great iOS-style keyboard! One suggestion: please stop showing the same learned word repeatedly in the suggestion bar It should appear only once and then show different smarter suggestions This would make typing much better"
+                            </div>
+                                                    <div class="developer-reply">
+                            <strong data-i18n="reviews.devReply">Developer Reply (2026-07-22):</strong>
+                            "Thank you so much for your thoughtful feedback! 😊 We&#39;re glad you&#39;re enjoying the iOS-style keyboard. Your suggestion about avoiding repeated learned words in the suggestion bar is excellent, and we&#39;ll definitely consider it for a future update to make predictions even smarter. ❤️
+"
+                        </div>
+                        </div>
+                        
+                        <div class="review-footer">
+                            <span class="helpful-tag">
+                                👍 0 Helpful
+                            </span>
+                            <span style="font-size: 0.75rem; color: var(--accent);">
+                                ✓ Verified Play Store Review
+                            </span>
+                        </div>
+                    </div>
+                    <div class="review-card glass reveal-up active" style="transition-delay: 60ms;">
+                        <div>
+                            <div class="review-header">
+                                <img src="https://play-lh.googleusercontent.com/a-/ALV-UjW0IFOuiE5r6oBemUM_-aeOdkYLg8_ghkB2_vqiDfy51oQWpiF2" class="avatar" alt="Leon's avatar" loading="lazy">
+                                <div class="reviewer-info">
+                                    <h4>Leon</h4>
+                                    <span class="review-date">July 17, 2026 • v3.5.7</span>
+                                </div>
+                            </div>
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="review-text" id="rev-text-0508f2fb-aa45-4a65-9f0a-ae0443fdd3e0">
+                                "it&#39;s good keyboard, thank you developers. but i have suggestion for you, i wanna request features &quot;Auto Capitalization&quot;. because i want to make it turn off, hope you make it ^^"
+                            </div>
+                                                    <div class="developer-reply">
+                            <strong data-i18n="reviews.devReply">Developer Reply (2026-07-17):</strong>
+                            "Thanks for review, your proposal will be checked"
+                        </div>
+                        </div>
+                        
+                        <div class="review-footer">
+                            <span class="helpful-tag">
+                                👍 0 Helpful
+                            </span>
+                            <span style="font-size: 0.75rem; color: var(--accent);">
+                                ✓ Verified Play Store Review
+                            </span>
+                        </div>
+                    </div>
+                    <div class="review-card glass reveal-up active" style="transition-delay: 120ms;">
+                        <div>
+                            <div class="review-header">
+                                <img src="https://play-lh.googleusercontent.com/a-/ALV-UjWtMexevvfYxYorrCuLppopus3BUCryApTd-yEydTqk8UcL7RU" class="avatar" alt="بيان شيرذاد's avatar" loading="lazy">
+                                <div class="reviewer-info">
+                                    <h4>بيان شيرذاد</h4>
+                                    <span class="review-date">July 04, 2026 • v3.5.4</span>
+                                </div>
+                            </div>
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="review-text" id="rev-text-03f9dac9-ef40-408a-95b1-389dbe7ad935">
+                                "Hello! 💖 I really love RCKEYBOARD. It is my favorite keyboard. I have one request. Could you please add Korean language support (한국어)? It would make me and many other users very happy. Thank you for your amazing work! 🌸"
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="review-footer">
+                            <span class="helpful-tag">
+                                👍 3 Helpful
+                            </span>
+                            <span style="font-size: 0.75rem; color: var(--accent);">
+                                ✓ Verified Play Store Review
+                            </span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container faq-container">
+                <div class="section-header reveal-up active">
+                    <h2 data-i18n="sections.faqTitle">Frequently Asked Questions</h2>
+                    <p data-i18n="sections.faqSub">Answers derived exclusively from official Google Play listing information, privacy policy, and developer specifications.</p>
+                </div>
+
+                <div class="faq-search-wrapper reveal-up active">
+                    <input type="text" class="faq-search-input" placeholder="Search FAQ topics (e.g. privacy, free, internet, permissions, update)..." oninput="filterFAQ(this.value)" aria-label="Search FAQ" data-i18n-placeholder="faq.searchPlaceholder">
+                </div>
+                
+                <div class="faq-list">
+            <details class="faq-item glass reveal-up active" style="transition-delay: 0ms;" open>
+                <summary>What is RC Keyboard?</summary>
+                <div class="faq-content">
+                    <p>RC Keyboard is an advanced, fast, and secure Android keyboard application built natively with Kotlin. It offers AI text predictions, context-aware suggestions, custom theme styling, trackpad cursor movement, instant math solving, and on-device privacy protection.</p>
+                    <span class="faq-source-tag">Source: Google Play Description</span>
+                </div>
+            </details>
+            <details class="faq-item glass reveal-up active" style="transition-delay: 40ms;" >
+                <summary>Is RC Keyboard free to use?</summary>
+                <div class="faq-content">
+                    <p>Yes, RC Keyboard is 100% free to download and use on Google Play. It contains optional in-app purchases (<div class="faq-list">
+                    <!-- Populated dynamically via main.js from faq.json -->
+                </div>.99 per item) for premium themes and customization options.</p>
+                    <span class="faq-source-tag">Source: Google Play Metadata (Price &amp; In-App Products)</span>
+                </div>
+            </details>
+            <details class="faq-item glass reveal-up active" style="transition-delay: 80ms;" >
+                <summary>Which Android devices and versions are supported?</summary>
+                <div class="faq-content">
+                    <p>RC Keyboard is built with Kotlin and optimized to run efficiently across modern Android smartphones and tablets.</p>
+                    <span class="faq-source-tag">Source: Google Play Metadata &amp; Technical Specs</span>
+                </div>
+            </details>
+            <details class="faq-item glass reveal-up active" style="transition-delay: 120ms;" >
+                <summary>How do I install RC Keyboard?</summary>
+                <div class="faq-content">
+                    <p>Open the Google Play Store, search for &#39;RCKeyboard&#39; (package ID: rc.keyboard), tap &#39;Install&#39;, then activate it via your device&#39;s Settings &gt; System &gt; Languages &amp; Input &gt; On-screen Keyboard.</p>
+                    <span class="faq-source-tag">Source: Official Play Store Installation Process</span>
+                </div>
+            </details>
+            <details class="faq-item glass reveal-up active" style="transition-delay: 160ms;" >
+                <summary>How do I update RC Keyboard?</summary>
+                <div class="faq-content">
+                    <p>Updates are published directly on Google Play. You can enable automatic updates in Play Store settings or manually update from the RC Keyboard store page when a new version (e.g., version 4.1.1) is available.</p>
+                    <span class="faq-source-tag">Source: Google Play Store Metadata</span>
+                </div>
+            </details>
+            <details class="faq-item glass reveal-up active" style="transition-delay: 200ms;" >
+                <summary>Does RC Keyboard require an Internet connection?</summary>
+                <div class="faq-content">
+                    <p>No. RC Keyboard processes all predictions, auto-corrections, and dictionaries locally on your device without requiring an active internet connection. Internet access is used only when activating external features like inline translation.</p>
+                    <span class="faq-source-tag">Source: Google Play Description (Limited Permissions &amp; Privacy)</span>
+                </div>
+            </details>
+            <details class="faq-item glass reveal-up active" style="transition-delay: 240ms;" >
+                <summary>What permissions are used by RC Keyboard?</summary>
+                <div class="faq-content">
+                    <p>RC Keyboard operates using standard Android Input Method Editor (IME) permissions. Network access is optional and strictly reserved for features relying on external services, such as translation.</p>
+                    <span class="faq-source-tag">Source: Google Play Store Description &amp; Privacy Policy</span>
+                </div>
+            </details>
+            <details class="faq-item glass reveal-up active" style="transition-delay: 280ms;" >
+                <summary>How does RC Keyboard protect my private data?</summary>
+                <div class="faq-content">
+                    <p>All typing data is processed on-device using a local database without uploading to external servers. RC Keyboard automatically disables learning when password or payment fields are active and automatically purges unpinned clipboard items.</p>
+                    <span class="faq-source-tag">Source: Google Play Description (Privacy &amp; Security First)</span>
+                </div>
+            </details>
+            <details class="faq-item glass reveal-up active" style="transition-delay: 320ms;" >
+                <summary>Which languages are supported?</summary>
+                <div class="faq-content">
+                    <p>RC Keyboard provides full native support for Arabic, English, Spanish, Portuguese, French, German, Turkish, and Russian, along with integrated text translation.</p>
+                    <span class="faq-source-tag">Source: Google Play Description (Multilingual Support)</span>
+                </div>
+            </details>
+            <details class="faq-item glass reveal-up active" style="transition-delay: 360ms;" >
+                <summary>How do I contact the developer?</summary>
+                <div class="faq-content">
+                    <p>You can contact developer Elsayed Khater via email at Khaterbr@gmail.com or visit the official website at https://rcmods.online. The official privacy policy is published at https://omarshawkey13.github.io/keyboard/.</p>
+                    <span class="faq-source-tag">Source: Google Play Store Developer Contact Information</span>
+                </div>
+            </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container cta-container reveal-up active">
+                <div class="cta-glow"></div>
+                <h2 data-i18n="sections.ctaTitle">Upgrade Your Android Typing Today</h2>
+                <p data-i18n="sections.ctaSub">Join over 100,000 users experiencing the speed, intelligence, and local privacy of RCKeyboard.</p>
+                <a href="https://play.google.com/store/apps/details?id=rc.keyboard" class="btn-primary large magnetic" target="_blank" rel="noopener" data-i18n="sections.ctaBtn">
+                    <svg viewBox="0 0 24 24" class="play-icon"><path d="M5 4v16l15-8-15-8z" fill="currentColor"/></svg>
+                    Download Free on Google Play
+                </a>
+            </div>
+        </section>
     </main>
 
+    <!-- Language Picker Modal -->
+    <div id="langModal" class="lang-modal" role="dialog" aria-modal="true" aria-labelledby="langModalTitle">
+        <div class="lang-modal-backdrop" onclick="closeLangModal()"></div>
+        <div class="lang-modal-card">
+            <div class="lang-modal-header">
+                <h3 id="langModalTitle" data-i18n="langModal.title">Select Language</h3>
+                <button class="modal-close" onclick="closeLangModal()" aria-label="Close Modal">&times;</button>
+            </div>
+            <input type="text" id="langSearchInput" class="lang-search-input" placeholder="Search languages..." oninput="filterLanguages(this.value)" data-i18n-placeholder="langModal.searchPlaceholder">
+            <div id="langListGrid" class="lang-list-grid">
+                <button class="lang-item-btn active" onclick="selectLangFromModal('en')">
+                    <span class="lang-flag">🇺🇸</span>
+                    <span>English <small style="opacity: 0.7;">(English)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('ar')">
+                    <span class="lang-flag">🇸🇦</span>
+                    <span>العربية <small style="opacity: 0.7;">(Arabic)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('fr')">
+                    <span class="lang-flag">🇫🇷</span>
+                    <span>Fran&#231;ais <small style="opacity: 0.7;">(French)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('de')">
+                    <span class="lang-flag">🇩🇪</span>
+                    <span>Deutsch <small style="opacity: 0.7;">(German)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('es')">
+                    <span class="lang-flag">🇪🇸</span>
+                    <span>Espa&#241;ol <small style="opacity: 0.7;">(Spanish)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('pt')">
+                    <span class="lang-flag">🇧🇷</span>
+                    <span>Portugu&#234;s <small style="opacity: 0.7;">(Portuguese)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('it')">
+                    <span class="lang-flag">🇮🇹</span>
+                    <span>Italiano <small style="opacity: 0.7;">(Italian)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('tr')">
+                    <span class="lang-flag">🇹🇷</span>
+                    <span>T&#252;rk&#231;e <small style="opacity: 0.7;">(Turkish)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('ru')">
+                    <span class="lang-flag">🇷🇺</span>
+                    <span>Русский <small style="opacity: 0.7;">(Russian)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('zh-CN')">
+                    <span class="lang-flag">🇨🇳</span>
+                    <span>简体中文 <small style="opacity: 0.7;">(Chinese Simplified)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('ja')">
+                    <span class="lang-flag">🇯🇵</span>
+                    <span>日本語 <small style="opacity: 0.7;">(Japanese)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('ko')">
+                    <span class="lang-flag">🇰🇷</span>
+                    <span>한국어 <small style="opacity: 0.7;">(Korean)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('hi')">
+                    <span class="lang-flag">🇮🇳</span>
+                    <span>हिन्दी <small style="opacity: 0.7;">(Hindi)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('id')">
+                    <span class="lang-flag">🇮🇩</span>
+                    <span>Bahasa Indonesia <small style="opacity: 0.7;">(Indonesian)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('ms')">
+                    <span class="lang-flag">🇲🇾</span>
+                    <span>Bahasa Melayu <small style="opacity: 0.7;">(Malay)</small></span>
+                </button>
+                <button class="lang-item-btn " onclick="selectLangFromModal('vi')">
+                    <span class="lang-flag">🇻🇳</span>
+                    <span>Tiếng Việt <small style="opacity: 0.7;">(Vietnamese)</small></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
-      <p>RCKeyBoard © 2026 — Premium keyboard experience for Android.</p>
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <img src="./src/images/icon.png" alt="RCKeyboard Icon" style="width: 28px; height: 28px; border-radius: 6px;">
+                    RCKeyboard
+                </a>
+                <p data-i18n="footer.description">The ultimate smart Android keyboard.<br>Designed natively in Kotlin for speed, intelligence, and privacy.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4 data-i18n="footer.navHeader">Navigation</h4>
+                    <a href="#features" data-i18n="nav.features">Features</a>
+                    <a href="#experience" data-i18n="nav.experience">Experience</a>
+                    <a href="#reviews" data-i18n="nav.reviews">User Reviews</a>
+                    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+                </div>
+                <div class="link-group">
+                    <h4 data-i18n="footer.legalHeader">Legal & Privacy</h4>
+                    <a href="./privacy.html" data-i18n="footer.privacyPolicy">Privacy Policy</a>
+                    <a href="./terms.html" data-i18n="footer.terms">Terms of Service</a>
+                    <a href="https://omarshawkey13.github.io/keyboard/" target="_blank" rel="noopener" data-i18n="infoGrid.officialPolicy">Official Privacy Link &rarr;</a>
+                </div>
+                <div class="link-group">
+                    <h4 data-i18n="footer.contactHeader">Developer Contact</h4>
+                    <a href="./contact.html" data-i18n="footer.support">Developer Support</a>
+                    <a href="mailto:Khaterbr@gmail.com">Khaterbr@gmail.com</a>
+                    <a href="https://rcmods.online" target="_blank" rel="noopener">https://rcmods.online &rarr;</a>
+                    <a href="https://play.google.com/store/apps/details?id=rc.keyboard" target="_blank" rel="noopener">Google Play Store &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p data-i18n="footer.copyright">&copy; 2026 RCKeyboard. Official Android Keyboard by Elsayed Khater.</p>
+            <button id="backToTop" class="back-to-top magnetic" aria-label="Back to Top">↑</button>
+        </div>
     </footer>
 
-    <script src="src/scripts/app.js"></script>
-  </body>
+    <!-- Floating Download Button -->
+    <a href="https://play.google.com/store/apps/details?id=rc.keyboard" class="floating-dl-btn" aria-label="Download RCKeyboard on Google Play" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="28" height="28"><path d="M5 4v16l15-8-15-8z" fill="currentColor"/></svg>
+    </a>
+
+    <script src="./src/main.js" type="module"></script>
+</body>
 </html>

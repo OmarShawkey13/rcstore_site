@@ -1,0 +1,101 @@
+[
+  {
+    "id": "ai-predictions",
+    "icon": "sparkles",
+    "title": "Smart AI Predictions & Auto-Correct",
+    "titleAr": "تنبؤات نصية دقيقة وتصحيح تلقائي",
+    "description": "Balanced auto-correction focusing on exact matches and learned words, with quick one-tap restore to original text.",
+    "category": "Intelligence",
+    "highlight": "AI Engine"
+  },
+  {
+    "id": "context-suggestions",
+    "icon": "brain",
+    "title": "Contextual Next-Word Suggestions",
+    "titleAr": "اقتراحات مبنية على السياق",
+    "description": "Analyzes sentence structure and context to provide accurate next-word suggestions as you type.",
+    "category": "Productivity",
+    "highlight": "Smart Context"
+  },
+  {
+    "id": "math-solver",
+    "icon": "calculator",
+    "title": "Instant Math Solver",
+    "titleAr": "حل المعادلات الرياضية فوراً",
+    "description": "Type any equation starting with '=' (e.g. '=4*25') and RCKeyboard instantly displays the calculated answer in the suggestion bar.",
+    "category": "Utility",
+    "highlight": "Formula Ready"
+  },
+  {
+    "id": "local-privacy",
+    "icon": "shield-check",
+    "title": "100% On-Device Local Privacy",
+    "titleAr": "معالجة محلية بالكامل لحماية الخصوصية",
+    "description": "All predictions, corrections, and dictionaries are stored and processed locally using a secure SQLite database. Zero typing data sent to external servers.",
+    "category": "Privacy",
+    "highlight": "Zero Server Logs"
+  },
+  {
+    "id": "sensitive-protection",
+    "icon": "lock",
+    "title": "Sensitive Field Auto-Protection",
+    "titleAr": "حماية الحقول الحساسة تلقائياً",
+    "description": "Detects password and payment input fields automatically, turning off learning and data logging during sensitive entries.",
+    "category": "Security",
+    "highlight": "Auto-Shield"
+  },
+  {
+    "id": "secure-clipboard",
+    "icon": "clipboard",
+    "title": "Auto-Clearing Secure Clipboard",
+    "titleAr": "حافظة نصوص آمنة مع تنظيف تلقائي",
+    "description": "Built-in clipboard manager automatically purges unpinned snippets after a set duration to safeguard confidential text.",
+    "category": "Security",
+    "highlight": "Auto-Purge"
+  },
+  {
+    "id": "kotlin-performance",
+    "icon": "lightning",
+    "title": "Native Kotlin Performance",
+    "titleAr": "أداء عالي بلغة Kotlin",
+    "description": "Engineered natively with Kotlin for minimal keystroke latency, smooth frame rates, and negligible battery consumption.",
+    "category": "Performance",
+    "highlight": "Zero Lag"
+  },
+  {
+    "id": "trackpad-mode",
+    "icon": "cursor",
+    "title": "Trackpad Cursor Control Mode",
+    "titleAr": "وضع لوحة التتبع Trackpad",
+    "description": "Long-press spacebar and glide your finger to move the cursor with pinpoint accuracy across long text blocks.",
+    "category": "Usability",
+    "highlight": "Precision Move"
+  },
+  {
+    "id": "full-customization",
+    "icon": "palette",
+    "title": "Full Color & Theme Customization",
+    "titleAr": "تخصيص كامل للألوان والثيمات",
+    "description": "Customize background hues, key colors, font styles, text colors, and transparency settings to match your personal style.",
+    "category": "Design",
+    "highlight": "Unlimited Hues"
+  },
+  {
+    "id": "custom-fonts-bg",
+    "icon": "image",
+    "title": "Custom Images & Font Files (TTF/OTF)",
+    "titleAr": "خلفيات مخصصة وخطوط TTF/OTF",
+    "description": "Set custom photo backgrounds with adjustable opacity and load custom font files (TTF/OTF) for unique typography.",
+    "category": "Design",
+    "highlight": "Personal Media"
+  },
+  {
+    "id": "multilingual-translation",
+    "icon": "globe",
+    "title": "Multilingual & Live Translation",
+    "titleAr": "دعم متعدد اللغات وترجمة مدمجة",
+    "description": "Full native support for Arabic, English, Spanish, Portuguese, French, German, Turkish, and Russian with inline direct translation.",
+    "category": "Global",
+    "highlight": "8 Languages"
+  }
+]
