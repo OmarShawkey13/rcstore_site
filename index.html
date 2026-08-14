@@ -142,7 +142,7 @@
               "name": "Is RCKeyBoard safe and private to use on Android?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, RCKeyBoard is completely free to download from Google Play. It operates 100% offline with local learning, meaning your keystrokes, passwords, and sensitive information are never transmitted to cloud servers."
+                "text": "Yes, RCKeyBoard operates 100% offline with on-device learning. Your keystrokes, passwords, and sensitive information are never uploaded or transmitted to any cloud servers."
               }
             },
             {
@@ -176,12 +176,14 @@
   </head>
   <body>
     <!-- Ambient Background Gradients & Mesh -->
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-    <div class="bg-orb orb-3"></div>
+    <div class="bg-mesh-wrap">
+      <div class="bg-orb orb-1"></div>
+      <div class="bg-orb orb-2"></div>
+      <div class="bg-orb orb-3"></div>
+    </div>
     <div class="bg-grid-overlay"></div>
 
-    <!-- Header Navigation -->
+    <!-- Header Navigation Dock -->
     <header class="topbar-wrapper">
       <nav class="topbar" id="main-nav">
         <a class="brand" href="index.html" aria-label="RCKeyBoard Homepage">
@@ -194,13 +196,15 @@
 
         <div class="nav-links">
           <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
-          <a href="#demo" class="nav-link">Live Demo</a>
+          <a href="#demo" class="nav-link">Studio Demo</a>
+          <a href="#comparison" class="nav-link">Compare</a>
           <a href="#themes" class="nav-link" data-i18n="nav.themes">Themes</a>
-          <a href="#identity" class="nav-link">Experience</a>
+          <a href="#faq" class="nav-link">FAQ</a>
           <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
         </div>
 
         <div class="nav-actions">
+          <!-- Language Selector -->
           <div class="language-selector">
             <button class="language-toggle" type="button" aria-label="Open language selector">
               <svg class="language-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -209,6 +213,9 @@
             </button>
             <div class="language-menu" aria-hidden="true">
               <div class="language-menu-header">Select Language</div>
+              <div class="language-search-wrap">
+                <input type="text" class="language-search-input" placeholder="Search language..." />
+              </div>
               <div class="language-menu-list">
                 <button class="language-item" type="button" data-lang="en"><span class="flag">🇺🇸</span> English</button>
                 <button class="language-item" type="button" data-lang="ar"><span class="flag">🇸🇦</span> العربية</button>
@@ -229,6 +236,7 @@
             </div>
           </div>
 
+          <!-- Theme Toggle Dark/Light -->
           <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
             <span class="toggle-icon-wrap">
               <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -236,11 +244,13 @@
             </span>
           </button>
 
+          <!-- Store Download CTA -->
           <a class="nav-cta" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <span>Download</span>
           </a>
 
+          <!-- Mobile Toggle Button -->
           <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
             <span class="bar bar-1"></span>
             <span class="bar bar-2"></span>
@@ -255,9 +265,10 @@
       <div class="mobile-menu-body">
         <div class="mobile-nav-links">
           <a href="#features" class="mobile-nav-link" data-i18n="nav.features">Features</a>
-          <a href="#demo" class="mobile-nav-link">Live Demo</a>
+          <a href="#demo" class="mobile-nav-link">Studio Demo</a>
+          <a href="#comparison" class="mobile-nav-link">Why RCKeyBoard</a>
           <a href="#themes" class="mobile-nav-link" data-i18n="nav.themes">Themes</a>
-          <a href="#identity" class="mobile-nav-link">Experience</a>
+          <a href="#faq" class="mobile-nav-link">FAQ</a>
           <a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a>
           <a href="privacy.html" class="mobile-nav-link" data-i18n="nav.privacy">Privacy Policy</a>
           <a href="terms.html" class="mobile-nav-link" data-i18n="nav.terms">Terms of Service</a>
@@ -297,32 +308,32 @@
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-primary btn-glow" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener" data-i18n="hero.install">
+              <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener" data-i18n="hero.install">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.53 1.53 0 0 1-.61-1.222V3.036c0-.476.223-.915.609-1.222zm11.6 8.772l2.673-1.543-2.673-1.543L12.58 10.586l2.629 2.628v-2.628zM4.774.887l10.285 5.938-2.479 2.479L4.774.887zm0 22.226l7.806-7.806 2.479 2.479L4.774 23.113z"/></svg>
-                Install Now
+                Install Free on Play Store
               </a>
               <a class="btn btn-secondary" href="#demo">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-                Try Live Simulator
+                Test Studio Demo
               </a>
             </div>
 
-            <div class="stats">
-              <div class="stat-card reveal">
+            <div class="stats reveal">
+              <div class="stat-card">
                 <div class="stat-icon">📥</div>
                 <div class="stat-content">
                   <strong>100K+</strong>
                   <span data-i18n="stats.installs">installs</span>
                 </div>
               </div>
-              <div class="stat-card reveal">
+              <div class="stat-card">
                 <div class="stat-icon">⭐</div>
                 <div class="stat-content">
                   <strong>4.5★</strong>
                   <span data-i18n="stats.rating">average rating</span>
                 </div>
               </div>
-              <div class="stat-card reveal">
+              <div class="stat-card">
                 <div class="stat-icon">🌐</div>
                 <div class="stat-content">
                   <strong>16+</strong>
@@ -332,6 +343,7 @@
             </div>
           </div>
 
+          <!-- Hero 3D Tilt Phone Mockup -->
           <div class="hero-visual reveal">
             <div class="phone-card-wrap">
               <div class="phone-glow-aura"></div>
@@ -341,7 +353,7 @@
                   <img src="src/images/rckeyboard.webp" alt="RCKeyBoard preview" loading="eager" width="340" height="680" />
                 </div>
               </div>
-              <!-- Floating Highlight Badges -->
+              <!-- Floating Dynamic Badges -->
               <div class="floating-badge badge-1">
                 <span>⚡ Smart Autocorrect</span>
               </div>
@@ -356,12 +368,12 @@
         </div>
       </section>
 
-      <!-- Interactive Live Keyboard Simulator Section -->
+      <!-- Interactive Live Keyboard Studio & Simulator Section -->
       <section class="demo-section" id="demo">
         <div class="section-heading reveal">
-          <p class="eyebrow">Interactive Simulator</p>
-          <h2>Try RCKeyBoard directly in your browser</h2>
-          <p class="section-subtext">Select a theme preset and type inside the test input box below to experience RCKeyBoard's sleek interface live.</p>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Interactive Studio</p>
+          <h2>Experience RCKeyBoard Live in Your Browser</h2>
+          <p class="section-subtext">Hear real mechanical typing switches, test typing speed, try inline calculations, and switch themes with zero lag.</p>
         </div>
 
         <div class="simulator-wrapper reveal">
@@ -370,38 +382,68 @@
               <span class="sim-dot red"></span>
               <span class="sim-dot yellow"></span>
               <span class="sim-dot green"></span>
+              <div class="simulator-title">RCKeyBoard Studio v2026</div>
             </div>
-            <div class="simulator-title">RCKeyBoard v2026 — Live Interactive Demo</div>
-            <div class="theme-selector-pills">
-              <button class="sim-theme-btn active" data-theme="amoled">Amoled Dark</button>
-              <button class="sim-theme-btn" data-theme="avocado">Avocado</button>
-              <button class="sim-theme-btn" data-theme="pink">Pink Check</button>
-              <button class="sim-theme-btn" data-theme="minecraft">Minecraft</button>
-              <button class="sim-theme-btn" data-theme="cute">Cute Cat</button>
-              <button class="sim-theme-btn" data-theme="light">Classic Light</button>
+
+            <div class="sim-header-actions">
+              <button class="sound-toggle-btn" id="sound-toggle" title="Toggle mechanical key audio">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                <span>Sound: On</span>
+              </button>
+
+              <div class="theme-selector-pills">
+                <button class="sim-theme-btn active" data-theme="amoled">Amoled Dark</button>
+                <button class="sim-theme-btn" data-theme="avocado">Avocado</button>
+                <button class="sim-theme-btn" data-theme="pink">Pink Check</button>
+                <button class="sim-theme-btn" data-theme="minecraft">Minecraft</button>
+                <button class="sim-theme-btn" data-theme="cute">Cute Cat</button>
+                <button class="sim-theme-btn" data-theme="light">Classic Light</button>
+              </div>
             </div>
           </div>
 
           <div class="simulator-screen theme-amoled" id="keyboard-simulator">
+            <!-- Telemetry Bar -->
+            <div class="sim-telemetry-bar">
+              <div class="sim-telemetry-item">
+                <span class="sim-telemetry-label">Speed:</span>
+                <span class="sim-telemetry-val" id="sim-wpm">48</span>
+                <span class="sim-telemetry-label">WPM</span>
+              </div>
+              <div class="sim-telemetry-item">
+                <span class="sim-telemetry-label">Keystrokes:</span>
+                <span class="sim-telemetry-val" id="sim-keys-count">14</span>
+              </div>
+              <div class="sim-telemetry-item">
+                <span class="sim-telemetry-label">Accuracy:</span>
+                <span class="sim-telemetry-val" id="sim-accuracy">99%</span>
+              </div>
+            </div>
+
+            <!-- Input Box -->
             <div class="sim-input-box">
-              <label for="sim-input" class="sim-label">Test Typing Area:</label>
+              <label for="sim-input" class="sim-label">
+                <span>Interactive Test Field</span>
+                <span style="font-size: 0.78rem; opacity: 0.8;">💡 Tip: Type "25*4=" for instant math</span>
+              </label>
               <div class="sim-input-wrapper">
-                <input type="text" id="sim-input" placeholder="Type here to test RCKeyBoard..." value="Typing with RCKeyBoard is lightning fast! 🚀" />
+                <input type="text" id="sim-input" placeholder="Type here or use on-screen keys..." value="Typing with RCKeyBoard is lightning fast! 🚀" />
                 <button class="sim-clear-btn" id="sim-clear" title="Clear text">✕</button>
               </div>
             </div>
 
-            <!-- Simulated Keyboard Frame -->
+            <!-- Keyboard Frame -->
             <div class="sim-keyboard-frame">
-              <!-- Suggestions Bar -->
+              <!-- Smart Suggestions Bar -->
               <div class="sim-suggestions">
                 <span class="sim-suggestion active-suggestion">RCKeyBoard</span>
                 <span class="sim-suggestion">awesome</span>
                 <span class="sim-suggestion">keyboard</span>
-                <span class="sim-suggestion">themes</span>
+                <span class="sim-suggestion">fast ⚡</span>
+                <span class="sim-suggestion">themes 🎨</span>
               </div>
 
-              <!-- Keyboard Keys Layout -->
+              <!-- Keys Layout -->
               <div class="sim-keys-rows">
                 <div class="sim-row">
                   <button class="key">q</button><button class="key">w</button><button class="key">e</button><button class="key">r</button><button class="key">t</button><button class="key">y</button><button class="key">u</button><button class="key">i</button><button class="key">o</button><button class="key">p</button>
@@ -420,16 +462,19 @@
                   <button class="key key-enter">↵</button>
                 </div>
               </div>
+
+              <div class="spacebar-trackpad-hint">↔️ Slide spacebar for trackpad precision cursor navigation</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Features Section -->
+      <!-- Features Bento Section -->
       <section class="features" id="features">
         <div class="section-heading reveal">
-          <p class="eyebrow" data-i18n="features.heading.eyebrow">What makes RCKeyBoard different</p>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Next-Gen Capabilities</p>
           <h2 data-i18n="features.heading.title">Built for real keyboard power, not just a basic typing app</h2>
+          <p class="section-subtext">Every feature is designed from scratch with Kotlin and local machine learning to make mobile writing frictionless.</p>
         </div>
 
         <div class="feature-grid">
@@ -437,7 +482,7 @@
             <div class="feature-icon glow-cyan">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v4a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M9 18h6"/><path d="M12 18v4"/><path d="M5 10a7 7 0 0 0 14 0"/></svg>
             </div>
-            <h3 data-i18n="features.smart.title">Smart typing</h3>
+            <h3 data-i18n="features.smart.title">Smart typing & Predictions</h3>
             <p data-i18n="features.smart.description">Context-aware suggestions, intelligent autocorrect, and fast prediction flow designed to feel natural.</p>
           </article>
 
@@ -445,7 +490,7 @@
             <div class="feature-icon glow-purple">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
             </div>
-            <h3 data-i18n="features.voice.title">Voice, trackpad, math</h3>
+            <h3 data-i18n="features.voice.title">Voice, Trackpad & Inline Math</h3>
             <p data-i18n="features.voice.description">Voice input, trackpad-style cursor control, and inline math solving make everyday typing faster.</p>
           </article>
 
@@ -453,7 +498,7 @@
             <div class="feature-icon glow-rose">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5z"/><path d="M2 16l4.5-4.5a2.12 2.12 0 0 1 3 0L14 16"/><path d="M14.5 14.5l1-1a2.12 2.12 0 0 1 3 0L22 17"/></svg>
             </div>
-            <h3 data-i18n="features.custom.title">Deep customization</h3>
+            <h3 data-i18n="features.custom.title">Deep Customization</h3>
             <p data-i18n="features.custom.description">Dynamic theme controls, custom media backgrounds, custom fonts, and adjustable keyboard sizing.</p>
           </article>
 
@@ -461,7 +506,7 @@
             <div class="feature-icon glow-emerald">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
             </div>
-            <h3 data-i18n="features.privacy.title">Privacy-first design</h3>
+            <h3 data-i18n="features.privacy.title">100% Offline Privacy</h3>
             <p data-i18n="features.privacy.description">Local learning, protected sensitive fields, and a secure clipboard make your data stay safer.</p>
           </article>
 
@@ -469,7 +514,7 @@
             <div class="feature-icon glow-amber">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
-            <h3 data-i18n="features.global.title">Global typing</h3>
+            <h3 data-i18n="features.global.title">Global Multilingual Typing</h3>
             <p data-i18n="features.global.description">Support for Arabic, English, Spanish, French, German, Russian, and more with live translation.</p>
           </article>
 
@@ -477,9 +522,62 @@
             <div class="feature-icon glow-blue">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
             </div>
-            <h3 data-i18n="features.core.title">Modern Android core</h3>
-            <p data-i18n="features.core.description">Built with Kotlin, Room, Coroutines, Coil, and Play integrations for a polished experience.</p>
+            <h3 data-i18n="features.core.title">Modern Android Architecture</h3>
+            <p data-i18n="features.core.description">Built with Kotlin, Room, Coroutines, Coil, and Play integrations for an ultra smooth experience.</p>
           </article>
+        </div>
+      </section>
+
+      <!-- Interactive Comparison Section ("Why RCKeyBoard?") -->
+      <section class="comparison-section" id="comparison">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> The Difference</p>
+          <h2>Why Power Users Choose RCKeyBoard in 2026</h2>
+          <p class="section-subtext">Compare how RCKeyBoard stacks against default stock keyboards.</p>
+        </div>
+
+        <div class="comparison-table-wrap reveal">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature Matrix</th>
+                <th class="col-highlight">✨ RCKeyBoard 2026</th>
+                <th>Standard Stock Keyboards</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Privacy Architecture</strong></td>
+                <td class="col-highlight"><span class="check-icon">✓</span> 100% Offline Local Machine Learning</td>
+                <td><span class="cross-icon">✗</span> Transmits keystrokes to cloud</td>
+              </tr>
+              <tr>
+                <td><strong>Typing Latency & Response</strong></td>
+                <td class="col-highlight"><span class="check-icon">✓</span> 0ms Local Instantaneous Response</td>
+                <td><span class="cross-icon">✗</span> Noticeable cloud suggestion lag</td>
+              </tr>
+              <tr>
+                <td><strong>Theme Customization</strong></td>
+                <td class="col-highlight"><span class="check-icon">✓</span> 50+ Themes, AMOLED OLED, RGB & Custom Media</td>
+                <td><span class="cross-icon">✗</span> Limited to default light/dark</td>
+              </tr>
+              <tr>
+                <td><strong>Trackpad Cursor Control</strong></td>
+                <td class="col-highlight"><span class="check-icon">✓</span> Spacebar slide with micro haptic feedback</td>
+                <td><span class="cross-icon">✗</span> Clunky selection loupe</td>
+              </tr>
+              <tr>
+                <td><strong>Inline Calculations</strong></td>
+                <td class="col-highlight"><span class="check-icon">✓</span> Instant Math solver right inside keyboard</td>
+                <td><span class="cross-icon">✗</span> Must open separate calculator app</td>
+              </tr>
+              <tr>
+                <td><strong>Multilingual Support</strong></td>
+                <td class="col-highlight"><span class="check-icon">✓</span> 16+ Global Languages & Live Translation</td>
+                <td><span class="cross-icon">✗</span> Basic language dictionaries</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -514,7 +612,7 @@
         </div>
       </section>
 
-      <!-- Themes Showcase & Filter Section (ENHANCED THEME CARDS) -->
+      <!-- Themes Showcase & Filter Section -->
       <section class="theme-showcase" id="themes">
         <div class="section-heading reveal">
           <p class="eyebrow" data-i18n="theme.heading.eyebrow">Theme library</p>
@@ -522,11 +620,18 @@
           <p class="section-subtext">Hover or tap any card to view full previews or test themes live in the interactive simulator.</p>
         </div>
 
-        <div class="theme-filter-bar reveal">
-          <button class="theme-filter-btn active" data-filter="all">All Themes (8)</button>
-          <button class="theme-filter-btn" data-filter="dark">Dark & Amoled</button>
-          <button class="theme-filter-btn" data-filter="light">Light & Fresh</button>
-          <button class="theme-filter-btn" data-filter="fun">Fun & Gaming</button>
+        <div class="theme-toolbar reveal">
+          <div class="theme-filter-bar">
+            <button class="theme-filter-btn active" data-filter="all">All Themes (8)</button>
+            <button class="theme-filter-btn" data-filter="dark">Dark & AMOLED</button>
+            <button class="theme-filter-btn" data-filter="light">Light & Fresh</button>
+            <button class="theme-filter-btn" data-filter="fun">Fun & Gaming</button>
+          </div>
+
+          <div class="theme-search-box">
+            <svg class="theme-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="theme-search" placeholder="Search themes..." />
+          </div>
         </div>
 
         <div class="theme-grid">
@@ -804,11 +909,11 @@
         </div>
       </section>
 
-      <!-- Gallery Section -->
+      <!-- Gallery Showcase Section -->
       <section class="gallery" id="gallery">
         <div class="section-heading reveal">
-          <p class="eyebrow">App experience</p>
-          <h2>More keyboard styles to match your mood</h2>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Visual Aesthetics</p>
+          <h2>Crafted for Every Typing Style and Mood</h2>
         </div>
 
         <div class="gallery-grid">
@@ -827,16 +932,67 @@
         </div>
       </section>
 
+      <!-- Interactive FAQ Accordion Section -->
+      <section class="faq-section" id="faq">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Got Questions?</p>
+          <h2>Frequently Asked Questions</h2>
+          <p class="section-subtext">Everything you need to know about RCKeyBoard privacy, customization, and features.</p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>Is RCKeyBoard safe and private to use on Android?</span>
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, 100%! RCKeyBoard operates completely offline with on-device local machine learning. Your keystrokes, personal passwords, and credit card numbers are never sent to external servers or cloud systems.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>How do I customize keyboard themes and backgrounds?</span>
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>You can choose from over 50 built-in custom themes (AMOLED OLED, Avocado Pastel, Pink Check, Minecraft Pixel, Cute Cat), pick custom fonts, adjust keycap borders, or upload your own background wallpaper photos directly from your phone gallery.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>How does trackpad-style cursor navigation work?</span>
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Simply slide your finger left or right across the spacebar to glide your text cursor with pixel precision. No more tapping between tiny letters to fix a typo!</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>Which languages and layouts are supported?</span>
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>RCKeyBoard natively supports 16+ languages including English, Arabic, Spanish, French, German, Russian, Portuguese, Hindi, Turkish, Japanese, Chinese, Indonesian, Vietnamese, Dutch, and Thai with multi-language quick switching.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Store Preview Section -->
       <section class="store-preview" id="download">
         <div class="preview-card reveal">
           <div class="preview-copy">
-            <p class="eyebrow">Play Store</p>
-            <h2>See the full app listing and install in seconds</h2>
-            <p>RCKeyBoard is designed to feel premium from the first tap, whether you want faster typing, custom styling, or a cleaner keyboard experience.</p>
-            <a class="btn btn-primary btn-glow" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Free Download</p>
+            <h2>Ready to transform your typing experience?</h2>
+            <p>Download RCKeyBoard free on Google Play Store. Enjoy lightning fast typing, 50+ custom themes, and 100% offline privacy today.</p>
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.53 1.53 0 0 1-.61-1.222V3.036c0-.476.223-.915.609-1.222zm11.6 8.772l2.673-1.543-2.673-1.543L12.58 10.586l2.629 2.628v-2.628zM4.774.887l10.285 5.938-2.479 2.479L4.774.887zm0 22.226l7.806-7.806 2.479 2.479L4.774 23.113z"/></svg>
-              Open in Play Store
+              Install Free on Google Play
             </a>
           </div>
           <div class="preview-frame">
@@ -848,7 +1004,7 @@
                   <p data-i18n="store.subtitle">Premium Android Keyboard</p>
                 </div>
               </div>
-              <div class="store-rating">★★★★★ <span>4.5</span></div>
+              <div class="store-rating">★★★★★ <span>4.5★</span></div>
               <div class="store-stats" data-i18n="store.stats">100K+ downloads • Privacy-first • Multilingual</div>
               <a class="btn btn-primary btn-full" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener" data-i18n="store.button">
                 Get it on Play Store
@@ -880,7 +1036,7 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
 
-    <!-- Footer -->
+    <!-- Unified 2026 Footer -->
     <footer class="footer">
       <div class="footer-shell">
         <div class="footer-brand">
@@ -893,6 +1049,7 @@
         <div class="footer-links">
           <a href="about.html" data-i18n="footer.about">About Us</a>
           <a href="index.html#features" data-i18n="footer.features">Features</a>
+          <a href="index.html#demo">Studio Demo</a>
           <a href="index.html#themes" data-i18n="footer.themes">Themes</a>
           <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
           <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>

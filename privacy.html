@@ -87,12 +87,14 @@
   </head>
   <body>
     <!-- Ambient Background Gradients & Mesh -->
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-    <div class="bg-orb orb-3"></div>
+    <div class="bg-mesh-wrap">
+      <div class="bg-orb orb-1"></div>
+      <div class="bg-orb orb-2"></div>
+      <div class="bg-orb orb-3"></div>
+    </div>
     <div class="bg-grid-overlay"></div>
 
-    <!-- Header Navigation -->
+    <!-- Header Navigation Dock -->
     <header class="topbar-wrapper">
       <nav class="topbar" id="main-nav">
         <a class="brand" href="index.html" aria-label="RCKeyBoard Homepage">
@@ -104,10 +106,11 @@
         </a>
 
         <div class="nav-links">
-          <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
-          <a href="#demo" class="nav-link">Live Demo</a>
-          <a href="#themes" class="nav-link" data-i18n="nav.themes">Themes</a>
-          <a href="#identity" class="nav-link">Experience</a>
+          <a href="index.html#features" class="nav-link" data-i18n="nav.features">Features</a>
+          <a href="index.html#demo" class="nav-link">Studio Demo</a>
+          <a href="index.html#comparison" class="nav-link">Compare</a>
+          <a href="index.html#themes" class="nav-link" data-i18n="nav.themes">Themes</a>
+          <a href="index.html#faq" class="nav-link">FAQ</a>
           <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
         </div>
 
@@ -120,6 +123,9 @@
             </button>
             <div class="language-menu" aria-hidden="true">
               <div class="language-menu-header">Select Language</div>
+              <div class="language-search-wrap">
+                <input type="text" class="language-search-input" placeholder="Search language..." />
+              </div>
               <div class="language-menu-list">
                 <button class="language-item" type="button" data-lang="en"><span class="flag">🇺🇸</span> English</button>
                 <button class="language-item" type="button" data-lang="ar"><span class="flag">🇸🇦</span> العربية</button>
@@ -148,7 +154,7 @@
           </button>
 
           <a class="nav-cta" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <span>Download</span>
           </a>
 
@@ -165,12 +171,13 @@
     <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
       <div class="mobile-menu-body">
         <div class="mobile-nav-links">
-          <a href="#features" class="mobile-nav-link" data-i18n="nav.features">Features</a>
-          <a href="#demo" class="mobile-nav-link">Live Demo</a>
-          <a href="#themes" class="mobile-nav-link" data-i18n="nav.themes">Themes</a>
-          <a href="#identity" class="mobile-nav-link">Experience</a>
+          <a href="index.html#features" class="mobile-nav-link" data-i18n="nav.features">Features</a>
+          <a href="index.html#demo" class="mobile-nav-link">Studio Demo</a>
+          <a href="index.html#comparison" class="mobile-nav-link">Why RCKeyBoard</a>
+          <a href="index.html#themes" class="mobile-nav-link" data-i18n="nav.themes">Themes</a>
+          <a href="index.html#faq" class="mobile-nav-link">FAQ</a>
           <a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a>
-          <a href="privacy.html" class="mobile-nav-link" data-i18n="nav.privacy">Privacy Policy</a>
+          <a href="privacy.html" class="mobile-nav-link active" data-i18n="nav.privacy">Privacy Policy</a>
           <a href="terms.html" class="mobile-nav-link" data-i18n="nav.terms">Terms of Service</a>
         </div>
         <div class="mobile-menu-footer">
@@ -185,7 +192,7 @@
     <main>
       <section class="page-header reveal">
         <div class="breadcrumb-wrap">
-          <a href="index.html" class="pill breadcrumb-btn">
+          <a href="index.html" class="breadcrumb-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             <span>Back to Home</span>
           </a>
@@ -195,81 +202,63 @@
       </section>
 
       <section class="page-content reveal">
-        
-  <div class="subpage-hero-card">
-    <div class="subpage-badge">🛡️ Privacy Commitment</div>
-    <h2>Your Data Remains Yours. Period.</h2>
-    <p class="effective-date">Effective Date: July 27, 2026 • Version 2.4</p>
-    <p>At RCKeyBoard, we believe your keystrokes are deeply personal. Whether you're typing private messages, passwords, or financial information, our application is engineered so that your data never leaves your device.</p>
-  </div>
+        <div class="subpage-hero-card">
+          <div class="subpage-badge">🛡️ Privacy Commitment</div>
+          <h2>Your Data Remains Yours. Period.</h2>
+          <p class="effective-date">Effective Date: July 27, 2026 • Version 2.4</p>
+          <p>At RCKeyBoard, we believe your keystrokes are deeply personal. Whether you're typing private messages, passwords, or financial information, our application is engineered so that your data never leaves your device.</p>
+        </div>
 
-  <div class="policy-sections-wrapper">
-    <article class="policy-card">
-      <div class="policy-header">
-        <span class="policy-num">01</span>
-        <h3>Zero Keystroke Logging</h3>
-      </div>
-      <p>RCKeyBoard does <strong>NOT</strong> collect, record, or transmit typed text, passwords, credit card numbers, address book contacts, or search queries to any remote servers or third parties. All text predictions and autocorrect operations execute entirely in your device's local memory.</p>
-    </article>
+        <div class="policy-sections-wrapper">
+          <article class="policy-card">
+            <div class="policy-header">
+              <span class="policy-num">01</span>
+              <h3>Zero Keystroke Logging</h3>
+            </div>
+            <p>RCKeyBoard does <strong>NOT</strong> collect, record, or transmit typed text, passwords, credit card numbers, address book contacts, or search queries to any remote servers or third parties. All text predictions and autocorrect operations execute entirely in your device's local memory.</p>
+          </article>
 
-    <article class="policy-card">
-      <div class="policy-header">
-        <span class="policy-num">02</span>
-        <h3>Local Machine Learning & Dictionaries</h3>
-      </div>
-      <p>When RCKeyBoard learns your typing habits and vocabulary, the resulting personal dictionary is saved exclusively in encrypted local app storage on your device. You can clear or reset your learned dictionary data at any time directly through the RCKeyBoard settings menu.</p>
-    </article>
+          <article class="policy-card">
+            <div class="policy-header">
+              <span class="policy-num">02</span>
+              <h3>Local Machine Learning & Dictionaries</h3>
+            </div>
+            <p>When RCKeyBoard learns your typing habits and vocabulary, the resulting personal dictionary is saved exclusively in encrypted local app storage on your device. You can clear or reset your learned dictionary data at any time directly through the RCKeyBoard settings menu.</p>
+          </article>
 
-    <article class="policy-card">
-      <div class="policy-header">
-        <span class="policy-num">03</span>
-        <h3>Permissions & Network Access</h3>
-      </div>
-      <p>RCKeyBoard requires only standard IME (Input Method Editor) permissions to operate as your system keyboard. Network permissions are used strictly for optional features (such as live text translation or downloading new theme packages from Google Play) and never for uploading typing data.</p>
-    </article>
+          <article class="policy-card">
+            <div class="policy-header">
+              <span class="policy-num">03</span>
+              <h3>Permissions & Network Access</h3>
+            </div>
+            <p>RCKeyBoard requires only standard IME (Input Method Editor) permissions to operate as your system keyboard. Network permissions are used strictly for optional features (such as live text translation or downloading new theme packages from Google Play) and never for uploading typing data.</p>
+          </article>
 
-    <article class="policy-card">
-      <div class="policy-header">
-        <span class="policy-num">04</span>
-        <h3>Third-Party Analytics & Crash Diagnostics</h3>
-      </div>
-      <p>To maintain stability and fix bugs, RCKeyBoard uses anonymized, aggregated crash reporting through Google Play Console. This data contains zero personal text information and includes only technical diagnostic data (e.g. device model, Android OS version, app version).</p>
-    </article>
+          <article class="policy-card">
+            <div class="policy-header">
+              <span class="policy-num">04</span>
+              <h3>Third-Party Analytics & Crash Diagnostics</h3>
+            </div>
+            <p>To maintain stability and fix bugs, RCKeyBoard uses anonymized, aggregated crash reporting through Google Play Console. This data contains zero personal text information and includes only technical diagnostic data (e.g. device model, Android OS version, app version).</p>
+          </article>
 
-    <article class="policy-card">
-      <div class="policy-header">
-        <span class="policy-num">05</span>
-        <h3>Your Rights & Data Control</h3>
-      </div>
-      <p>You maintain 100% control over your data. You can clear all local app storage, uninstall the app, or revoke optional permissions at any time. For questions regarding our privacy practices, contact us at <strong>privacy@rckeyboard.online</strong>.</p>
-    </article>
-  </div>
-
+          <article class="policy-card">
+            <div class="policy-header">
+              <span class="policy-num">05</span>
+              <h3>Your Rights & Data Control</h3>
+            </div>
+            <p>You maintain 100% control over your data. You can clear all local app storage, uninstall the app, or revoke optional permissions at any time. For questions regarding our privacy practices, contact us at <strong>privacy@rckeyboard.online</strong>.</p>
+          </article>
+        </div>
       </section>
     </main>
-
-    <!-- Theme Lightbox Modal -->
-    <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true">
-      <div class="lightbox-backdrop"></div>
-      <div class="lightbox-content">
-        <button class="lightbox-close" id="lightbox-close" title="Close preview">✕</button>
-        <div class="lightbox-image-wrap">
-          <img id="lightbox-img" src="" alt="Theme high resolution preview" />
-        </div>
-        <div class="lightbox-caption">
-          <h3 id="lightbox-title">Theme Title</h3>
-          <p id="lightbox-desc">Theme description goes here</p>
-          <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=rc.keyboard&hl=en-US" target="_blank" rel="noopener">Install Theme on Play Store</a>
-        </div>
-      </div>
-    </div>
 
     <!-- Back To Top Button -->
     <button class="back-to-top" id="back-to-top" title="Back to top" aria-label="Back to top">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
 
-    <!-- Footer -->
+    <!-- Unified 2026 Footer -->
     <footer class="footer">
       <div class="footer-shell">
         <div class="footer-brand">
@@ -282,6 +271,7 @@
         <div class="footer-links">
           <a href="about.html" data-i18n="footer.about">About Us</a>
           <a href="index.html#features" data-i18n="footer.features">Features</a>
+          <a href="index.html#demo">Studio Demo</a>
           <a href="index.html#themes" data-i18n="footer.themes">Themes</a>
           <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
           <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
