@@ -155,7 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------------------------------
   // 4. Hero 3D Perspective Tilt & Interactive Theme Swatches
   // ---------------------------------------------------------------------------
-  if (heroVisual && phoneCardWrap) {
+  const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+
+  if (heroVisual && phoneCardWrap && isFinePointer) {
     heroVisual.addEventListener('mousemove', (e) => {
       const rect = heroVisual.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
@@ -382,6 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Lightbox Modal Preview
   themeCards.forEach((card) => {
     const viewBtn = card.querySelector('.view-lightbox-btn');
+    const media = card.querySelector('.theme-media');
     const img = card.querySelector('.theme-media img');
     const title = card.querySelector('.theme-info h3')?.textContent;
     const desc = card.querySelector('.theme-info p')?.textContent;
@@ -397,6 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     viewBtn?.addEventListener('click', openLightbox);
+    media?.addEventListener('click', openLightbox);
   });
 
   const closeLightbox = () => {
@@ -553,6 +557,14 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.remove('menu-open');
     });
   });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && mobileMenuOverlay?.classList.contains('open')) {
+      mobileMenuOverlay.classList.remove('open');
+      document.body.classList.remove('menu-open');
+      mobileMenuToggle?.setAttribute('aria-expanded', 'false');
+    }
+  }, { passive: true });
 
   // ---------------------------------------------------------------------------
   // 11. Navbar Scrollspy & Back-to-Top Progress
