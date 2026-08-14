@@ -4,47 +4,47 @@
 
   <!-- Main Homepage -->
   <url>
-    <loc>https://rcmods.online/</loc>
+    <loc>https://rckeyboard.online/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://rcmods.online/src/images/rckeyboard.webp</image:loc>
+      <image:loc>https://rckeyboard.online/src/images/rckeyboard.webp</image:loc>
       <image:title>RCKeyBoard — Fast, Private &amp; Customizable Android Keyboard App</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://rcmods.online/src/images/amoled_dark.jpg</image:loc>
+      <image:loc>https://rckeyboard.online/src/images/amoled_dark.jpg</image:loc>
       <image:title>RCKeyBoard Amoled Dark Theme Preview</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://rcmods.online/src/images/avocado.png</image:loc>
+      <image:loc>https://rckeyboard.online/src/images/avocado.png</image:loc>
       <image:title>RCKeyBoard Avocado Fresh Theme Preview</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://rcmods.online/src/images/pink_check.png</image:loc>
+      <image:loc>https://rckeyboard.online/src/images/pink_check.png</image:loc>
       <image:title>RCKeyBoard Pink Check Grid Theme Preview</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://rcmods.online/src/images/minecraft.png</image:loc>
+      <image:loc>https://rckeyboard.online/src/images/minecraft.png</image:loc>
       <image:title>RCKeyBoard Minecraft Gamer Theme Preview</image:title>
     </image:image>
   </url>
 
   <!-- About Us Page -->
   <url>
-    <loc>https://rcmods.online/about.html</loc>
+    <loc>https://rckeyboard.online/about.html</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://rcmods.online/src/images/logo.webp</image:loc>
+      <image:loc>https://rckeyboard.online/src/images/logo.webp</image:loc>
       <image:title>RCKeyBoard Official App Icon</image:title>
     </image:image>
   </url>
 
   <!-- Privacy Policy Page -->
   <url>
-    <loc>https://rcmods.online/privacy.html</loc>
+    <loc>https://rckeyboard.online/privacy.html</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -52,7 +52,7 @@
 
   <!-- Terms of Service Page -->
   <url>
-    <loc>https://rcmods.online/terms.html</loc>
+    <loc>https://rckeyboard.online/terms.html</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

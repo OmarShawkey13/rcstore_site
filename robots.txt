@@ -16,4 +16,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://rcmods.online/sitemap.xml
+Sitemap: https://rckeyboard.online/sitemap.xml
