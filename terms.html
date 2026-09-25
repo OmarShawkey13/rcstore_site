@@ -47,11 +47,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/styles/main.css" />
-    <meta name="theme-color" content="#060814" />
+    <link rel="stylesheet" href="src/styles/refinements.css" />
+    <meta name="theme-color" content="#080b12" />
 
     <!-- Schema.org JSON-LD Structured Data (TermsOfService WebPage & BreadcrumbList) -->
     <script type="application/ld+json">
@@ -85,17 +86,13 @@
     </script>
   </head>
   <body>
-    <!-- Ambient Background Gradients & Mesh -->
-    <div class="bg-mesh-wrap">
-      <div class="bg-orb orb-1"></div>
-      <div class="bg-orb orb-2"></div>
-      <div class="bg-orb orb-3"></div>
-    </div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <!-- Static background texture -->
     <div class="bg-grid-overlay"></div>
 
     <!-- Header Navigation Dock -->
     <header class="topbar-wrapper">
-      <nav class="topbar" id="main-nav">
+      <nav class="topbar" id="main-nav" aria-label="Primary navigation">
         <a class="brand" href="index.html" aria-label="RCKeyBoard Homepage">
           <div class="brand-logo-wrap">
             <img src="src/images/logo.webp" alt="RCKeyBoard Logo" width="38" height="38" />
@@ -115,12 +112,12 @@
 
         <div class="nav-actions">
           <div class="language-selector">
-            <button class="language-toggle" type="button" aria-label="Open language selector">
+            <button class="language-toggle" type="button" aria-label="Open language selector" aria-expanded="false" aria-controls="language-menu">
               <svg class="language-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
               <span class="language-label">EN</span>
               <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="language-menu" aria-hidden="true">
+            <div class="language-menu" id="language-menu" aria-hidden="true" inert>
               <div class="language-menu-header">Select Language</div>
               <div class="language-search-wrap">
                 <input type="text" class="language-search-input" placeholder="Search language..." />
@@ -145,7 +142,7 @@
             </div>
           </div>
 
-          <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
+          <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode" aria-pressed="false" title="Toggle theme">
             <span class="toggle-icon-wrap">
               <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
               <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -157,7 +154,7 @@
             <span>Download</span>
           </a>
 
-          <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
             <span class="bar bar-1"></span>
             <span class="bar bar-2"></span>
             <span class="bar bar-3"></span>
@@ -167,7 +164,7 @@
     </header>
 
     <!-- Mobile Drawer Menu Overlay -->
-    <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true" inert>
       <div class="mobile-menu-body">
         <div class="mobile-nav-links">
           <a href="index.html#features" class="mobile-nav-link" data-i18n="nav.features">Features</a>
@@ -188,7 +185,7 @@
     </div>
 
     <!-- Main Content Container -->
-    <main>
+    <main id="main-content" tabindex="-1">
       <section class="page-header reveal">
         <div class="breadcrumb-wrap">
           <a href="index.html" class="breadcrumb-btn">
@@ -284,6 +281,6 @@
       <p class="footer-copy" data-i18n="footer.copy">RCKeyBoard © 2026 — Built for faster, smarter, and more personal typing.</p>
     </footer>
 
-    <script src="src/scripts/app.js"></script>
+    <script src="src/scripts/app.js" defer></script>
   </body>
 </html>

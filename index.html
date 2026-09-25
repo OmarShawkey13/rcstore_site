@@ -6,7 +6,7 @@
     <title>RCKeyBoard — Fast, Private & Customizable Android Keyboard App</title>
     <meta
       name="description"
-      content="Download RCKeyBoard, the ultimate Android keyboard app with smart predictions, 50+ custom themes (Amoled, RGB, Avocado), voice typing, 16+ languages, and 100% offline privacy."
+      content="Download RCKeyBoard, the ultimate Android keyboard app with smart predictions, 50+ custom themes (Amoled, RGB, Avocado), voice typing, 27+ languages, and 100% offline privacy."
     />
     <meta name="keywords" content="Android keyboard, smart typing, custom themes, Amoled keyboard, privacy-first keyboard, multilingual Android keyboard, fast autocorrect, RCKeyBoard app, Android IME, offline typing app" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -38,7 +38,7 @@
     <meta property="og:site_name" content="RCKeyBoard" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="RCKeyBoard — Fast, Private & Customizable Android Keyboard App" />
-    <meta property="og:description" content="Download RCKeyBoard, the ultimate Android keyboard app with smart predictions, 50+ custom themes (Amoled, RGB, Avocado), voice typing, 16+ languages, and 100% offline privacy." />
+    <meta property="og:description" content="Download RCKeyBoard, the ultimate Android keyboard app with smart predictions, 50+ custom themes (Amoled, RGB, Avocado), voice typing, 27+ languages, and 100% offline privacy." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://rckeyboard.online/" />
     <meta property="og:image" content="https://rckeyboard.online/src/images/rckeyboard.webp" />
@@ -51,7 +51,7 @@
     <meta name="twitter:site" content="@RCKeyBoardApp" />
     <meta name="twitter:creator" content="@RCKeyBoardApp" />
     <meta name="twitter:title" content="RCKeyBoard — Fast, Private & Customizable Android Keyboard App" />
-    <meta name="twitter:description" content="Download RCKeyBoard, the ultimate Android keyboard app with smart predictions, 50+ custom themes (Amoled, RGB, Avocado), voice typing, 16+ languages, and 100% offline privacy." />
+    <meta name="twitter:description" content="Download RCKeyBoard, the ultimate Android keyboard app with smart predictions, 50+ custom themes (Amoled, RGB, Avocado), voice typing, 27+ languages, and 100% offline privacy." />
     <meta name="twitter:image" content="https://rckeyboard.online/src/images/rckeyboard.webp" />
 
     <!-- Core Web Vitals & LCP Resource Preloads -->
@@ -62,11 +62,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/styles/main.css" />
-    <meta name="theme-color" content="#060814" />
+    <link rel="stylesheet" href="src/styles/refinements.css" />
+    <meta name="theme-color" content="#080b12" />
 
     <!-- Schema.org JSON-LD Structured Data for Google Search Console & Rich Snippets -->
     <script type="application/ld+json">
@@ -120,7 +121,7 @@
             "50+ custom themes (Amoled, RGB, Avocado, Kawaii, Gaming)",
             "Voice typing & trackpad-style cursor control",
             "100% offline local privacy dictionary",
-            "16+ global language support with live translation"
+            "27+ global language support with live translation"
           ]
         },
         {
@@ -158,7 +159,7 @@
               "name": "Which languages are supported by RCKeyBoard?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "RCKeyBoard supports 16+ major languages including English, Arabic, Spanish, French, German, Russian, Portuguese, Hindi, Turkish, Japanese, Chinese, Indonesian, Vietnamese, Dutch, and Thai."
+                "text": "RCKeyBoard supports 27+ major languages including English, Arabic, Spanish, French, German, Russian, Portuguese, Hindi, Turkish, Japanese, Chinese, Indonesian, Vietnamese, Dutch, and Thai."
               }
             },
             {
@@ -175,17 +176,13 @@
     </script>
   </head>
   <body>
-    <!-- Ambient Background Gradients & Mesh -->
-    <div class="bg-mesh-wrap">
-      <div class="bg-orb orb-1"></div>
-      <div class="bg-orb orb-2"></div>
-      <div class="bg-orb orb-3"></div>
-    </div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <!-- Static background texture -->
     <div class="bg-grid-overlay"></div>
 
     <!-- Header Navigation Dock -->
     <header class="topbar-wrapper">
-      <nav class="topbar" id="main-nav">
+      <nav class="topbar" id="main-nav" aria-label="Primary navigation">
         <a class="brand" href="index.html" aria-label="RCKeyBoard Homepage">
           <div class="brand-logo-wrap">
             <img src="src/images/logo.webp" alt="RCKeyBoard Logo" width="38" height="38" />
@@ -206,12 +203,12 @@
         <div class="nav-actions">
           <!-- Language Selector -->
           <div class="language-selector">
-            <button class="language-toggle" type="button" aria-label="Open language selector">
+            <button class="language-toggle" type="button" aria-label="Open language selector" aria-expanded="false" aria-controls="language-menu">
               <svg class="language-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
               <span class="language-label">EN</span>
               <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="language-menu" aria-hidden="true">
+            <div class="language-menu" id="language-menu" aria-hidden="true" inert>
               <div class="language-menu-header">Select Language</div>
               <div class="language-search-wrap">
                 <input type="text" class="language-search-input" placeholder="Search language..." />
@@ -237,7 +234,7 @@
           </div>
 
           <!-- Theme Toggle Dark/Light -->
-          <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
+          <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode" aria-pressed="false" title="Toggle theme">
             <span class="toggle-icon-wrap">
               <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
               <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -251,7 +248,7 @@
           </a>
 
           <!-- Mobile Toggle Button -->
-          <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
             <span class="bar bar-1"></span>
             <span class="bar bar-2"></span>
             <span class="bar bar-3"></span>
@@ -261,7 +258,7 @@
     </header>
 
     <!-- Mobile Drawer Menu Overlay -->
-    <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true" inert>
       <div class="mobile-menu-body">
         <div class="mobile-nav-links">
           <a href="#features" class="mobile-nav-link" data-i18n="nav.features">Features</a>
@@ -282,7 +279,7 @@
     </div>
 
     <!-- Main Content Container -->
-    <main>
+    <main id="main-content" tabindex="-1">
       <!-- Hero Section -->
       <section class="hero" id="hero">
         <div class="hero-grid">
@@ -336,7 +333,7 @@
               <div class="stat-card">
                 <div class="stat-icon">🌐</div>
                 <div class="stat-content">
-                  <strong>16+</strong>
+                  <strong>27+</strong>
                   <span data-i18n="stats.languages">languages</span>
                 </div>
               </div>
@@ -350,7 +347,7 @@
               <div class="phone-card">
                 <div class="phone-notch"></div>
                 <div class="phone-screen">
-                  <img src="src/images/rckeyboard.webp" alt="RCKeyBoard preview" loading="eager" width="340" height="680" />
+                  <img src="src/images/rckeyboard.webp" alt="RCKeyBoard preview" loading="eager" fetchpriority="high" decoding="async" width="340" height="680" />
                 </div>
               </div>
               <!-- Floating Dynamic Badges -->
@@ -573,7 +570,7 @@
               </tr>
               <tr>
                 <td><strong>Multilingual Support</strong></td>
-                <td class="col-highlight"><span class="check-icon">✓</span> 16+ Global Languages & Live Translation</td>
+                <td class="col-highlight"><span class="check-icon">✓</span> 27+ Global Languages & Live Translation</td>
                 <td><span class="cross-icon">✗</span> Basic language dictionaries</td>
               </tr>
             </tbody>
@@ -642,7 +639,7 @@
                 <span class="badge-pill">🔥 Popular</span>
                 <span class="rating-pill">★ 4.9</span>
               </div>
-              <img src="src/images/amoled_dark.jpg" alt="Amoled dark keyboard theme preview" loading="lazy" width="600" height="400" />
+              <img src="src/images/amoled_dark.jpg" alt="Amoled dark keyboard theme preview" loading="lazy" decoding="async" width="600" height="400" />
               <div class="theme-preview-overlay">
                 <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -676,7 +673,7 @@
                 <span class="badge-pill">✨ Trending</span>
                 <span class="rating-pill">★ 4.8</span>
               </div>
-              <img src="src/images/avocado.png" alt="Avocado keyboard theme preview" loading="lazy" width="600" height="400" />
+              <img src="src/images/avocado.png" alt="Avocado keyboard theme preview" loading="lazy" decoding="async" width="600" height="400" />
               <div class="theme-preview-overlay">
                 <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -710,7 +707,7 @@
                 <span class="badge-pill">💖 Cute</span>
                 <span class="rating-pill">★ 4.9</span>
               </div>
-              <img src="src/images/pink_check.png" alt="Pink check keyboard theme preview" loading="lazy" width="600" height="400" />
+              <img src="src/images/pink_check.png" alt="Pink check keyboard theme preview" loading="lazy" decoding="async" width="600" height="400" />
               <div class="theme-preview-overlay">
                 <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -744,7 +741,7 @@
                 <span class="badge-pill">🎮 Gaming</span>
                 <span class="rating-pill">★ 5.0</span>
               </div>
-              <img src="src/images/minecraft.png" alt="Minecraft keyboard theme preview" loading="lazy" width="600" height="400" />
+              <img src="src/images/minecraft.png" alt="Minecraft keyboard theme preview" loading="lazy" decoding="async" width="600" height="400" />
               <div class="theme-preview-overlay">
                 <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -778,7 +775,7 @@
                 <span class="badge-pill">🐾 Kawaii</span>
                 <span class="rating-pill">★ 4.9</span>
               </div>
-              <img src="src/images/cute_cat.png" alt="Cute cat keyboard theme preview" loading="lazy" width="600" height="400" />
+              <img src="src/images/cute_cat.png" alt="Cute cat keyboard theme preview" loading="lazy" decoding="async" width="600" height="400" />
               <div class="theme-preview-overlay">
                 <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -812,7 +809,7 @@
                 <span class="badge-pill">👑 Premium</span>
                 <span class="rating-pill">★ 4.9</span>
               </div>
-              <img src="src/images/penguin_elite.png" alt="Penguin elite keyboard theme preview" loading="lazy" width="600" height="400" />
+              <img src="src/images/penguin_elite.png" alt="Penguin elite keyboard theme preview" loading="lazy" decoding="async" width="600" height="400" />
               <div class="theme-preview-overlay">
                 <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -846,7 +843,7 @@
                 <span class="badge-pill">❄️ Cool</span>
                 <span class="rating-pill">★ 4.7</span>
               </div>
-              <img src="src/images/Penguin.jpeg" alt="Penguin blue keyboard theme preview" loading="lazy" width="600" height="400" />
+              <img src="src/images/Penguin.jpeg" alt="Penguin blue keyboard theme preview" loading="lazy" decoding="async" width="600" height="400" />
               <div class="theme-preview-overlay">
                 <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -880,7 +877,7 @@
                 <span class="badge-pill">☀️ Day Mode</span>
                 <span class="rating-pill">★ 4.8</span>
               </div>
-              <img src="src/images/classic_light.jpg" alt="Classic light keyboard theme preview" loading="lazy" width="600" height="400" />
+              <img src="src/images/classic_light.jpg" alt="Classic light keyboard theme preview" loading="lazy" decoding="async" width="600" height="400" />
               <div class="theme-preview-overlay">
                 <button class="theme-action-icon view-lightbox-btn" title="Enlarge theme preview">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -918,15 +915,15 @@
 
         <div class="gallery-grid">
           <div class="gallery-item reveal">
-            <img src="src/images/Penguin.jpeg" alt="Penguin keyboard preview" loading="lazy" width="600" height="400" />
+            <img src="src/images/Penguin.jpeg" alt="Penguin keyboard preview" loading="lazy" decoding="async" width="600" height="400" />
             <div class="gallery-caption">Penguin Blue Theme</div>
           </div>
           <div class="gallery-item reveal">
-            <img src="src/images/pink_check.png" alt="Pink check keyboard preview" loading="lazy" width="600" height="400" />
+            <img src="src/images/pink_check.png" alt="Pink check keyboard preview" loading="lazy" decoding="async" width="600" height="400" />
             <div class="gallery-caption">Pink Check Grid</div>
           </div>
           <div class="gallery-item reveal">
-            <img src="src/images/amoled_dark.jpg" alt="Amoled dark keyboard preview" loading="lazy" width="600" height="400" />
+            <img src="src/images/amoled_dark.jpg" alt="Amoled dark keyboard preview" loading="lazy" decoding="async" width="600" height="400" />
             <div class="gallery-caption">Amoled OLED Contrast</div>
           </div>
         </div>
@@ -977,7 +974,7 @@
               <span class="faq-chevron">▼</span>
             </button>
             <div class="faq-answer">
-              <p>RCKeyBoard natively supports 16+ languages including English, Arabic, Spanish, French, German, Russian, Portuguese, Hindi, Turkish, Japanese, Chinese, Indonesian, Vietnamese, Dutch, and Thai with multi-language quick switching.</p>
+              <p>RCKeyBoard natively supports 27+ languages including English, Arabic, Spanish, French, German, Russian, Portuguese, Hindi, Turkish, Japanese, Chinese, Indonesian, Vietnamese, Dutch, and Thai with multi-language quick switching.</p>
             </div>
           </div>
         </div>
@@ -1016,7 +1013,7 @@
     </main>
 
     <!-- Theme Lightbox Modal -->
-    <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true">
+    <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-hidden="true" inert>
       <div class="lightbox-backdrop"></div>
       <div class="lightbox-content">
         <button class="lightbox-close" id="lightbox-close" title="Close preview">✕</button>
@@ -1059,6 +1056,6 @@
       <p class="footer-copy" data-i18n="footer.copy">RCKeyBoard © 2026 — Built for faster, smarter, and more personal typing.</p>
     </footer>
 
-    <script src="src/scripts/app.js"></script>
+    <script src="src/scripts/app.js" defer></script>
   </body>
 </html>

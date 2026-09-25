@@ -3,6 +3,22 @@
 // =============================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const readPreference = (key, fallback = null) => {
+    try {
+      return localStorage.getItem(key) ?? fallback;
+    } catch {
+      return fallback;
+    }
+  };
+  const writePreference = (key, value) => {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      // Keep the current session usable when storage is disabled.
+    }
+  };
+
   // ---------------------------------------------------------------------------
   // 1. DOM Elements & State
   // ---------------------------------------------------------------------------
@@ -19,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
   const navLinks = document.querySelectorAll('.nav-link');
   const backToTopBtn = document.getElementById('back-to-top');
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
   // Simulator Elements
   const simInput = document.getElementById('sim-input');
@@ -128,48 +145,34 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---------------------------------------------------------------------------
-  // 3. Dynamic Cursor Spotlight Follower
-  // ---------------------------------------------------------------------------
-  const spotlight = document.createElement('div');
-  spotlight.className = 'cursor-spotlight';
-  document.body.appendChild(spotlight);
-
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let currentSpotX = mouseX;
-  let currentSpotY = mouseY;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  }, { passive: true });
-
-  const renderSpotlight = () => {
-    currentSpotX += (mouseX - currentSpotX) * 0.12;
-    currentSpotY += (mouseY - currentSpotY) * 0.12;
-    spotlight.style.transform = `translate(${currentSpotX - 300}px, ${currentSpotY - 300}px)`;
-    requestAnimationFrame(renderSpotlight);
-  };
-  requestAnimationFrame(renderSpotlight);
-
-  // ---------------------------------------------------------------------------
   // 4. Hero 3D Perspective Tilt & Interactive Theme Swatches
   // ---------------------------------------------------------------------------
-  const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+  const isFinePointer = window.matchMedia('(pointer: fine)').matches && !prefersReducedMotion;
 
   if (heroVisual && phoneCardWrap && isFinePointer) {
+    let tiltFrame = 0;
+    let pointerX = 0;
+    let pointerY = 0;
+
     heroVisual.addEventListener('mousemove', (e) => {
-      const rect = heroVisual.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
+      pointerX = e.clientX;
+      pointerY = e.clientY;
+      if (tiltFrame) return;
 
-      const rotateY = (x / (rect.width / 2)) * 14;
-      const rotateX = -(y / (rect.height / 2)) * 14;
-
-      phoneCardWrap.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      tiltFrame = requestAnimationFrame(() => {
+        tiltFrame = 0;
+        const rect = heroVisual.getBoundingClientRect();
+        const x = pointerX - rect.left - rect.width / 2;
+        const y = pointerY - rect.top - rect.height / 2;
+        const rotateY = (x / (rect.width / 2)) * 12;
+        const rotateX = -(y / (rect.height / 2)) * 12;
+        phoneCardWrap.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.015, 1.015, 1.015)`;
+      });
     });
 
     heroVisual.addEventListener('mouseleave', () => {
+      if (tiltFrame) cancelAnimationFrame(tiltFrame);
+      tiltFrame = 0;
       phoneCardWrap.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
     });
   }
@@ -184,15 +187,22 @@ document.addEventListener('DOMContentLoaded', () => {
     penguin: 'src/images/penguin_elite.png'
   };
 
+  let swatchTransitionTimer = 0;
   heroSwatches.forEach((swatch) => {
+    swatch.setAttribute('aria-pressed', swatch.classList.contains('active') ? 'true' : 'false');
     swatch.addEventListener('click', () => {
-      heroSwatches.forEach((s) => s.classList.remove('active'));
+      heroSwatches.forEach((s) => {
+        s.classList.remove('active');
+        s.setAttribute('aria-pressed', 'false');
+      });
       swatch.classList.add('active');
+      swatch.setAttribute('aria-pressed', 'true');
       const themeKey = swatch.getAttribute('data-hero-theme');
       if (heroPhoneImg && themeImages[themeKey]) {
+        window.clearTimeout(swatchTransitionTimer);
         heroPhoneImg.style.opacity = '0.3';
         heroPhoneImg.style.transform = 'scale(0.96)';
-        setTimeout(() => {
+        swatchTransitionTimer = window.setTimeout(() => {
           heroPhoneImg.src = themeImages[themeKey];
           heroPhoneImg.style.opacity = '1';
           heroPhoneImg.style.transform = 'scale(1)';
@@ -239,19 +249,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Evaluate simple inline math (e.g., 25*4= -> 100)
   const checkInlineMath = (text) => {
-    const mathMatch = text.match(/(\d+\s*[\+\-\*\/]\s*\d+)\s*=/);
-    if (mathMatch) {
-      try {
-        const expression = mathMatch[1];
-        // Safe basic arithmetic eval
-        const sanitized = expression.replace(/[^0-9\+\-\*\/]/g, '');
-        const result = Function(`'use strict'; return (${sanitized})`)();
-        return text.replace(mathMatch[0], `${expression} = ${result} ✨`);
-      } catch {
-        return text;
-      }
-    }
-    return text;
+    const mathMatch = text.match(/(\d+)\s*([+\-*/])\s*(\d+)\s*=/);
+    if (!mathMatch) return text;
+
+    const left = Number(mathMatch[1]);
+    const right = Number(mathMatch[3]);
+    const operations = {
+      '+': () => left + right,
+      '-': () => left - right,
+      '*': () => left * right,
+      '/': () => right === 0 ? NaN : left / right
+    };
+    const result = operations[mathMatch[2]]();
+    if (!Number.isFinite(result)) return text;
+
+    const expression = `${mathMatch[1]} ${mathMatch[2]} ${mathMatch[3]}`;
+    return text.replace(mathMatch[0], `${expression} = ${result} ✨`);
   };
 
   // Virtual Key Press Handling
@@ -334,32 +347,36 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------------------------------
   // 6. Theme Library Filters, Real-Time Search & Lightbox Modal
   // ---------------------------------------------------------------------------
+  const createThemeSearchIndex = () => Array.from(themeCards, (card) => {
+    const title = card.querySelector('h3')?.textContent || '';
+    const desc = card.querySelector('p')?.textContent || '';
+    const tags = Array.from(card.querySelectorAll('.theme-tags span'), (tag) => tag.textContent).join(' ');
+    return {
+      card,
+      category: card.getAttribute('data-category'),
+      searchableText: `${title} ${desc} ${tags}`.toLocaleLowerCase()
+    };
+  });
+  let themeSearchIndex = createThemeSearchIndex();
+
   const applyThemeFilters = () => {
     const activeCategoryBtn = document.querySelector('.theme-filter-btn.active');
     const selectedFilter = activeCategoryBtn?.getAttribute('data-filter') || 'all';
-    const searchQuery = (themeSearchInput?.value || '').trim().toLowerCase();
+    const searchQuery = (themeSearchInput?.value || '').trim().toLocaleLowerCase();
 
-    themeCards.forEach((card) => {
-      const category = card.getAttribute('data-category');
-      const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
-      const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
-      const tags = Array.from(card.querySelectorAll('.theme-tags span')).map(t => t.textContent.toLowerCase()).join(' ');
-
+    themeSearchIndex.forEach(({ card, category, searchableText }) => {
       const matchesCategory = selectedFilter === 'all' || category === selectedFilter;
-      const matchesSearch = !searchQuery || title.includes(searchQuery) || desc.includes(searchQuery) || tags.includes(searchQuery);
-
-      if (matchesCategory && matchesSearch) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
+      card.hidden = !matchesCategory || (searchQuery && !searchableText.includes(searchQuery));
     });
   };
 
   themeFilterBtns.forEach((btn) => {
+    btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
     btn.addEventListener('click', () => {
       themeFilterBtns.forEach((b) => b.classList.remove('active'));
+      themeFilterBtns.forEach((b) => b.setAttribute('aria-pressed', 'false'));
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       applyThemeFilters();
     });
   });
@@ -375,13 +392,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const demoSection = document.getElementById('demo');
       if (demoSection) {
-        demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        demoSection.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
         setTimeout(() => simInput?.focus(), 600);
       }
     });
   });
 
   // Lightbox Modal Preview
+  let lastLightboxTrigger = null;
   themeCards.forEach((card) => {
     const viewBtn = card.querySelector('.view-lightbox-btn');
     const media = card.querySelector('.theme-media');
@@ -392,11 +410,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const openLightbox = (e) => {
       e.stopPropagation();
       if (!lightboxModal || !img) return;
+      lastLightboxTrigger = viewBtn || e.currentTarget;
       lightboxImg.src = img.src;
       if (lightboxTitle) lightboxTitle.textContent = title || 'Keyboard Theme Preview';
       if (lightboxDesc) lightboxDesc.textContent = desc || 'Explore high resolution details of RCKeyBoard custom themes.';
       lightboxModal.classList.add('open');
       lightboxModal.setAttribute('aria-hidden', 'false');
+      lightboxModal.inert = false;
+      lightboxCloseBtn?.focus();
     };
 
     viewBtn?.addEventListener('click', openLightbox);
@@ -406,25 +427,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeLightbox = () => {
     lightboxModal?.classList.remove('open');
     lightboxModal?.setAttribute('aria-hidden', 'true');
+    if (lightboxModal) lightboxModal.inert = true;
+    lastLightboxTrigger?.focus();
+    lastLightboxTrigger = null;
   };
 
   lightboxCloseBtn?.addEventListener('click', closeLightbox);
   lightboxModal?.querySelector('.lightbox-backdrop')?.addEventListener('click', closeLightbox);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
-  });
 
   // ---------------------------------------------------------------------------
   // 7. Interactive FAQ Accordion
   // ---------------------------------------------------------------------------
   faqItems.forEach((item) => {
     const question = item.querySelector('.faq-question');
+    question?.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
     question?.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
-      faqItems.forEach((i) => i.classList.remove('open'));
+      faqItems.forEach((i) => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+      });
       if (!isOpen) {
         item.classList.add('open');
+        question.setAttribute('aria-expanded', 'true');
       }
     });
   });
@@ -458,10 +483,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (languageLabel) {
       languageLabel.textContent = lang.toUpperCase();
     }
-    localStorage.setItem('rc-language', lang);
+    writePreference('rc-language', lang);
 
     languageMenu?.classList.remove('open');
     languageMenu?.setAttribute('aria-hidden', 'true');
+    if (languageMenu) languageMenu.inert = true;
+    languageToggle?.setAttribute('aria-expanded', 'false');
 
     await loadTranslations(defaultLanguage);
     const currentData = await loadTranslations(lang);
@@ -480,6 +507,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    themeSearchIndex = createThemeSearchIndex();
+    applyThemeFilters();
+
     if (lang === 'ar' || lang === 'ur') {
       document.documentElement.dir = 'rtl';
     } else {
@@ -491,6 +521,8 @@ document.addEventListener('DOMContentLoaded', () => {
     e.stopPropagation();
     const isOpen = languageMenu?.classList.toggle('open');
     languageMenu?.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    if (languageMenu) languageMenu.inert = !isOpen;
+    languageToggle?.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     if (isOpen) {
       setTimeout(() => languageSearchInput?.focus(), 100);
     }
@@ -516,6 +548,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!event.composedPath().includes(languageToggle) && !event.composedPath().includes(languageMenu)) {
         languageMenu.classList.remove('open');
         languageMenu.setAttribute('aria-hidden', 'true');
+        languageMenu.inert = true;
+        languageToggle.setAttribute('aria-expanded', 'false');
       }
     }
   });
@@ -525,10 +559,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------------------------------
   const applyTheme = (isLight) => {
     document.body.classList.toggle('light-mode', isLight);
-    localStorage.setItem('rc-theme', isLight ? 'light' : 'dark');
+    themeToggle?.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+    themeColorMeta?.setAttribute('content', isLight ? '#f7f8fc' : '#080b12');
+    writePreference('rc-theme', isLight ? 'light' : 'dark');
   };
 
-  const savedTheme = localStorage.getItem('rc-theme');
+  const savedTheme = readPreference('rc-theme');
   const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
   applyTheme(savedTheme ? savedTheme === 'light' : prefersLight);
 
@@ -537,78 +573,89 @@ document.addEventListener('DOMContentLoaded', () => {
     applyTheme(isLight);
   });
 
-  const savedLanguage = localStorage.getItem('rc-language') || defaultLanguage;
+  const savedLanguage = readPreference('rc-language') || defaultLanguage;
   translatePage(savedLanguage);
 
   // ---------------------------------------------------------------------------
   // 10. Mobile Menu Drawer
   // ---------------------------------------------------------------------------
-  const toggleMobileMenu = () => {
-    const isOpen = mobileMenuOverlay?.classList.toggle('open');
+  const setMobileMenuOpen = (isOpen) => {
+    if (!mobileMenuOverlay) return;
+    mobileMenuOverlay.classList.toggle('open', isOpen);
+    mobileMenuOverlay.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    mobileMenuOverlay.inert = !isOpen;
     document.body.classList.toggle('menu-open', isOpen);
     mobileMenuToggle?.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOverlay?.classList.contains('open'));
   };
 
   mobileMenuToggle?.addEventListener('click', toggleMobileMenu);
 
   mobileNavLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      mobileMenuOverlay?.classList.remove('open');
-      document.body.classList.remove('menu-open');
+      setMobileMenuOpen(false);
     });
   });
 
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768 && mobileMenuOverlay?.classList.contains('open')) {
-      mobileMenuOverlay.classList.remove('open');
-      document.body.classList.remove('menu-open');
-      mobileMenuToggle?.setAttribute('aria-expanded', 'false');
+      setMobileMenuOpen(false);
     }
   }, { passive: true });
 
-  // ---------------------------------------------------------------------------
-  // 11. Navbar Scrollspy & Back-to-Top Progress
-  // ---------------------------------------------------------------------------
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-
-    if (currentScroll > 40) {
-      document.body.classList.add('scrolled');
-    } else {
-      document.body.classList.remove('scrolled');
-    }
-
-    if (backToTopBtn) {
-      if (currentScroll > 350) {
-        backToTopBtn.classList.add('visible');
-      } else {
-        backToTopBtn.classList.remove('visible');
-      }
-    }
-  }, { passive: true });
-
-  backToTopBtn?.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    closeLightbox();
+    if (mobileMenuOverlay?.classList.contains('open')) setMobileMenuOpen(false);
+    languageMenu?.classList.remove('open');
+    languageMenu?.setAttribute('aria-hidden', 'true');
+    if (languageMenu) languageMenu.inert = true;
+    languageToggle?.setAttribute('aria-expanded', 'false');
   });
 
-  const sections = document.querySelectorAll('section[id], header[id]');
-  const observeScrollspy = () => {
-    const scrollPos = window.scrollY + 220;
-    sections.forEach((section) => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
-      if (scrollPos >= top && scrollPos < top + height) {
-        navLinks.forEach((link) => {
-          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-        });
-      }
-    });
+  // ---------------------------------------------------------------------------
+  // 11. Scroll UI and observer-based navigation state
+  // ---------------------------------------------------------------------------
+  let scrollFrame = 0;
+  const updateScrollState = () => {
+    scrollFrame = 0;
+    const currentScroll = window.scrollY;
+    document.body.classList.toggle('scrolled', currentScroll > 40);
+    backToTopBtn?.classList.toggle('visible', currentScroll > 350);
   };
-  window.addEventListener('scroll', observeScrollspy, { passive: true });
+
+  window.addEventListener('scroll', () => {
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScrollState);
+  }, { passive: true });
+  updateScrollState();
+
+  backToTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+  });
+
+  const sectionLinks = Array.from(navLinks).filter((link) => {
+    const href = link.getAttribute('href') || '';
+    return href.startsWith('#') && document.getElementById(href.slice(1));
+  });
+  if ('IntersectionObserver' in window && sectionLinks.length) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const currentSection = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (!currentSection) return;
+
+      const activeHref = `#${currentSection.target.id}`;
+      sectionLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === activeHref));
+    }, { rootMargin: '-18% 0px -68% 0px', threshold: 0 });
+
+    sectionLinks.forEach((link) => sectionObserver.observe(document.getElementById(link.getAttribute('href').slice(1))));
+  }
 
   // ---------------------------------------------------------------------------
-  // 12. Animated Stats Number Counters on Scroll
+  // 12. Small stat counter and reveal-on-scroll enhancement
   // ---------------------------------------------------------------------------
   let statsCounted = false;
   const statNumbers = document.querySelectorAll('.stat-content strong');
@@ -620,40 +667,36 @@ document.addEventListener('DOMContentLoaded', () => {
     statNumbers.forEach((el) => {
       const text = el.textContent.trim();
       if (text.includes('100K')) {
-        let count = 0;
-        const timer = setInterval(() => {
-          count += 5;
-          if (count >= 100) {
-            el.textContent = '100K+';
-            clearInterval(timer);
-          } else {
-            el.textContent = `${count}K+`;
-          }
-        }, 40);
+        if (prefersReducedMotion) {
+          el.textContent = '100K+';
+          return;
+        }
+
+        const startedAt = performance.now();
+        const duration = 720;
+        const animateCount = (now) => {
+          const progress = Math.min((now - startedAt) / duration, 1);
+          el.textContent = `${Math.round(progress * 100)}K+`;
+          if (progress < 1) requestAnimationFrame(animateCount);
+        };
+        requestAnimationFrame(animateCount);
       }
     });
   };
 
-  // ---------------------------------------------------------------------------
-  // 13. Staggered Scroll Animations (Intersection Observer)
-  // ---------------------------------------------------------------------------
-  const observer = new IntersectionObserver(
-    (entries) => {
+  if ('IntersectionObserver' in window && !prefersReducedMotion) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          if (entry.target.classList.contains('stats')) {
-            countUpStats();
-          }
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        if (entry.target.classList.contains('stats')) countUpStats();
+        observer.unobserve(entry.target);
       });
-    },
-    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-  );
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 
-  revealElements.forEach((el, index) => {
-    el.style.transitionDelay = `${Math.min(index * 0.04, 0.28)}s`;
-    observer.observe(el);
-  });
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    revealElements.forEach((el) => el.classList.add('visible'));
+    countUpStats();
+  }
 });
