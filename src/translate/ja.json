@@ -1,14 +1,14 @@
 {
-  "hero.pill": "✨ 新しいテーマ • 2026年リデザイン",
+  "hero.pill": "バージョン 4.9.5 · Android キーボード",
   "hero.badge1": "⚡ 超高速",
   "hero.badge2": "🎨 大胆なカスタマイズ",
   "hero.badge3": "🔒 プライバシー第一",
-  "hero.title": "もっと速く入力。もっと大胆に見せる。自分のキーボードを所有しよう。",
+  "hero.title": "自分らしいキーボード。",
   "hero.description": "RCKeyBoardは、速度、プライバシー、深いパーソナライズのために設計されたプレミアムAndroidキーボードです。インテリジェントな入力、カスタムテーマ、多言語ツール、洗練された体験を組み合わせています。",
   "hero.install": "今すぐインストール",
   "hero.explore": "機能を探る",
-  "stats.installs": "インストール",
-  "stats.rating": "平均評価",
+  "stats.installs": "ダウンロード",
+  "stats.rating": "ストア評価",
   "stats.languages": "言語",
   "features.heading.eyebrow": "RCKeyBoardが特別な理由",
   "features.heading.title": "単なる基本入力アプリではなく、本物のキーボードパワーのために作られた",
@@ -38,7 +38,7 @@
   "theme.heading.title": "プレミアムキーボード体験のための新鮮なテーマ",
   "store.name": "RCKeyBoard",
   "store.subtitle": "プレミアムAndroidキーボード",
-  "store.stats": "100K+ ダウンロード • プライバシー第一 • 多言語対応",
+  "store.stats": "50万件以上のダウンロード · 端末内学習 · 27以上の言語",
   "store.button": "Playストアで取得",
   "footer.brand": "Androidのためのプレミアムキーボード体験。",
   "footer.features": "機能",
@@ -50,5 +50,7 @@
   "footer.terms": "Terms of Service",
   "nav.about": "About",
   "nav.privacy": "Privacy",
-  "nav.terms": "Terms"
+  "nav.terms": "Terms",
+  "nav.features": "機能",
+  "nav.themes": "テーマ"
 }

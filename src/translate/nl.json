@@ -1,14 +1,14 @@
 {
-  "hero.pill": "✨ Nieuwe thema's • 2026 redesign",
+  "hero.pill": "Versie 4.9.5 · Android-toetsenbord",
   "hero.badge1": "⚡ Razendsnel",
   "hero.badge2": "🎨 Gedurfde personalisatie",
   "hero.badge3": "🔒 Privacy eerst",
-  "hero.title": "Typ sneller. Zie er gedurfder uit. Maak je toetsenbord van jou.",
+  "hero.title": "Jouw toetsenbord, jouw stijl.",
   "hero.description": "RCKeyBoard is een premium Android-toetsenbord gebouwd voor snelheid, privacy en diepe personalisatie. Het combineert intelligente typen, aangepaste thema's, meertalige tools en een gepolijste ervaring voor power users.",
   "hero.install": "Nu installeren",
   "hero.explore": "Ontdek functies",
-  "stats.installs": "installaties",
-  "stats.rating": "gemiddelde beoordeling",
+  "stats.installs": "downloads",
+  "stats.rating": "winkelbeoordeling",
   "stats.languages": "talen",
   "features.heading.eyebrow": "Wat RCKeyBoard anders maakt",
   "features.heading.title": "Gebouwd voor echte toetsenbordkracht, niet alleen een basis typ-app",
@@ -38,7 +38,7 @@
   "theme.heading.title": "Frisse thema's gemaakt voor een premium toetsenbordervaring",
   "store.name": "RCKeyBoard",
   "store.subtitle": "Premium Android toetsenbord",
-  "store.stats": "100K+ downloads • Privacy eerst • Meertalig",
+  "store.stats": "500K+ downloads · Leren op het apparaat · 27+ talen",
   "store.button": "Download in Play Store",
   "footer.brand": "Premium toetsenbordervaring voor Android.",
   "footer.features": "Functies",
@@ -50,5 +50,7 @@
   "footer.terms": "Terms of Service",
   "nav.about": "About",
   "nav.privacy": "Privacy",
-  "nav.terms": "Terms"
+  "nav.terms": "Terms",
+  "nav.features": "Functies",
+  "nav.themes": "Thema"
 }

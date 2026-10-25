@@ -1,14 +1,14 @@
 {
-  "hero.pill": "✨ ثيمات جديدة • تصميم 2026",
+  "hero.pill": "الإصدار 4.9.5 · لوحة مفاتيح أندرويد",
   "hero.badge1": "⚡ سريع جدًا",
   "hero.badge2": "🎨 تخصيص قوي",
   "hero.badge3": "🔒 خصوصية أولًا",
-  "hero.title": "اكتب أسرع. صُمّم بشكل أقوى. امتلك لوحة المفاتيح.",
+  "hero.title": "لوحة مفاتيح على طريقتك",
   "hero.description": "RCKeyBoard هو لوحة مفاتيح أندرويد مميزة مصممة للسرعة والخصوصية والتخصيص العميق. يجمع بين الكتابة الذكية، الثيمات، أدوات متعددة اللغات، وتجربة مصقولة للمستخدمين القويين.",
   "hero.install": "التثبيت الآن",
   "hero.explore": "استكشف الميزات",
-  "stats.installs": "تثبيت",
-  "stats.rating": "متوسط التقييم",
+  "stats.installs": "تنزيل",
+  "stats.rating": "تقييم المتجر",
   "stats.languages": "لغات",
   "features.heading.eyebrow": "لماذا RCKeyBoard مختلف",
   "features.heading.title": "مصمم لقوة لوحة المفاتيح الحقيقية، وليس مجرد تطبيق كتابة",
@@ -38,7 +38,7 @@
   "theme.heading.title": "ثيمات جديدة مصممة لتجربة لوحة مفاتيح مميزة",
   "store.name": "RCKeyBoard",
   "store.subtitle": "لوحة مفاتيح أندرويد مميزة",
-  "store.stats": "100K+ تحميل • خصوصية أولًا • متعدد اللغات",
+  "store.stats": "أكثر من 500 ألف تنزيل · تعلّم على الجهاز · أكثر من 27 لغة",
   "store.button": "احصل عليها من متجر Play",
   "footer.brand": "تجربة لوحة مفاتيح مميزة لأندرويد.",
   "footer.features": "الميزات",
@@ -50,5 +50,7 @@
   "footer.terms": "Terms of Service",
   "nav.about": "About",
   "nav.privacy": "Privacy",
-  "nav.terms": "Terms"
+  "nav.terms": "Terms",
+  "nav.features": "الميزات",
+  "nav.themes": "السمات"
 }

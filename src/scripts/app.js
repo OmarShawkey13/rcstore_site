@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const soundToggleBtn = document.getElementById('sound-toggle');
   const simWpmVal = document.getElementById('sim-wpm');
   const simKeysVal = document.getElementById('sim-keys-count');
-  const simAccuracyVal = document.getElementById('sim-accuracy');
+  const simWordsVal = document.getElementById('sim-words');
 
   // Hero Phone 3D Tilt & Swatches
   const phoneCardWrap = document.querySelector('.phone-card-wrap');
@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
   soundToggleBtn?.addEventListener('click', () => {
     isSoundEnabled = !isSoundEnabled;
     soundToggleBtn.classList.toggle('muted', !isSoundEnabled);
+    soundToggleBtn.setAttribute('aria-pressed', isSoundEnabled ? 'true' : 'false');
     const label = soundToggleBtn.querySelector('span');
     if (label) label.textContent = isSoundEnabled ? 'Sound: On' : 'Sound: Off';
   });
@@ -179,12 +180,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Hero Quick Swatches
   const themeImages = {
-    amoled: 'src/images/rckeyboard.webp',
-    avocado: 'src/images/avocado.png',
-    pink: 'src/images/pink_check.png',
-    minecraft: 'src/images/minecraft.png',
-    cute: 'src/images/cute_cat.png',
-    penguin: 'src/images/penguin_elite.png'
+    amoled: 'src/images/amoled_dark.webp',
+    avocado: 'src/images/avocado.webp',
+    pink: 'src/images/pink_check.webp',
+    minecraft: 'src/images/minecraft.webp',
+    cute: 'src/images/cute_cat.webp',
+    penguin: 'src/images/penguin_elite.webp'
   };
 
   let swatchTransitionTimer = 0;
@@ -228,12 +229,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (simWpmVal) simWpmVal.textContent = `${currentWpm}`;
     if (simKeysVal) simKeysVal.textContent = `${totalKeystrokes}`;
-    if (simAccuracyVal) simAccuracyVal.textContent = '99%';
+    if (simWordsVal) simWordsVal.textContent = `${wordsTyped}`;
+  };
+
+  const updateWordCount = () => {
+    const wordsTyped = (simInput?.value.trim().split(/\s+/).filter(Boolean).length || 0);
+    if (simWordsVal) simWordsVal.textContent = `${wordsTyped}`;
   };
 
   const selectSimulatorTheme = (themeName) => {
     simThemeBtns.forEach((b) => {
-      b.classList.toggle('active', b.getAttribute('data-theme') === themeName);
+      const isActive = b.getAttribute('data-theme') === themeName;
+      b.classList.toggle('active', isActive);
+      b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
     if (simScreen) {
       simScreen.className = `simulator-screen theme-${themeName}`;
@@ -241,6 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   simThemeBtns.forEach((btn) => {
+    btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
     btn.addEventListener('click', () => {
       const theme = btn.getAttribute('data-theme');
       selectSimulatorTheme(theme);
@@ -269,6 +278,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Virtual Key Press Handling
   simKeys.forEach((keyBtn) => {
+    const keyName = keyBtn.textContent.trim();
+    const keyLabels = { '⇧': 'Shift', '⌫': 'Backspace', 'space': 'Space', '?123': 'Symbols', '🌐': 'Change language', '↵': 'Enter' };
+    if (keyLabels[keyName]) keyBtn.setAttribute('aria-label', keyLabels[keyName]);
     keyBtn.addEventListener('click', () => {
       const rawText = keyBtn.textContent.trim();
       
@@ -308,8 +320,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Suggestions Bar auto-insertion
   simSuggestions.forEach((sug) => {
+    sug.setAttribute('aria-pressed', sug.classList.contains('active-suggestion') ? 'true' : 'false');
     sug.addEventListener('click', () => {
       if (!simInput) return;
+      simSuggestions.forEach((item) => {
+        item.classList.toggle('active-suggestion', item === sug);
+        item.setAttribute('aria-pressed', item === sug ? 'true' : 'false');
+      });
       playKeySound('space');
       simInput.value += (simInput.value.endsWith(' ') ? '' : ' ') + sug.textContent.trim() + ' ';
       updateTelemetry();
@@ -323,6 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
       typingStartTime = null;
       if (simWpmVal) simWpmVal.textContent = '0';
       if (simKeysVal) simKeysVal.textContent = '0';
+      if (simWordsVal) simWordsVal.textContent = '0';
     }
   });
 
@@ -343,6 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  simInput?.addEventListener('input', updateWordCount);
 
   // ---------------------------------------------------------------------------
   // 6. Theme Library Filters, Real-Time Search & Lightbox Modal
@@ -402,7 +421,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastLightboxTrigger = null;
   themeCards.forEach((card) => {
     const viewBtn = card.querySelector('.view-lightbox-btn');
-    const media = card.querySelector('.theme-media');
     const img = card.querySelector('.theme-media img');
     const title = card.querySelector('.theme-info h3')?.textContent;
     const desc = card.querySelector('.theme-info p')?.textContent;
@@ -421,7 +439,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     viewBtn?.addEventListener('click', openLightbox);
-    media?.addEventListener('click', openLightbox);
   });
 
   const closeLightbox = () => {
@@ -434,6 +451,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   lightboxCloseBtn?.addEventListener('click', closeLightbox);
   lightboxModal?.querySelector('.lightbox-backdrop')?.addEventListener('click', closeLightbox);
+  lightboxModal?.addEventListener('keydown', (event) => {
+    if (event.key !== 'Tab') return;
+    const focusable = Array.from(lightboxModal.querySelectorAll('a[href], button:not([disabled])'));
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
 
   // ---------------------------------------------------------------------------
   // 7. Interactive FAQ Accordion
@@ -502,7 +533,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
           el.placeholder = text;
         } else {
-          el.textContent = text;
+          const textNode = Array.from(el.childNodes).find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+          if (textNode) textNode.textContent = text;
+          else el.textContent = text;
         }
       }
     });
@@ -560,13 +593,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const applyTheme = (isLight) => {
     document.body.classList.toggle('light-mode', isLight);
     themeToggle?.setAttribute('aria-pressed', isLight ? 'true' : 'false');
-    themeColorMeta?.setAttribute('content', isLight ? '#f7f8fc' : '#080b12');
+    themeColorMeta?.setAttribute('content', isLight ? '#f5f8f7' : '#111916');
     writePreference('rc-theme', isLight ? 'light' : 'dark');
   };
 
   const savedTheme = readPreference('rc-theme');
-  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-  applyTheme(savedTheme ? savedTheme === 'light' : prefersLight);
+  applyTheme(savedTheme ? savedTheme === 'light' : true);
 
   themeToggle?.addEventListener('click', () => {
     const isLight = !document.body.classList.contains('light-mode');
@@ -666,9 +698,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     statNumbers.forEach((el) => {
       const text = el.textContent.trim();
-      if (text.includes('100K')) {
+      if (text.includes('500K')) {
         if (prefersReducedMotion) {
-          el.textContent = '100K+';
+          el.textContent = '500K+';
           return;
         }
 
@@ -676,7 +708,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const duration = 720;
         const animateCount = (now) => {
           const progress = Math.min((now - startedAt) / duration, 1);
-          el.textContent = `${Math.round(progress * 100)}K+`;
+          el.textContent = `${Math.round(progress * 500)}K+`;
           if (progress < 1) requestAnimationFrame(animateCount);
         };
         requestAnimationFrame(animateCount);

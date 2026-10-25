@@ -1,14 +1,14 @@
 {
-  "hero.pill": "✨ Yeni temalar • 2026 yeniden tasarım",
+  "hero.pill": "Sürüm 4.9.5 · Android klavyesi",
   "hero.badge1": "⚡ Çok hızlı",
   "hero.badge2": "🎨 Cesur özelleştirme",
   "hero.badge3": "🔒 Gizlilik önce",
-  "hero.title": "Daha hızlı yaz. Daha güçlü görün. Klavyeni kendine ait kıl.",
+  "hero.title": "Klavye, kendi tarzınızda.",
   "hero.description": "RCKeyBoard, hız, gizlilik ve derin kişiselleştirme için tasarlanmış premium bir Android klavyedir. Akıllı yazım, özel temalar, çok dilli araçlar ve günlük güç kullanıcıları için planlanmış bir deneyim sunar.",
   "hero.install": "Şimdi yükle",
   "hero.explore": "Özellikleri keşfet",
-  "stats.installs": "yüklemeler",
-  "stats.rating": "ortalama puan",
+  "stats.installs": "indirme",
+  "stats.rating": "mağaza puanı",
   "stats.languages": "diller",
   "features.heading.eyebrow": "RCKeyBoard'u farklı kılan şey",
   "features.heading.title": "Sadece temel bir yazma uygulaması değil, gerçek klavye gücü için inşa edildi",
@@ -38,7 +38,7 @@
   "theme.heading.title": "Premium bir klavye deneyimi için taze temalar",
   "store.name": "RCKeyBoard",
   "store.subtitle": "Premium Android Klavye",
-  "store.stats": "100K+ indirme • Gizlilik önce • Çok dilli",
+  "store.stats": "500 bin+ indirme · Cihaz üzerinde öğrenme · 27+ dil",
   "store.button": "Play Store'dan al",
   "footer.brand": "Android için premium klavye deneyimi.",
   "footer.features": "Özellikler",
@@ -50,5 +50,7 @@
   "footer.terms": "Terms of Service",
   "nav.about": "About",
   "nav.privacy": "Privacy",
-  "nav.terms": "Terms"
+  "nav.terms": "Terms",
+  "nav.features": "Özellikler",
+  "nav.themes": "Temalar"
 }

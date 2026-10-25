@@ -1,14 +1,14 @@
 {
-  "hero.pill": "✨ Новые темы • редизайн 2026",
+  "hero.pill": "Версия 4.9.5 · Клавиатура Android",
   "hero.badge1": "⚡ Молниеносно быстро",
   "hero.badge2": "🎨 Смелая кастомизация",
   "hero.badge3": "🔒 Конфиденциальность прежде всего",
-  "hero.title": "Печатай быстрее. Выгляди ярче. Делай клавиатуру своей.",
+  "hero.title": "Клавиатура в твоем стиле.",
   "hero.description": "RCKeyBoard — премиальная клавиатура для Android, созданная для скорости, конфиденциальности и глубокой персонализации. Она сочетает умный набор, пользовательские темы, мультиязычные инструменты и продуманный интерфейс для активных пользователей.",
   "hero.install": "Установить сейчас",
   "hero.explore": "Изучить функции",
-  "stats.installs": "установок",
-  "stats.rating": "средний рейтинг",
+  "stats.installs": "скачиваний",
+  "stats.rating": "оценка в магазине",
   "stats.languages": "языков",
   "features.heading.eyebrow": "Что делает RCKeyBoard особенным",
   "features.heading.title": "Создано для реальной мощности клавиатуры, а не просто базового приложения для ввода",
@@ -38,7 +38,7 @@
   "theme.heading.title": "Свежие темы для премиального опыта клавиатуры",
   "store.name": "RCKeyBoard",
   "store.subtitle": "Премиальная Android клавиатура",
-  "store.stats": "100K+ загрузок • конфиденциальность прежде всего • мультиязычно",
+  "store.stats": "Более 500 тыс. скачиваний · Обучение на устройстве · Более 27 языков",
   "store.button": "Получить в Play Store",
   "footer.brand": "Премиальный опыт клавиатуры для Android.",
   "footer.features": "Функции",
@@ -50,5 +50,7 @@
   "footer.terms": "Terms of Service",
   "nav.about": "About",
   "nav.privacy": "Privacy",
-  "nav.terms": "Terms"
+  "nav.terms": "Terms",
+  "nav.features": "Возможности",
+  "nav.themes": "Темы"
 }

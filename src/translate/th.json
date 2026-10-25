@@ -1,14 +1,14 @@
 {
-  "hero.pill": "✨ ธีมใหม่ • ออกแบบใหม่ 2026",
+  "hero.pill": "เวอร์ชัน 4.9.5 · คีย์บอร์ด Android",
   "hero.badge1": "⚡ เร็วทันใจ",
   "hero.badge2": "🎨 ปรับแต่งแบบกล้าหาญ",
   "hero.badge3": "🔒 ความเป็นส่วนตัวมาก่อน",
-  "hero.title": "พิมพ์เร็วขึ้น ดูโดดเด่นขึ้น เป็นเจ้าของคีย์บอร์ดของคุณเอง",
+  "hero.title": "คีย์บอร์ดในแบบของคุณ",
   "hero.description": "RCKeyBoard คือคีย์บอร์ด Android พรีเมียมที่สร้างขึ้นเพื่อความเร็ว ความเป็นส่วนตัว และการปรับแต่งลึก มันรวมการพิมพ์อัจฉริยะ ธีมแบบกำหนดเอง เครื่องมือหลายภาษา และประสบการณ์ที่ขัดเกลาไว้สำหรับผู้ใช้ขั้นสูง.",
   "hero.install": "ติดตั้งเลย",
   "hero.explore": "สำรวจฟีเจอร์",
-  "stats.installs": "การติดตั้ง",
-  "stats.rating": "คะแนนเฉลี่ย",
+  "stats.installs": "ดาวน์โหลด",
+  "stats.rating": "คะแนนในสโตร์",
   "stats.languages": "ภาษา",
   "features.heading.eyebrow": "สิ่งที่ทำให้ RCKeyBoard แตกต่าง",
   "features.heading.title": "สร้างขึ้นเพื่อพลังคีย์บอร์ดที่แท้จริง ไม่ใช่แค่แอปพิมพ์พื้นฐาน",
@@ -38,7 +38,7 @@
   "theme.heading.title": "ธีมสดใหม่สำหรับประสบการณ์คีย์บอร์ดพรีเมียม",
   "store.name": "RCKeyBoard",
   "store.subtitle": "คีย์บอร์ด Android พรีเมียม",
-  "store.stats": "100K+ ดาวน์โหลด • ความเป็นส่วนตัวก่อน • รองรับหลายภาษา",
+  "store.stats": "ดาวน์โหลดกว่า 500K · เรียนรู้บนอุปกรณ์ · มากกว่า 27 ภาษา",
   "store.button": "รับใน Play Store",
   "footer.brand": "ประสบการณ์คีย์บอร์ดพรีเมียมสำหรับ Android.",
   "footer.features": "ฟีเจอร์",
@@ -50,5 +50,7 @@
   "footer.terms": "Terms of Service",
   "nav.about": "About",
   "nav.privacy": "Privacy",
-  "nav.terms": "Terms"
+  "nav.terms": "Terms",
+  "nav.features": "คุณสมบัติ",
+  "nav.themes": "ธีม"
 }

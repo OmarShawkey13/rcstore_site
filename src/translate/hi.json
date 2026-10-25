@@ -1,14 +1,14 @@
 {
-  "hero.pill": "✨ नए थीम • 2026 रीडिज़ाइन",
+  "hero.pill": "वर्शन 4.9.5 · Android कीबोर्ड",
   "hero.badge1": "⚡ तेज़ और तेज़",
   "hero.badge2": "🎨 बोल्ड कस्टमाइज़ेशन",
   "hero.badge3": "🔒 गोपनीयता पहले",
-  "hero.title": "तेज़ टाइप करें। ज़्यादा बोल्ड दिखें। अपना कीबोर्ड अपना बनाएं।",
+  "hero.title": "आपका कीबोर्ड, आपका तरीका",
   "hero.description": "RCKeyBoard एक प्रीमियम एंड्रॉइड कीबोर्ड है जो गति, गोपनीयता और गहरी पर्सनलाइज़ेशन के लिए बनाया गया है। यह स्मार्ट टाइपिंग, कस्टम थीम्स, बहुभाषी टूल्स और पॉलिश्ड अनुभव को संयोजित करता है।",
   "hero.install": "अब इंस्टॉल करें",
   "hero.explore": "फ़ीचर्स देखें",
-  "stats.installs": "इंस्टॉल",
-  "stats.rating": "औसत रेटिंग",
+  "stats.installs": "डाउनलोड",
+  "stats.rating": "स्टोर रेटिंग",
   "stats.languages": "भाषाएँ",
   "features.heading.eyebrow": "RCKeyBoard को अलग क्या बनाता है",
   "features.heading.title": "वास्तविक कीबोर्ड पावर के लिए बनाया गया, सिर्फ एक बुनियादी टाइपिंग ऐप नहीं",
@@ -38,7 +38,7 @@
   "theme.heading.title": "एक प्रीमियम कीबोर्ड अनुभव के लिए ताज़ा थीम",
   "store.name": "RCKeyBoard",
   "store.subtitle": "प्रीमियम एंड्रॉइड कीबोर्ड",
-  "store.stats": "100K+ डाउनलोड • गोपनीयता पहले • बहुभाषी",
+  "store.stats": "5 लाख से अधिक डाउनलोड · डिवाइस पर सीखना · 27+ भाषाएँ",
   "store.button": "Play Store पर पाएं",
   "footer.brand": "Android के लिए प्रीमियम कीबोर्ड अनुभव।",
   "footer.features": "फ़ीचर्स",
@@ -50,5 +50,7 @@
   "footer.terms": "Terms of Service",
   "nav.about": "About",
   "nav.privacy": "Privacy",
-  "nav.terms": "Terms"
+  "nav.terms": "Terms",
+  "nav.features": "सुविधाएँ",
+  "nav.themes": "थीम"
 }

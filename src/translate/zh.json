@@ -1,14 +1,14 @@
 {
-  "hero.pill": "✨ 新主题 • 2026 重新设计",
+  "hero.pill": "版本 4.9.5 · Android 键盘",
   "hero.badge1": "⚡ 极速",
   "hero.badge2": "🎨 大胆定制",
   "hero.badge3": "🔒 隐私优先",
-  "hero.title": "打字更快。外观更大胆。拥有你的键盘。",
+  "hero.title": "属于你的键盘。",
   "hero.description": "RCKeyBoard 是一款面向速度、隐私和深度个性化的高级 Android 键盘。它结合了智能输入、自定义主题、多语言工具和为高级用户设计的精致体验。",
   "hero.install": "立即安装",
   "hero.explore": "探索功能",
-  "stats.installs": "安装量",
-  "stats.rating": "平均评分",
+  "stats.installs": "次下载",
+  "stats.rating": "商店评分",
   "stats.languages": "语言",
   "features.heading.eyebrow": "RCKeyBoard 与众不同的原因",
   "features.heading.title": "为真正的键盘力量而建，不仅仅是一个基础打字应用",
@@ -38,7 +38,7 @@
   "theme.heading.title": "为高级键盘体验打造的新鲜主题",
   "store.name": "RCKeyBoard",
   "store.subtitle": "高级 Android 键盘",
-  "store.stats": "100K+ 下载 • 隐私优先 • 多语言",
+  "store.stats": "下载量超过 50 万 · 设备端学习 · 支持 27 种以上语言",
   "store.button": "在 Play 商店获取",
   "footer.brand": "Android 的高级键盘体验。",
   "footer.features": "功能",
@@ -50,5 +50,7 @@
   "footer.terms": "Terms of Service",
   "nav.about": "About",
   "nav.privacy": "Privacy",
-  "nav.terms": "Terms"
+  "nav.terms": "Terms",
+  "nav.features": "功能",
+  "nav.themes": "主题"
 }

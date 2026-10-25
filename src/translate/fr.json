@@ -1,14 +1,14 @@
 {
-  "hero.pill": "✨ Nouveaux thèmes • refonte 2026",
+  "hero.pill": "Version 4.9.5 · Clavier Android",
   "hero.badge1": "⚡ Ultra rapide",
   "hero.badge2": "🎨 Personnalisation audacieuse",
   "hero.badge3": "🔒 Confidentialité d'abord",
-  "hero.title": "Tapez plus vite. Affichez un style plus fort. Faites votre clavier vôtre.",
+  "hero.title": "Votre clavier, à votre façon.",
   "hero.description": "RCKeyBoard est un clavier Android premium conçu pour la vitesse, la confidentialité et la personnalisation avancée. Il combine saisie intelligente, thèmes personnalisés, outils multilingues et une expérience soignée pour les utilisateurs intensifs.",
   "hero.install": "Installer maintenant",
   "hero.explore": "Découvrir les fonctionnalités",
-  "stats.installs": "installations",
-  "stats.rating": "note moyenne",
+  "stats.installs": "téléchargements",
+  "stats.rating": "note sur la boutique",
   "stats.languages": "langues",
   "features.heading.eyebrow": "Ce qui rend RCKeyBoard différent",
   "features.heading.title": "Conçu pour une vraie puissance de clavier, pas seulement une app de saisie basique",
@@ -38,7 +38,7 @@
   "theme.heading.title": "Des thèmes frais conçus pour une expérience clavier premium",
   "store.name": "RCKeyBoard",
   "store.subtitle": "Clavier Android premium",
-  "store.stats": "100K+ téléchargements • Confidentialité d'abord • Multilingue",
+  "store.stats": "Plus de 500 000 téléchargements · Apprentissage local · 27 langues et plus",
   "store.button": "Obtenez-le sur Play Store",
   "footer.brand": "Expérience clavier premium pour Android.",
   "footer.features": "Fonctionnalités",
@@ -50,5 +50,7 @@
   "footer.terms": "Terms of Service",
   "nav.about": "About",
   "nav.privacy": "Privacy",
-  "nav.terms": "Terms"
+  "nav.terms": "Terms",
+  "nav.features": "Fonctionnalités",
+  "nav.themes": "Thèmes"
 }

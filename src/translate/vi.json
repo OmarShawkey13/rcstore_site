@@ -1,14 +1,14 @@
 {
-  "hero.pill": "✨ Chủ đề mới • thiết kế lại 2026",
+  "hero.pill": "Phiên bản 4.9.5 · Bàn phím Android",
   "hero.badge1": "⚡ Rất nhanh",
   "hero.badge2": "🎨 Tùy chỉnh mạnh mẽ",
   "hero.badge3": "🔒 Ưu tiên quyền riêng tư",
-  "hero.title": "Gõ nhanh hơn. Trông mạnh mẽ hơn. Sở hữu bàn phím của bạn.",
+  "hero.title": "Bàn phím theo cách của bạn.",
   "hero.description": "RCKeyBoard là bàn phím Android cao cấp được tạo cho tốc độ, quyền riêng tư và cá nhân hóa sâu. Nó kết hợp gõ thông minh, chủ đề tùy chỉnh, công cụ đa ngôn ngữ và trải nghiệm mượt mà dành cho người dùng cao cấp.",
   "hero.install": "Cài ngay",
   "hero.explore": "Khám phá tính năng",
-  "stats.installs": "cài đặt",
-  "stats.rating": "điểm đánh giá trung bình",
+  "stats.installs": "lượt tải",
+  "stats.rating": "đánh giá trên cửa hàng",
   "stats.languages": "ngôn ngữ",
   "features.heading.eyebrow": "Điều làm RCKeyBoard khác biệt",
   "features.heading.title": "Xây dựng cho sức mạnh bàn phím thực sự, không chỉ một app gõ cơ bản",
@@ -38,7 +38,7 @@
   "theme.heading.title": "Chủ đề mới cho trải nghiệm bàn phím cao cấp",
   "store.name": "RCKeyBoard",
   "store.subtitle": "Bàn phím Android cao cấp",
-  "store.stats": "100K+ lượt tải • Quyền riêng tư trước • Đa ngôn ngữ",
+  "store.stats": "Hơn 500 nghìn lượt tải · Học trên thiết bị · Hơn 27 ngôn ngữ",
   "store.button": "Nhận trên Play Store",
   "footer.brand": "Trải nghiệm bàn phím cao cấp cho Android.",
   "footer.features": "Tính năng",
@@ -50,5 +50,7 @@
   "footer.terms": "Terms of Service",
   "nav.about": "About",
   "nav.privacy": "Privacy",
-  "nav.terms": "Terms"
+  "nav.terms": "Terms",
+  "nav.features": "Tính năng",
+  "nav.themes": "Chủ đề"
 }

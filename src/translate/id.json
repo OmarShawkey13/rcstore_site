@@ -1,14 +1,14 @@
 {
-  "hero.pill": "✨ Tema baru • desain ulang 2026",
+  "hero.pill": "Versi 4.9.5 · Keyboard Android",
   "hero.badge1": "⚡ Sangat cepat",
   "hero.badge2": "🎨 Kustomisasi berani",
   "hero.badge3": "🔒 Privasi pertama",
-  "hero.title": "Ketik lebih cepat. Tampil lebih berani. Jadikan keyboard-mu milikmu.",
+  "hero.title": "Keyboard sesuai gaya Anda.",
   "hero.description": "RCKeyBoard adalah keyboard Android premium yang dibuat untuk kecepatan, privasi, dan personalisasi mendalam. Menggabungkan pengetikan cerdas, tema khusus, alat multibahasa, dan pengalaman halus untuk pengguna power.",
   "hero.install": "Pasang sekarang",
   "hero.explore": "Jelajahi fitur",
-  "stats.installs": "pemasangan",
-  "stats.rating": "peringkat rata-rata",
+  "stats.installs": "unduhan",
+  "stats.rating": "rating toko",
   "stats.languages": "bahasa",
   "features.heading.eyebrow": "Apa yang membuat RCKeyBoard berbeda",
   "features.heading.title": "Dibangun untuk kekuatan keyboard sejati, bukan hanya aplikasi ketik dasar",
@@ -38,7 +38,7 @@
   "theme.heading.title": "Tema baru untuk pengalaman keyboard premium",
   "store.name": "RCKeyBoard",
   "store.subtitle": "Keyboard Android premium",
-  "store.stats": "100K+ unduhan • Privasi pertama • Multibahasa",
+  "store.stats": "500 rb+ unduhan · Pembelajaran di perangkat · 27+ bahasa",
   "store.button": "Dapatkan di Play Store",
   "footer.brand": "Pengalaman keyboard premium untuk Android.",
   "footer.features": "Fitur",
@@ -50,5 +50,7 @@
   "footer.terms": "Terms of Service",
   "nav.about": "About",
   "nav.privacy": "Privacy",
-  "nav.terms": "Terms"
+  "nav.terms": "Terms",
+  "nav.features": "Fitur",
+  "nav.themes": "Tema"
 }
